@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class CoreAlgorithm : MonoBehaviour
 {
+    TemperatureModel temperatureModel;
+
 
 }

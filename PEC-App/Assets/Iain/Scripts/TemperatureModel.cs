@@ -7,13 +7,25 @@ public class TemperatureModel : MonoBehaviour
     /// <summary>
     /// Heating Period selection made by user
     /// </summary>
-    public int HeatingPeriodSelection { get; set; }
+    public int HeatingPeriodSelection { get; set; } = 1;
 
     /// <summary>
     /// Thermostat Setting selection made by user
     /// </summary>
-    public int ThermostatSettingSelection { get; set; }
+    public int ThermostatSettingSelection { get; set; } = 1;
 
+    /// <summary>
+    /// The current temperature of air inside the house in degrees
+    /// </summary>
+    public float AirTemperature
+    {
+        get
+        {
+            return m_airTemp;
+        }
+    }
+
+    // Data Arrays
     private int[] m_heatingPeriod = new int[3] { 4, 6, 10 }; // How long heating is on for after coming on in ticks
     private int[] m_thermostatSetting = new int[3] { 18, 20, 22 }; // The cutoff point for the heating in degrees
 
@@ -21,18 +33,6 @@ public class TemperatureModel : MonoBehaviour
     private bool m_activeHeatingPeriod = false; // true based on currentTick and heatingPeriod
     private bool m_heatingIsOn = false; // whether or not the heating is on based on activeHeatingPeriod, airTemp and thermostatSetting
     private float m_airTemp = 18f; // the current temperature of air inside the house in degrees
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void AdjustHeating(int currentTick)
     {
