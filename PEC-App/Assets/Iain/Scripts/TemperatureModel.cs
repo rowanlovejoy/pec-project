@@ -65,7 +65,7 @@ public class TemperatureModel
         }
 
         Debug.Log("Active heating period: " + m_activeHeatingPeriod +
-            "\nHeating is on: " + m_heatingIsOn +
-            "\nAir temperature: " + m_airTemp);
+            "        Heating is on: " + m_heatingIsOn +
+            "        Air temperature: " + m_airTemp);
     }
 }

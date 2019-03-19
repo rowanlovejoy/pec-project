@@ -29,7 +29,7 @@ public class CoreAlgorithm : MonoBehaviour
         }
     }
 
-    private void StartSimulation()
+    public void StartSimulation()
     {
         // if simulation is not already in progress
         if (!m_simulationInProgress)
@@ -50,7 +50,7 @@ public class CoreAlgorithm : MonoBehaviour
 
         temperatureModel.AdjustHeating(m_currentTick);
 
-        moistureModel.AdjustMoisture();
+        moistureModel.AdjustMoisture(m_currentTick);
 
         yield return new WaitForSeconds(tickLength);
 
