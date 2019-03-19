@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class TemperatureModel : MonoBehaviour
 {
-    /// <summary>
-    /// Heating Period selection made by user
-    /// </summary>
+    // User selections
     public int HeatingPeriodSelection { get; set; } = 1;
-
-    /// <summary>
-    /// Thermostat Setting selection made by user
-    /// </summary>
     public int ThermostatSettingSelection { get; set; } = 1;
 
     /// <summary>
