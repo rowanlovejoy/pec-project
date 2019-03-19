@@ -58,5 +58,9 @@ public class TemperatureModel : MonoBehaviour
                 m_airTemp -= 0.2f;
             }
         }
+
+        Debug.Log("Active heating period: " + m_activeHeatingPeriod +
+            "\nHeating is on: " + m_heatingIsOn +
+            "\nAir temperature: " + m_airTemp);
     }
 }

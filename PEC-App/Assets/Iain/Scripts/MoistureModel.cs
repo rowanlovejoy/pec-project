@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class MoistureModel : MonoBehaviour
 {
     public TemperatureModel temperatureModel;
@@ -34,7 +32,7 @@ public class MoistureModel : MonoBehaviour
 
     private AirSaturationTable airSaturationTable;
 
-    private void AdjustMoisture()
+    public void AdjustMoisture()
     {
         m_moistureInAir += (moistureProduction[MoistureProductionSelection] - moistureRemoval[MoistureRemovalSelection]);
 
