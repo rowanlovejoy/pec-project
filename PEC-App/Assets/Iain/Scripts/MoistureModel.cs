@@ -12,13 +12,13 @@ public class MoistureModel
     private TemperatureModel temperatureModel;
 
     // User selections
-    public int MoistureProductionSelection { get; set; } = 2;
+    public int MoistureProductionSelection { get; set; } = 1;
     public int MoistureRemovalSelection { get; set; } = 1;
 
     // Data Arrays
     float[] moistureProduction = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water that moves into the air per half hour
     float[] moistureRemoval = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water removed from the air
-    int[] moistureProductionLength = new int[] { 6, 12, 18 }; // the length of time moisure is being produced in ticks
+    int[] moistureProductionLength = new int[] { 6, 10, 14 }; // the length of time moisure is being produced in ticks
 
     // Moisture Variables
     private float m_moistureInAir = 1f; // the amount of water in the air in litres
@@ -41,7 +41,7 @@ public class MoistureModel
     public void AdjustMoisture(int currentTick)
     {
         // if currentTick is within moisture production period
-        if ((currentTick >= 12 && currentTick < (12 + moistureProductionLength[MoistureProductionSelection])) || (currentTick >= 34 && currentTick < (34 + moistureProductionLength[MoistureProductionSelection])))
+        if ((currentTick >= 16 && currentTick < (16 + moistureProductionLength[MoistureProductionSelection])) || (currentTick >= 30 && currentTick < (30 + moistureProductionLength[MoistureProductionSelection])))
         {
             m_moistureInAir += moistureProduction[MoistureProductionSelection]; // increase moisture
         }
