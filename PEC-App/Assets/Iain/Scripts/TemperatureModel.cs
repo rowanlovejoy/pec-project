@@ -6,7 +6,6 @@ public class TemperatureModel
 {
     public TemperatureModel()
     {
-
     }
 
     // User selections

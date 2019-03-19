@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AirSaturationTable
 {
-    private Dictionary<int, Dictionary<int, int>> m_wallSaturationDictionary;
+    private Dictionary<int, Dictionary<int, int>> m_wallSaturationDictionary; // holds all the values
 
     public AirSaturationTable()
     {
@@ -63,6 +63,12 @@ public class AirSaturationTable
         };
     }
 
+    /// <summary>
+    /// Gets the air saturation based on temperature and moisture.
+    /// </summary>
+    /// <param name="temperature">The current air temperature in the house</param>
+    /// <param name="moistureInLitres">The current moisture in the air in whole litres</param>
+    /// <returns></returns>
     public int GetValue(int temperature, int moistureInLitres)
     {
         return m_wallSaturationDictionary[temperature][moistureInLitres];

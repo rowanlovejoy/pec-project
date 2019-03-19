@@ -50,6 +50,7 @@ public class MoistureModel
             m_moistureInAir -= moistureRemoval[MoistureRemovalSelection]; // decrease moisture
         }
 
+        // moisture limiting
         if (m_moistureInAir > 5) // limit max moisture
         {
             m_moistureInAir = 5f;
@@ -61,17 +62,16 @@ public class MoistureModel
 
         m_airSaturation = airSaturationTable.GetValue(RoundToNearestEven(temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir)); // get saturation value using temperature and air moisture
 
-        m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]; // get
+        m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]; // get impact using air saturation and add it to wall saturation 
 
         Debug.Log("Moisture in air: " + m_moistureInAir +
             "       Air saturation: " + m_airSaturation +
             "       Wall saturation: " + m_wallSaturation);
     }
 
-    private int RoundToNearestEven(float num)
+    private int RoundToNearestEven(float num) // - need this because temperature in dictionary is multiples of two
     {
         double result = System.Math.Round(num / 2, System.MidpointRounding.AwayFromZero) * 2;
         return (int)result;
-        //return ((int)num - ((int)num % 2)); - this rounds down to nearest even
     }
 }
