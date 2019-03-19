@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TemperatureModel : MonoBehaviour
+public class TemperatureModel
 {
+    public TemperatureModel()
+    {
+
+    }
+
     // User selections
     public int HeatingPeriodSelection { get; set; } = 1;
     public int ThermostatSettingSelection { get; set; } = 1;

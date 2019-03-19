@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoistureModel : MonoBehaviour
+public class MoistureModel
 {
-    public TemperatureModel temperatureModel;
+    public MoistureModel(TemperatureModel tempModel)
+    {
+        temperatureModel = tempModel;
+    }
+
+    private TemperatureModel temperatureModel;
 
     // User selections
-    public int MoistureProductionSelection { get; set; }
-    public int MoistureRemovalSelection { get; set; }
+    public int MoistureProductionSelection { get; set; } = 2;
+    public int MoistureRemovalSelection { get; set; } = 1;
 
     // Data Arrays
     float[] moistureProduction = new float[3] { 0.1f, 0.2f, 0.3f }; // The amount of water that moves into the air per half hour
@@ -30,11 +35,19 @@ public class MoistureModel : MonoBehaviour
         [100] = 8
     }; 
 
-    private AirSaturationTable airSaturationTable;
+    private AirSaturationTable airSaturationTable = new AirSaturationTable();
 
     public void AdjustMoisture()
     {
         m_moistureInAir += (moistureProduction[MoistureProductionSelection] - moistureRemoval[MoistureRemovalSelection]);
+        if (m_moistureInAir > 5) // limit max moisture
+        {
+            m_moistureInAir = 5f;
+        }
+        else if (m_moistureInAir < 0) // limit min moisture
+        {
+            m_moistureInAir = 0f;
+        }
 
         m_airSaturation = airSaturationTable.GetValue(RoundToNearestEven(temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir));
 
