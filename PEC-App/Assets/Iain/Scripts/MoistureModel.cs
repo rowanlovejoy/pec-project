@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class MoistureModel
 {
-    public MoistureModel(TemperatureModel tempModel)
-    {
-        temperatureModel = tempModel;
-    }
-
     private TemperatureModel temperatureModel;
 
     // User selections
@@ -16,15 +11,17 @@ public class MoistureModel
     public int MoistureRemovalSelection { get; set; } = 1;
 
     // Data Arrays
-    float[] moistureProduction = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water that moves into the air per half hour
-    float[] moistureRemoval = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water removed from the air
-    int[] moistureProductionLength = new int[] { 6, 10, 14 }; // the length of time moisure is being produced in ticks
+    private readonly float[] moistureProduction = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water that moves into the air per half hour
+    private readonly float[] moistureRemoval = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water removed from the air
+    private readonly int[] moistureProductionLength = new int[] { 6, 10, 14 }; // the length of time moisure is being produced in ticks
 
     // Moisture Variables
     private float m_moistureInAir = 1f; // the amount of water in the air in litres
     private int m_airSaturation = 50; // a percentage of total possible litres of water in air based on temperature
     private float m_wallSaturation; // a percentage of total possible litres of water in wall based on temperature
 
+    // Data access containers
+    private AirSaturationTable airSaturationTable = new AirSaturationTable();
     private Dictionary<int, int> m_wallSaturationDictionary = new Dictionary<int, int>() // contains the impact on wall saturation per half hour based upon the air saturation
     {
         [50] = -4,
@@ -35,13 +32,23 @@ public class MoistureModel
         [100] = 8
     };
 
-    private AirSaturationTable airSaturationTable = new AirSaturationTable();
+    /// <summary>
+    /// Constructor method
+    /// </summary>
+    /// <param name="_tempModel"></param>
+    public MoistureModel(TemperatureModel _tempModel)
+    {
+        temperatureModel = _tempModel;
+    }
 
-
-    public void AdjustMoisture(int currentTick)
+    /// <summary>
+    /// Checks the current tick and updates the moisture values based on the selection settings accordingly.
+    /// </summary>
+    /// <param name="_currentTick">The current tick of the simulation</param>
+    public void AdjustMoisture(int _currentTick)
     {
         // if currentTick is within moisture production period
-        if ((currentTick >= 16 && currentTick < (16 + moistureProductionLength[MoistureProductionSelection])) || (currentTick >= 30 && currentTick < (30 + moistureProductionLength[MoistureProductionSelection])))
+        if ((_currentTick >= 16 && _currentTick < (16 + moistureProductionLength[MoistureProductionSelection])) || (_currentTick >= 30 && _currentTick < (30 + moistureProductionLength[MoistureProductionSelection])))
         {
             m_moistureInAir += moistureProduction[MoistureProductionSelection]; // increase moisture
         }
@@ -69,9 +76,14 @@ public class MoistureModel
             "       Wall saturation: " + m_wallSaturation);
     }
 
-    private int RoundToNearestEven(float num) // - need this because temperature in dictionary is multiples of two
+    /// <summary>
+    /// Rounds a float to the nearest even number
+    /// </summary>
+    /// <param name="_num">The number to be rounded</param>
+    /// <returns>An even integer</returns>
+    private int RoundToNearestEven(float _num) // - need this because temperature in dictionary is multiples of two
     {
-        double result = System.Math.Round(num / 2, System.MidpointRounding.AwayFromZero) * 2;
+        double result = System.Math.Round(_num / 2, System.MidpointRounding.AwayFromZero) * 2;
         return (int)result;
     }
 }

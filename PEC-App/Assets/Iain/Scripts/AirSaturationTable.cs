@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Acts as a data container for air saturation values
+/// </summary>
 public class AirSaturationTable
 {
-    private Dictionary<int, Dictionary<int, int>> m_wallSaturationDictionary; // holds all the values
+    private readonly Dictionary<int, Dictionary<int, int>> m_wallSaturationDictionary; // holds all the values - first key returns a dictionary with all relevant data, second key returns the appropriate value
 
     public AirSaturationTable()
     {
