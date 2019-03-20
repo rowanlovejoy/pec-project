@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CoreAlgorithm : MonoBehaviour
 {
-    public TemperatureModel temperatureModel;
-    public MoistureModel moistureModel;
+    [SerializeField]
+    private TemperatureModel m_temperatureModel;
+    [SerializeField]
+    private MoistureModel m_moistureModel;
 
     // Simulation Variables
     private float m_simulationLength = 60f; // the actual length of time in seconds the simulation runs
@@ -15,8 +17,8 @@ public class CoreAlgorithm : MonoBehaviour
 
     private void Start()
     {
-        temperatureModel = new TemperatureModel();
-        moistureModel = new MoistureModel(temperatureModel);
+        m_temperatureModel = new TemperatureModel();
+        m_moistureModel = new MoistureModel(m_temperatureModel);
         m_tickLength = m_simulationLength / 48;
     }
 
@@ -29,6 +31,9 @@ public class CoreAlgorithm : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Starts the simulation
+    /// </summary>
     public void StartSimulation()
     {
         // if simulation is not already in progress
@@ -44,20 +49,25 @@ public class CoreAlgorithm : MonoBehaviour
         }
     }
 
-    IEnumerator Tick(float tickLength)
+    /// <summary>
+    /// Single step of simulation where all calculations are made.
+    /// </summary>
+    /// <param name="_tickLength">Length of tick in seconds</param>
+    IEnumerator Tick(float _tickLength)
     {
         Debug.Log("TICK: " + m_currentTick);
 
-        temperatureModel.AdjustHeating(m_currentTick);
+        m_temperatureModel.AdjustHeating(m_currentTick);
 
-        moistureModel.AdjustMoisture(m_currentTick);
+        m_moistureModel.AdjustMoisture(m_currentTick);
 
-        yield return new WaitForSeconds(tickLength);
+        yield return new WaitForSeconds(_tickLength); // wait time period for animations
 
+        // if not at end of simulation
         if (m_currentTick < 47)
         {
             m_currentTick++;
-            StartCoroutine(Tick(tickLength));
+            StartCoroutine(Tick(_tickLength)); // next tick
         }
         else
         {
@@ -65,15 +75,22 @@ public class CoreAlgorithm : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Natural end to simulation.
+    /// </summary>
     private void EndSimulation()
     {
         m_simulationInProgress = false;
         Debug.Log("The simulation has ended.");
     }
 
+    /// <summary>
+    /// Prematurely stops the simulation by stopping all coroutines.
+    /// </summary>
     private void StopSimulation()
     {
         m_simulationInProgress = false;
+        StopAllCoroutines();
         Debug.Log("The simulation has been stopped prematurely.");
     }
 }

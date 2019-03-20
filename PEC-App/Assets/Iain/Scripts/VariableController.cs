@@ -4,26 +4,44 @@ using UnityEngine;
 
 public class VariableController : MonoBehaviour
 {
-    public TemperatureModel tempModel;
-    public MoistureModel moistModel;
+    [SerializeField]
+    private TemperatureModel m_tempModel;
+    [SerializeField]
+    private MoistureModel m_moistModel;
 
-    public void UpdateHeatingPeriodSelection(float value)
+    /// <summary>
+    /// Sets the heating period selection in the temperature model. Used with a slider.
+    /// </summary>
+    /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
+    public void UpdateHeatingPeriodSelection(float _value)
     {
-        tempModel.HeatingPeriodSelection = (int)value;
+        m_tempModel.HeatingPeriodSelection = (int)_value;
     }
 
-    public void UpdateThermostatSelection(float value)
+    /// <summary>
+    /// Sets the thermostat setting in the temperature model. Used with a slider.
+    /// </summary>
+    /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
+    public void UpdateThermostatSelection(float _value)
     {
-        tempModel.ThermostatSettingSelection = (int)value;
+        m_tempModel.ThermostatSettingSelection = (int)_value;
     }
 
-    public void UpdateMoistureProductionSelection(float value)
+    /// <summary>
+    /// Sets the moisture production setting in the moisture model. Used with a slider.
+    /// </summary>
+    /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
+    public void UpdateMoistureProductionSelection(float _value)
     {
-        moistModel.MoistureProductionSelection = (int)value;
+        m_moistModel.MoistureProductionSelection = (int)_value;
     }
 
-    public void UpdateMoistureRemovalSelection(float value)
+    /// <summary>
+    /// Sets the moisture removal setting in the moisture model. Used with a slider.
+    /// </summary>
+    /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
+    public void UpdateMoistureRemovalSelection(float _value)
     {
-        moistModel.MoistureRemovalSelection = (int)value;
+        m_moistModel.MoistureRemovalSelection = (int)_value;
     }
 }
