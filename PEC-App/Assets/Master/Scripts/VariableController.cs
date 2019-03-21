@@ -15,7 +15,7 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateHeatingPeriodSelection(float _value)
         {
-            m_tempModel.HeatingPeriodSelection = (int)_value;
+            m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection = (int)_value;
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateThermostatSelection(float _value)
         {
-            m_tempModel.ThermostatSettingSelection = (int)_value;
+            m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection = (int)_value;
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateMoistureProductionSelection(float _value)
         {
-            m_moistModel.MoistureProductionSelection = (int)_value;
+            m_coreAlgorithm.MoistureModel.MoistureProductionSelection = (int)_value;
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateMoistureRemovalSelection(float _value)
         {
-            m_moistModel.MoistureRemovalSelection = (int)_value;
+            m_coreAlgorithm.MoistureModel.MoistureRemovalSelection = (int)_value;
         }
     }
 }
