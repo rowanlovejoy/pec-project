@@ -31,7 +31,7 @@ namespace Master
                 {
                     if (m_sliderValueDisplays[i] != null && m_sliders[i] != null)
                     {
-                        m_sliderValueDisplays[i].text = m_sliders[i].value.ToString();
+                        m_sliderValueDisplays[i].text = "" + (m_sliders[i].value + 1);
                     }
                     else
                     {
