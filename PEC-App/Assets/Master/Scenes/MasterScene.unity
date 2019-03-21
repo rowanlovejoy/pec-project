@@ -1336,7 +1336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07225934, y: 0.21353918}
   m_AnchorMax: {x: 0.767684, y: 0.425}
-  m_AnchoredPosition: {x: 18.884142, y: -0.18437958}
+  m_AnchoredPosition: {x: 18.88414, y: -0.18437576}
   m_SizeDelta: {x: -0.8999939, y: 2.6322556}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656074319
@@ -1923,6 +1923,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_coreAlgorithm: {fileID: 1553040066}
+  m_sliderValueDisplays:
+  - {fileID: 808145724}
+  - {fileID: 452975266}
+  - {fileID: 1106154443}
+  - {fileID: 962490402}
+  m_sliders:
+  - {fileID: 1867237916}
+  - {fileID: 1675796554}
+  - {fileID: 656074319}
+  - {fileID: 1637324816}
 --- !u!1 &962490400
 GameObject:
   m_ObjectHideFlags: 0

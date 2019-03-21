@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Master
 {
@@ -10,7 +11,37 @@ namespace Master
         [SerializeField]
         private CoreAlgorithm m_coreAlgorithm = null;
         [SerializeField]
-        private TextMeshProUGUI[] m_sliderValueDisplays;
+        private TextMeshProUGUI[] m_sliderValueDisplays = null;
+        [SerializeField]
+        private Slider[] m_sliders = null;
+
+        private void Awake()
+        {
+            InitialiseSliderValueDisplays();
+        }
+
+        private void InitialiseSliderValueDisplays()
+        {
+            if (m_sliderValueDisplays.Length == m_sliders.Length)
+            {
+                for (int i = 0; i < m_sliderValueDisplays.Length; i++)
+                {
+                    if (m_sliderValueDisplays[i] != null && m_sliders[i] != null)
+                    {
+                        m_sliderValueDisplays[i].text = m_sliders[i].value.ToString();
+                    }
+                    else
+                    {
+                        Debug.Log("Error setting slider value displays; unequal number of sliders and value displays", gameObject);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("Error setting slider value displays; unequal number of sliders and value displays", gameObject);
+            }
+        }
 
         /// <summary>
         /// Sets the heating period selection in the temperature model. Used with a slider.
