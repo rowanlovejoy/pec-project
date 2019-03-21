@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Master
@@ -8,6 +9,8 @@ namespace Master
     {
         [SerializeField]
         private CoreAlgorithm m_coreAlgorithm = null;
+        [SerializeField]
+        private TextMeshProUGUI[] m_sliderValueDisplays;
 
         /// <summary>
         /// Sets the heating period selection in the temperature model. Used with a slider.
@@ -16,6 +19,7 @@ namespace Master
         public void UpdateHeatingPeriodSelection(float _value)
         {
             m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection = (int)_value;
+            m_sliderValueDisplays[0].text = _value.ToString();
         }
 
         /// <summary>
@@ -25,6 +29,7 @@ namespace Master
         public void UpdateThermostatSelection(float _value)
         {
             m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection = (int)_value;
+            m_sliderValueDisplays[1].text = _value.ToString();
         }
 
         /// <summary>
@@ -34,6 +39,7 @@ namespace Master
         public void UpdateMoistureProductionSelection(float _value)
         {
             m_coreAlgorithm.MoistureModel.MoistureProductionSelection = (int)_value;
+            m_sliderValueDisplays[2].text = _value.ToString();
         }
 
         /// <summary>
@@ -43,6 +49,7 @@ namespace Master
         public void UpdateMoistureRemovalSelection(float _value)
         {
             m_coreAlgorithm.MoistureModel.MoistureRemovalSelection = (int)_value;
+            m_sliderValueDisplays[3].text = _value.ToString();
         }
     }
 }
