@@ -7,9 +7,7 @@ namespace Master
     public class VariableController : MonoBehaviour
     {
         [SerializeField]
-        private TemperatureModel m_tempModel;
-        [SerializeField]
-        private MoistureModel m_moistModel;
+        private CoreAlgorithm m_coreAlgorithm = null;
 
         /// <summary>
         /// Sets the heating period selection in the temperature model. Used with a slider.
