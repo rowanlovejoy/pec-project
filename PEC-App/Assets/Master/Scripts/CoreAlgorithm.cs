@@ -93,5 +93,13 @@ namespace Master
             StopAllCoroutines();
             Debug.Log("The simulation has been stopped prematurely.");
         }
+
+        public TemperatureModel TemperatureModel
+        {
+            get
+            {
+                return m_temperatureModel;
+            }
+        }
     }
 }
