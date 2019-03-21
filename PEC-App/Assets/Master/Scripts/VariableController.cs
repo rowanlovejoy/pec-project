@@ -82,5 +82,13 @@ namespace Master
             m_coreAlgorithm.MoistureModel.MoistureRemovalSelection = (int)_value;
             m_sliderValueDisplays[3].text = _value.ToString();
         }
+
+        /// <summary>
+        /// Starts the simulation upon button press
+        /// </summary>
+        public void StartSimulation()
+        {
+            m_coreAlgorithm.StartSimulation();
+        }
     }
 }
