@@ -7,8 +7,8 @@ namespace Master
     public class TemperatureModel
     {
         // User selections
-        public int HeatingPeriodSelection { get; set; } = 1;
-        public int ThermostatSettingSelection { get; set; } = 1;
+        public int HeatingPeriodSelection { get; set; } = 0;
+        public int ThermostatSettingSelection { get; set; } = 0;
 
         /// <summary>
         /// The current temperature of air inside the house in degrees
@@ -64,6 +64,9 @@ namespace Master
                     m_airTemp -= 0.2f;
                 }
             }
+
+            Debug.Log("HeatingPeriodSelection: " + HeatingPeriodSelection + " ThermostatSettingSelection: " + ThermostatSettingSelection);
+            Debug.Log("m_heatingPeriod: " + m_heatingPeriod[HeatingPeriodSelection] + " m_thermostatSetting: " + m_thermostatSetting[ThermostatSettingSelection]);
 
             Debug.Log("Active heating period: " + m_activeHeatingPeriod +
                 "        Heating is on: " + m_heatingIsOn +

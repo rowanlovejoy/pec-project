@@ -9,8 +9,8 @@ namespace Master
         private TemperatureModel temperatureModel;
 
         // User selections
-        public int MoistureProductionSelection { get; set; } = 1;
-        public int MoistureRemovalSelection { get; set; } = 1;
+        public int MoistureProductionSelection { get; set; } = 0;
+        public int MoistureRemovalSelection { get; set; } = 0;
 
         // Data Arrays
         private readonly float[] moistureProduction = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water that moves into the air per half hour
@@ -72,6 +72,9 @@ namespace Master
             m_airSaturation = airSaturationTable.GetValue(RoundToNearestEven(temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir)); // get saturation value using temperature and air moisture
 
             m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]; // get impact using air saturation and add it to wall saturation 
+
+            Debug.Log("MoistureProductionSelection: " + MoistureProductionSelection + " MoistureRemovalSelection: " + MoistureRemovalSelection);
+            Debug.Log("moistureProductionLength: " + moistureProductionLength[MoistureProductionSelection] + " moistureRemoval: " + moistureRemoval[MoistureRemovalSelection]);
 
             Debug.Log("Moisture in air: " + m_moistureInAir +
                 "       Air saturation: " + m_airSaturation +

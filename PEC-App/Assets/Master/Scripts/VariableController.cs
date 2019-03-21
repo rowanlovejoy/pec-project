@@ -11,7 +11,7 @@ namespace Master
         [SerializeField]
         private CoreAlgorithm m_coreAlgorithm = null;
         [SerializeField]
-        private TextMeshProUGUI[] m_sliderValueDisplays = null;
+        private TextMeshProUGUI[] m_sliderValueDisplays = null; 
         [SerializeField]
         private Slider[] m_sliders = null;
 
@@ -20,6 +20,9 @@ namespace Master
             InitialiseSliderValueDisplays();
         }
 
+        /// <summary>
+        /// Sets the values displayed for each slider to the sliders' current values
+        /// </summary>
         private void InitialiseSliderValueDisplays()
         {
             if (m_sliderValueDisplays.Length == m_sliders.Length)
