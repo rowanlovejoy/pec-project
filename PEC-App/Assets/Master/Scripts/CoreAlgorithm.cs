@@ -87,7 +87,7 @@ namespace Master
         /// <summary>
         /// Prematurely stops the simulation by stopping all coroutines.
         /// </summary>
-        private void StopSimulation()
+        public void StopSimulation()
         {
             m_simulationInProgress = false;
             StopAllCoroutines();
