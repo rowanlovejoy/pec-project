@@ -101,5 +101,13 @@ namespace Master
                 return m_temperatureModel;
             }
         }
+
+        public MoistureModel MoistureModel
+        {
+            get
+            {
+                return m_moistureModel;
+            }
+        }
     }
 }
