@@ -6,9 +6,7 @@ namespace Master
 {
     public class CoreAlgorithm : MonoBehaviour
     {
-        [SerializeField]
         private TemperatureModel m_temperatureModel;
-        [SerializeField]
         private MoistureModel m_moistureModel;
 
         // Simulation Variables
