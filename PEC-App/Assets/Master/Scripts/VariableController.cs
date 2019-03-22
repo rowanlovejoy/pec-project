@@ -102,13 +102,5 @@ namespace Master
         {
             m_coreAlgorithm.StartSimulation();
         }
-
-        /// <summary>
-        /// Stops the simulation upon button press
-        /// </summary>
-        public void StopSimulation()
-        {
-            m_coreAlgorithm.StopSimulation();
-        }
     }
 }
