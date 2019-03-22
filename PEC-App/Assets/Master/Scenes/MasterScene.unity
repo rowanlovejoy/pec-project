@@ -506,6 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_coreAlgorithm: {fileID: 1553040066}
+  m_mainPanel: {fileID: 891316250}
 --- !u!1 &387245132
 GameObject:
   m_ObjectHideFlags: 0
