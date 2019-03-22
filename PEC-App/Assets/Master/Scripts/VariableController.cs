@@ -100,7 +100,10 @@ namespace Master
         /// </summary>
         public void StartSimulation()
         {
+            /// Starts the simulation if it is not ongoing
             m_coreAlgorithm.StartSimulation();
+            /// Hides the Main Panel when the simulation starts
+            gameObject.SetActive(false);
         }
     }
 }
