@@ -18,7 +18,7 @@ namespace Master
         private int m_currentTick = 0;
         private bool m_simulationInProgress = false;
 
-        private void Start()
+        private void Awake()
         {
             TemperatureModel = new TemperatureModel();
             MoistureModel = new MoistureModel(TemperatureModel);
