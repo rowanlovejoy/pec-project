@@ -6,8 +6,11 @@ namespace Master
 {
     public class CoreAlgorithm : MonoBehaviour
     {
-        private TemperatureModel m_temperatureModel;
-        private MoistureModel m_moistureModel;
+        /// <summary>
+        /// References to simulation model classes
+        /// </summary>
+        public TemperatureModel TemperatureModel { get; private set; } = null;
+        public MoistureModel MoistureModel { get; private set; } = null;
 
         // Simulation Variables
         private float m_simulationLength = 60f; // the actual length of time in seconds the simulation runs
@@ -17,8 +20,8 @@ namespace Master
 
         private void Start()
         {
-            m_temperatureModel = new TemperatureModel();
-            m_moistureModel = new MoistureModel(m_temperatureModel);
+            TemperatureModel = new TemperatureModel();
+            MoistureModel = new MoistureModel(TemperatureModel);
             m_tickLength = m_simulationLength / 48;
         }
 
@@ -59,9 +62,9 @@ namespace Master
             {
                 Debug.Log("TICK: " + m_currentTick);
 
-                m_temperatureModel.AdjustHeating(m_currentTick);
+                TemperatureModel.AdjustHeating(m_currentTick);
 
-                m_moistureModel.AdjustMoisture(m_currentTick);
+                MoistureModel.AdjustMoisture(m_currentTick);
 
                 yield return new WaitForSeconds(_tickLength); // wait time period for animations
 
@@ -88,22 +91,6 @@ namespace Master
             m_simulationInProgress = false;
             StopAllCoroutines();
             Debug.Log("The simulation has been stopped prematurely.");
-        }
-
-        public TemperatureModel TemperatureModel
-        {
-            get
-            {
-                return m_temperatureModel;
-            }
-        }
-
-        public MoistureModel MoistureModel
-        {
-            get
-            {
-                return m_moistureModel;
-            }
         }
     }
 }
