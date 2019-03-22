@@ -14,6 +14,11 @@ namespace Master
         [SerializeField]
         private CoreAlgorithm m_coreAlgorithm = null;
         /// <summary>
+        /// Reference to the container of the Simulation Display GUI
+        /// </summary>
+        [SerializeField]
+        private GameObject m_simulationDisplayGUI = null;
+        /// <summary>
         /// References to slider value labels
         /// </summary>
         [SerializeField]
@@ -104,6 +109,8 @@ namespace Master
             m_coreAlgorithm.StartSimulation();
             /// Hides the Main Panel when the simulation starts
             gameObject.SetActive(false);
+            /// Shows the Simulation Display GUI when the simulation starts
+            m_simulationDisplayGUI.SetActive(true);
         }
     }
 }

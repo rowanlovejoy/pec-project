@@ -28,6 +28,8 @@ namespace Master
         {
             /// Stops the simulation if it is ongoing
             m_coreAlgorithm.StopSimulation();
+            /// Hides the Simulation Display GUI when the simulation stops
+            gameObject.SetActive(false);
             /// Shows the Main Panel when the simulation stops
             m_mainPanel.SetActive(true);
         }
