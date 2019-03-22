@@ -6,25 +6,36 @@ namespace Master
 {
     public class MoistureModel
     {
+        /// <summary>
+        /// Reference to TemperatureModel
+        /// </summary>
         private TemperatureModel m_temperatureModel = null;
 
-        // User selections
+        /// <summary>
+        /// User selections
+        /// </summary>
         public int MoistureProductionSelection { get; set; } = 0;
         public int MoistureRemovalSelection { get; set; } = 0;
 
-        // Data Arrays
+        /// <summary>
+        /// Data Arrays
+        /// </summary>
         private readonly float[] m_moistureProduction = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water that moves into the air per half hour
         private readonly float[] m_moistureRemoval = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water removed from the air
         private readonly int[] m_moistureProductionLength = new int[] { 6, 10, 14 }; // the length of time moisure is being produced in ticks
 
-        // Moisture Variables
+        /// <summary>
+        /// Moisture Variables
+        /// </summary>
         private float m_moistureInAir = 1f; // the amount of water in the air in litres
         private int m_airSaturation = 50; // a percentage of total possible litres of water in air based on temperature
         private float m_wallSaturation; // a percentage of total possible litres of water in wall based on temperature
 
-        // Data access containers
+        /// <summary>
+        /// Data access containers
+        /// </summary>
         private AirSaturationTable m_airSaturationTable = new AirSaturationTable();
-        private Dictionary<int, int> m_wallSaturationDictionary = new Dictionary<int, int>() // contains the impact on wall saturation per half hour based upon the air saturation
+        private readonly Dictionary<int, int> m_wallSaturationDictionary = new Dictionary<int, int>() // contains the impact on wall saturation per half hour based upon the air saturation
         {
             [50] = -4,
             [60] = -2,
@@ -73,6 +84,7 @@ namespace Master
 
             m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]; // get impact using air saturation and add it to wall saturation 
 
+            /// Debug messages
             Debug.Log("MoistureProductionSelection: " + MoistureProductionSelection + " MoistureRemovalSelection: " + MoistureRemovalSelection);
             Debug.Log("moistureProductionLength: " + m_moistureProductionLength[MoistureProductionSelection] + " moistureRemoval: " + m_moistureRemoval[MoistureRemovalSelection]);
 

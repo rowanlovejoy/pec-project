@@ -13,13 +13,7 @@ namespace Master
         /// <summary>
         /// The current temperature of air inside the house in degrees
         /// </summary>
-        public float AirTemperature
-        {
-            get
-            {
-                return m_airTemp;
-            }
-        }
+        public float AirTemperature { get; private set; } = 18f;
 
         // Data Arrays
         private readonly int[] m_heatingPeriod = new int[3] { 4, 6, 10 }; // How long heating is on for after coming on in ticks
@@ -28,7 +22,6 @@ namespace Master
         // Heating Variables
         private bool m_activeHeatingPeriod = false; // true based on currentTick and heatingPeriod
         private bool m_heatingIsOn = false; // whether or not the heating is on based on activeHeatingPeriod, airTemp and thermostatSetting
-        private float m_airTemp = 18f; // the current temperature of air inside the house in degrees
 
         /// <summary>
         /// Checks the current tick and updates the heating values based on the selection settings accordingly.
@@ -47,30 +40,31 @@ namespace Master
             }
 
             // If activeHeatingPeriod is true and airTemp is less than thermostatSetting
-            if (m_activeHeatingPeriod && (m_airTemp < m_thermostatSetting[ThermostatSettingSelection]))
+            if (m_activeHeatingPeriod && (AirTemperature < m_thermostatSetting[ThermostatSettingSelection]))
             {
                 m_heatingIsOn = true;
-                m_airTemp += 1f;
+                AirTemperature += 1f;
             }
             else
             {
                 m_heatingIsOn = false;
-                if (m_airTemp - 0.2f < 14)
+                if (AirTemperature - 0.2f < 14)
                 {
-                    m_airTemp = 14f; // air temperature should not drop below 14
+                    AirTemperature = 14f; // air temperature should not drop below 14
                 }
                 else
                 {
-                    m_airTemp -= 0.2f;
+                    AirTemperature -= 0.2f;
                 }
             }
 
+            /// Debug messages
             Debug.Log("HeatingPeriodSelection: " + HeatingPeriodSelection + " ThermostatSettingSelection: " + ThermostatSettingSelection);
             Debug.Log("m_heatingPeriod: " + m_heatingPeriod[HeatingPeriodSelection] + " m_thermostatSetting: " + m_thermostatSetting[ThermostatSettingSelection]);
 
             Debug.Log("Active heating period: " + m_activeHeatingPeriod +
                 "        Heating is on: " + m_heatingIsOn +
-                "        Air temperature: " + m_airTemp);
+                "        Air temperature: " + AirTemperature);
         }
     }
 }

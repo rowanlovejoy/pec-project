@@ -8,10 +8,19 @@ namespace Master
 {
     public class VariableController : MonoBehaviour
     {
+        /// <summary>
+        /// Reference to CoreAlgorithm
+        /// </summary>
         [SerializeField]
         private CoreAlgorithm m_coreAlgorithm = null;
+        /// <summary>
+        /// References to slider value labels
+        /// </summary>
         [SerializeField]
-        private TextMeshProUGUI[] m_sliderValueDisplays = null; 
+        private TextMeshProUGUI[] m_sliderValueDisplays = null;
+        /// <summary>
+        /// References to slider GUI elements
+        /// </summary>
         [SerializeField]
         private Slider[] m_sliders = null;
 
