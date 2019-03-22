@@ -71,12 +71,12 @@ namespace Master
         /// <summary>
         /// Gets the air saturation based on temperature and moisture.
         /// </summary>
-        /// <param name="temperature">The current air temperature in the house</param>
-        /// <param name="moistureInLitres">The current moisture in the air in whole litres</param>
+        /// <param name="_temperature">The current air temperature in the house</param>
+        /// <param name="_moistureInLitres">The current moisture in the air in whole litres</param>
         /// <returns></returns>
-        public int GetValue(int temperature, int moistureInLitres)
+        public int GetValue(int _temperature, int _moistureInLitres)
         {
-            return m_wallSaturationDictionary[temperature][moistureInLitres];
+            return m_wallSaturationDictionary[_temperature][_moistureInLitres];
         }
     }
 }

@@ -55,25 +55,6 @@ namespace Master
         /// <param name="_tickLength">Length of tick in seconds</param>
         IEnumerator Tick(float _tickLength)
         {
-            //Debug.Log("TICK: " + m_currentTick);
-
-            //m_temperatureModel.AdjustHeating(m_currentTick);
-
-            //m_moistureModel.AdjustMoisture(m_currentTick);
-
-            //yield return new WaitForSeconds(_tickLength); // wait time period for animations
-
-            //// if not at end of simulation
-            //if (m_currentTick < 47)
-            //{
-            //    m_currentTick++;
-            //    StartCoroutine(Tick(_tickLength)); // next tick
-            //}
-            //else
-            //{
-            //    EndSimulation();
-            //}
-
             while (m_currentTick < 47)
             {
                 Debug.Log("TICK: " + m_currentTick);

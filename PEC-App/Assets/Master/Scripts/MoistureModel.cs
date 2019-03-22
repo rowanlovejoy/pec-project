@@ -6,16 +6,16 @@ namespace Master
 {
     public class MoistureModel
     {
-        private TemperatureModel temperatureModel;
+        private TemperatureModel m_temperatureModel = null;
 
         // User selections
         public int MoistureProductionSelection { get; set; } = 0;
         public int MoistureRemovalSelection { get; set; } = 0;
 
         // Data Arrays
-        private readonly float[] moistureProduction = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water that moves into the air per half hour
-        private readonly float[] moistureRemoval = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water removed from the air
-        private readonly int[] moistureProductionLength = new int[] { 6, 10, 14 }; // the length of time moisure is being produced in ticks
+        private readonly float[] m_moistureProduction = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water that moves into the air per half hour
+        private readonly float[] m_moistureRemoval = new float[3] { 0.1f, 0.2f, 0.3f }; // the amount of water removed from the air
+        private readonly int[] m_moistureProductionLength = new int[] { 6, 10, 14 }; // the length of time moisure is being produced in ticks
 
         // Moisture Variables
         private float m_moistureInAir = 1f; // the amount of water in the air in litres
@@ -23,7 +23,7 @@ namespace Master
         private float m_wallSaturation; // a percentage of total possible litres of water in wall based on temperature
 
         // Data access containers
-        private AirSaturationTable airSaturationTable = new AirSaturationTable();
+        private AirSaturationTable m_airSaturationTable = new AirSaturationTable();
         private Dictionary<int, int> m_wallSaturationDictionary = new Dictionary<int, int>() // contains the impact on wall saturation per half hour based upon the air saturation
         {
             [50] = -4,
@@ -40,7 +40,7 @@ namespace Master
         /// <param name="_tempModel"></param>
         public MoistureModel(TemperatureModel _tempModel)
         {
-            temperatureModel = _tempModel;
+            m_temperatureModel = _tempModel;
         }
 
         /// <summary>
@@ -50,13 +50,13 @@ namespace Master
         public void AdjustMoisture(int _currentTick)
         {
             // if currentTick is within moisture production period
-            if ((_currentTick >= 16 && _currentTick < (16 + moistureProductionLength[MoistureProductionSelection])) || (_currentTick >= 30 && _currentTick < (30 + moistureProductionLength[MoistureProductionSelection])))
+            if ((_currentTick >= 16 && _currentTick < (16 + m_moistureProductionLength[MoistureProductionSelection])) || (_currentTick >= 30 && _currentTick < (30 + m_moistureProductionLength[MoistureProductionSelection])))
             {
-                m_moistureInAir += moistureProduction[MoistureProductionSelection]; // increase moisture
+                m_moistureInAir += m_moistureProduction[MoistureProductionSelection]; // increase moisture
             }
             else
             {
-                m_moistureInAir -= moistureRemoval[MoistureRemovalSelection]; // decrease moisture
+                m_moistureInAir -= m_moistureRemoval[MoistureRemovalSelection]; // decrease moisture
             }
 
             // moisture limiting
@@ -69,12 +69,12 @@ namespace Master
                 m_moistureInAir = 1f;
             }
 
-            m_airSaturation = airSaturationTable.GetValue(RoundToNearestEven(temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir)); // get saturation value using temperature and air moisture
+            m_airSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir)); // get saturation value using temperature and air moisture
 
             m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]; // get impact using air saturation and add it to wall saturation 
 
             Debug.Log("MoistureProductionSelection: " + MoistureProductionSelection + " MoistureRemovalSelection: " + MoistureRemovalSelection);
-            Debug.Log("moistureProductionLength: " + moistureProductionLength[MoistureProductionSelection] + " moistureRemoval: " + moistureRemoval[MoistureRemovalSelection]);
+            Debug.Log("moistureProductionLength: " + m_moistureProductionLength[MoistureProductionSelection] + " moistureRemoval: " + m_moistureRemoval[MoistureRemovalSelection]);
 
             Debug.Log("Moisture in air: " + m_moistureInAir +
                 "       Air saturation: " + m_airSaturation +
@@ -88,8 +88,8 @@ namespace Master
         /// <returns>An even integer</returns>
         private int RoundToNearestEven(float _num) // - need this because temperature in dictionary is multiples of two
         {
-            double result = System.Math.Round(_num / 2, System.MidpointRounding.AwayFromZero) * 2;
-            return (int)result;
+            double _result = System.Math.Round(_num / 2, System.MidpointRounding.AwayFromZero) * 2;
+            return (int)_result;
         }
     }
 }
