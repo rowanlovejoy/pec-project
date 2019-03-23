@@ -18,6 +18,12 @@ namespace Master
         private CoreAlgorithm m_coreAlgorithm = null;
 
         /// <summary>
+        /// Reference to the Main Panel.
+        /// </summary>
+        [SerializeField]
+        private GameObject m_mainPanel = null;
+
+        /// <summary>
         /// Reference to the container of the Simulation Display GUI
         /// </summary>
         [SerializeField]
@@ -124,10 +130,25 @@ namespace Master
             m_coreAlgorithm.StartSimulation();
 
             /// Hides the Main Panel when the simulation starts
-            gameObject.SetActive(false);
+            m_mainPanel.SetActive(false);
 
             /// Shows the Simulation Display GUI when the simulation starts
             m_simulationDisplayGUI.SetActive(true);
+        }
+
+        /// <summary>
+        /// Stops the simulation upon button press.
+        /// </summary>
+        public void StopSimulation()
+        {
+            /// Stops the simulation if it is ongoing.
+            m_coreAlgorithm.StopSimulation();
+
+            /// Hides the Simulation Display GUI when the simulation stops.
+            m_simulationDisplayGUI.SetActive(false);
+
+            /// Shows the Main Panel when the simulation stops.
+            m_mainPanel.SetActive(true);
         }
     }
 }
