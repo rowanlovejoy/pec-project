@@ -66,5 +66,13 @@ namespace Master
                 "        Heating is on: " + m_heatingIsOn +
                 "        Air temperature: " + AirTemperature);
         }
+
+        public int SelectedThermostatSetting
+        {
+            get
+            {
+                return m_thermostatSetting[ThermostatSettingSelection];
+            }
+        }
     }
 }
