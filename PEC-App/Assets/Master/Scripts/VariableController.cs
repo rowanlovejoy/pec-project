@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 namespace Master
 {
+    /// <summary>
+    /// Connects the GUI to the core algorithm.
+    /// </summary>
     public class VariableController : MonoBehaviour
     {
         /// <summary>

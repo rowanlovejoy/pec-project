@@ -9,7 +9,8 @@ namespace Master
     /// </summary>
     public class AirSaturationTable
     {
-        private readonly Dictionary<int, Dictionary<int, int>> m_wallSaturationDictionary; // holds all the values - first key returns a dictionary with all relevant data, second key returns the appropriate value
+        /// Holds all the values - first key returns a dictionary with all relevant data, second key returns the appropriate value.
+        private readonly Dictionary<int, Dictionary<int, int>> m_wallSaturationDictionary; 
 
         public AirSaturationTable()
         {
@@ -71,9 +72,9 @@ namespace Master
         /// <summary>
         /// Gets the air saturation based on temperature and moisture.
         /// </summary>
-        /// <param name="_temperature">The current air temperature in the house</param>
-        /// <param name="_moistureInLitres">The current moisture in the air in whole litres</param>
-        /// <returns></returns>
+        /// <param name="_temperature">The current air temperature in the house.</param>
+        /// <param name="_moistureInLitres">The current moisture in the air in whole litres.</param>
+        /// <returns>The air saturation level for the current temperature and moisture in the air.</returns>
         public int GetValue(int _temperature, int _moistureInLitres)
         {
             return m_wallSaturationDictionary[_temperature][_moistureInLitres];
