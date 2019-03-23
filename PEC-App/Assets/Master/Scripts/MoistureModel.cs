@@ -86,6 +86,7 @@ namespace Master
 
             /// Debug messages
             Debug.Log("MoistureProductionSelection: " + MoistureProductionSelection + " MoistureRemovalSelection: " + MoistureRemovalSelection);
+
             Debug.Log("moistureProductionLength: " + m_moistureProductionLength[MoistureProductionSelection] + " moistureRemoval: " + m_moistureRemoval[MoistureRemovalSelection]);
 
             Debug.Log("Moisture in air: " + m_moistureInAir +
@@ -101,6 +102,7 @@ namespace Master
         private int RoundToNearestEven(float _num) // - need this because temperature in dictionary is multiples of two
         {
             double _result = System.Math.Round(_num / 2, System.MidpointRounding.AwayFromZero) * 2;
+
             return (int)_result;
         }
 

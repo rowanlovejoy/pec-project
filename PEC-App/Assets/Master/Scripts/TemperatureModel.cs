@@ -43,11 +43,13 @@ namespace Master
             if (m_activeHeatingPeriod && (AirTemperature < m_thermostatSetting[ThermostatSettingSelection]))
             {
                 m_heatingIsOn = true;
+
                 AirTemperature += 1f;
             }
             else
             {
                 m_heatingIsOn = false;
+
                 if (AirTemperature - 0.2f < 14)
                 {
                     AirTemperature = 14f; // air temperature should not drop below 14
@@ -60,6 +62,7 @@ namespace Master
 
             /// Debug messages
             Debug.Log("HeatingPeriodSelection: " + HeatingPeriodSelection + " ThermostatSettingSelection: " + ThermostatSettingSelection);
+
             Debug.Log("m_heatingPeriod: " + m_heatingPeriod[HeatingPeriodSelection] + " m_thermostatSetting: " + m_thermostatSetting[ThermostatSettingSelection]);
 
             Debug.Log("Active heating period: " + m_activeHeatingPeriod +

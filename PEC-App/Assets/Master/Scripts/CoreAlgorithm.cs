@@ -21,7 +21,9 @@ namespace Master
         private void Awake()
         {
             TemperatureModel = new TemperatureModel();
+
             MoistureModel = new MoistureModel(TemperatureModel);
+
             m_tickLength = m_simulationLength / 48;
         }
 
@@ -43,7 +45,9 @@ namespace Master
             if (!m_simulationInProgress)
             {
                 Debug.Log("Simulation starting");
+
                 m_simulationInProgress = true;
+
                 StartCoroutine(Tick(m_tickLength)); // start simulation
             }
             else
@@ -80,6 +84,7 @@ namespace Master
         private void EndSimulation()
         {
             m_simulationInProgress = false;
+
             Debug.Log("The simulation has ended.");
         }
 
@@ -89,7 +94,9 @@ namespace Master
         public void StopSimulation()
         {
             m_simulationInProgress = false;
+
             StopAllCoroutines();
+
             Debug.Log("The simulation has been stopped prematurely.");
         }
     }
