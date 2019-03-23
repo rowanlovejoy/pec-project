@@ -74,5 +74,13 @@ namespace Master
                 return m_thermostatSetting[ThermostatSettingSelection];
             }
         }
+
+        public int SelectedHeatingPeriodSetting
+        {
+            get
+            {
+                return m_heatingPeriod[HeatingPeriodSelection];
+            }
+        }
     }
 }
