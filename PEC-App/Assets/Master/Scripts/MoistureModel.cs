@@ -103,5 +103,13 @@ namespace Master
             double _result = System.Math.Round(_num / 2, System.MidpointRounding.AwayFromZero) * 2;
             return (int)_result;
         }
+
+        public int SelectedMoistureProductionSetting
+        {
+            get
+            {
+                return m_moistureProductionLength[MoistureProductionSelection];
+            }
+        }
     }
 }
