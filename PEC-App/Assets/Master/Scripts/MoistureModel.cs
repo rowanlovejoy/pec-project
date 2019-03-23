@@ -111,5 +111,13 @@ namespace Master
                 return m_moistureProductionLength[MoistureProductionSelection];
             }
         }
+
+        public float SelectedMoistureRemovalSetting
+        {
+            get
+            {
+                return m_moistureRemoval[MoistureRemovalSelection];
+            }
+        }
     }
 }
