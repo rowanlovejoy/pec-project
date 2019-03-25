@@ -126,11 +126,11 @@ namespace Master
         }
 
         /// <summary>
-        /// Rounds a float to the nearest even number.
+        /// Rounds a float to the nearest even number. Used to produce an even number to access correct value from AirSaturationTable.
         /// </summary>
         /// <param name="_num">The number to be rounded.</param>
         /// <returns>An even integer.</returns>
-        private int RoundToNearestEven(float _num) // - need this because temperature in dictionary is multiples of two
+        private int RoundToNearestEven(float _num)
         {
             double _result = System.Math.Round(_num / 2, System.MidpointRounding.AwayFromZero) * 2;
 

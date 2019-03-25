@@ -83,7 +83,7 @@ namespace Master
         /// <param name="_tickLength">Length of a tick in seconds.</param>
         IEnumerator Tick(float _tickLength)
         {
-            while (m_currentTick < 47)
+            while (m_currentTick < 48)
             {
                 Debug.Log("TICK: " + m_currentTick);
 
