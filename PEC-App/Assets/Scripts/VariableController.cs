@@ -85,8 +85,6 @@ namespace Master
         {
             string _valueDisplayed = null;
 
-            m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection = (int)_value;
-
             switch(_value)
             {
                 case 0:
@@ -103,6 +101,8 @@ namespace Master
             }
 
             m_sliderValueDisplays[0].text = _valueDisplayed;
+
+            m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection = (int)_value;
         }
 
         /// <summary>
