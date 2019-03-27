@@ -113,24 +113,27 @@ namespace Master
         {
             string _valueDisplayed = null;
 
-            m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection = (int)_value;
-
             switch (_value)
             {
                 case 0:
                     _valueDisplayed = "Low";
                     break;
+
                 case 1:
                     _valueDisplayed = "Medium";
                     break;
+
                 case 2:
                     _valueDisplayed = "High";
                     break;
+
                 default:
                     break;
             }
 
             m_sliderValueDisplays[1].text = _valueDisplayed;
+
+            m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection = (int)_value;
         }
 
         /// <summary>
@@ -139,9 +142,29 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateMoistureProductionSelection(float _value)
         {
-            m_coreAlgorithm.MoistureModel.MoistureProductionSelection = (int)_value;
+            string _valueDisplayed = null;
 
-            m_sliderValueDisplays[2].text = m_coreAlgorithm.MoistureModel.SelectedMoistureProductionSetting.ToString();
+            switch (_value)
+            {
+                case 0:
+                    _valueDisplayed = "Low";
+                    break;
+
+                case 1:
+                    _valueDisplayed = "Medium";
+                    break;
+
+                case 2:
+                    _valueDisplayed = "High";
+                    break;
+
+                default:
+                    break;
+            }
+
+            m_sliderValueDisplays[2].text = _valueDisplayed;
+
+            m_coreAlgorithm.MoistureModel.MoistureProductionSelection = (int)_value;
         }
 
         /// <summary>
