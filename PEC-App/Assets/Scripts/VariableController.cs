@@ -173,9 +173,29 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateMoistureRemovalSelection(float _value)
         {
-            m_coreAlgorithm.MoistureModel.MoistureRemovalSelection = (int)_value;
+            string _valueDisplayed = null;
 
-            m_sliderValueDisplays[3].text = m_coreAlgorithm.MoistureModel.SelectedMoistureRemovalSetting.ToString();
+            switch (_value)
+            {
+                case 0:
+                    _valueDisplayed = "Low";
+                    break;
+
+                case 1:
+                    _valueDisplayed = "Medium";
+                    break;
+
+                case 2:
+                    _valueDisplayed = "High";
+                    break;
+
+                default:
+                    break;
+            }
+
+            m_sliderValueDisplays[3].text = _valueDisplayed;
+
+            m_coreAlgorithm.MoistureModel.MoistureRemovalSelection = (int)_value;
         }
 
         /// <summary>
