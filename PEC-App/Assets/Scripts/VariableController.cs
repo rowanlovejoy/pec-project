@@ -83,9 +83,9 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateHeatingPeriodSelection(float _value)
         {
-            m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection = (int)_value;
-
             string _valueDisplayed = null;
+
+            m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection = (int)_value;
 
             switch(_value)
             {
@@ -111,9 +111,26 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateThermostatSelection(float _value)
         {
+            string _valueDisplayed = null;
+
             m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection = (int)_value;
 
-            m_sliderValueDisplays[1].text = m_coreAlgorithm.TemperatureModel.SelectedThermostatSetting.ToString();
+            switch (_value)
+            {
+                case 0:
+                    _valueDisplayed = "Low";
+                    break;
+                case 1:
+                    _valueDisplayed = "Medium";
+                    break;
+                case 2:
+                    _valueDisplayed = "High";
+                    break;
+                default:
+                    break;
+            }
+
+            m_sliderValueDisplays[1].text = _valueDisplayed;
         }
 
         /// <summary>
