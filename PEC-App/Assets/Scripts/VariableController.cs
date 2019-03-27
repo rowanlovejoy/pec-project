@@ -85,7 +85,24 @@ namespace Master
         {
             m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection = (int)_value;
 
-            m_sliderValueDisplays[0].text = m_coreAlgorithm.TemperatureModel.SelectedHeatingPeriodSetting.ToString();
+            string _valueDisplayed = null;
+
+            switch(_value)
+            {
+                case 0:
+                    _valueDisplayed = "Short";
+                    break;
+                case 1:
+                    _valueDisplayed = "Medium";
+                    break;
+                case 2:
+                    _valueDisplayed = "Long";
+                    break;
+                default:
+                    break;
+            }
+
+            m_sliderValueDisplays[0].text = _valueDisplayed;
         }
 
         /// <summary>
