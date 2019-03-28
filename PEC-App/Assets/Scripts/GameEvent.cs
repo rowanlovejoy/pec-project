@@ -8,11 +8,6 @@ namespace Master
     public class GameEvent : MonoBehaviour
     {
 
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
 
     }
 }
