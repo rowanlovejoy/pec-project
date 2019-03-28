@@ -18,7 +18,8 @@ public class SpriteManager : MonoBehaviour
 
     void Start()
     {
-        ResetSprites(); // initialize setting to minimum
+        /// initialize setting to minimum
+        ResetSprites(); 
     }
 
     // Update is called once per frame
@@ -53,10 +54,11 @@ public class SpriteManager : MonoBehaviour
     /// <summary>
     /// Enables a group of sprites related to ventilation and hides any that aren't selected
     /// </summary>
-    /// <param name="selection">The selection made by the user. An integer between 0 and 2 (inclusive).</param>
-    public void UpdateVentilationSprites(int selection)
+    /// <param name="_selection">The selection made by the user. An integer between 0 and 2 (inclusive).</param>
+    public void UpdateVentilationSprites(int _selection)
     {
-        if (m_ventilationSpriteGroups.Length <= selection || selection < 0) // error handling
+        /// error handling
+        if (m_ventilationSpriteGroups.Length <= _selection || _selection < 0) 
         {
             Debug.LogError("Selection made is out of bounds of array.");
         }
@@ -64,13 +66,17 @@ public class SpriteManager : MonoBehaviour
         {
             for (int i = 0; i < m_ventilationSpriteGroups.Length; i++)
             {
-                if (i == selection) // if group has been selected
+                /// if group has been selected
+                if (i == _selection) 
                 {
-                    m_ventilationSpriteGroups[i].SetActive(true); // enable (show) group
+                    /// enable (show) group
+                    m_ventilationSpriteGroups[i].SetActive(true); 
                 }
-                else // if group has not been selected
+                /// if group has not been selected
+                else
                 {
-                    m_ventilationSpriteGroups[i].SetActive(false); // disable (hide) group
+                    /// disable (hide) group
+                    m_ventilationSpriteGroups[i].SetActive(false);
                 }
             }
         }
@@ -79,10 +85,11 @@ public class SpriteManager : MonoBehaviour
     /// <summary>
     /// Enables a group of sprites related to moisture production and hides any that aren't selected
     /// </summary>
-    /// <param name="selection">The selection made by the user. An integer between 0 and 2 (inclusive).</param>
-    public void UpdateMoistureProductionSprites(int selection)
+    /// <param name="_selection">The selection made by the user. An integer between 0 and 2 (inclusive).</param>
+    public void UpdateMoistureProductionSprites(int _selection)
     {
-        if (m_moistureSpriteGroups.Length <= selection || selection < 0) // error handling
+        /// error handling
+        if (m_moistureSpriteGroups.Length <= _selection || _selection < 0) 
         {
             Debug.LogError("Selection made is out of bounds of array.");
         }
@@ -90,13 +97,17 @@ public class SpriteManager : MonoBehaviour
         {
             for (int i = 0; i < m_moistureSpriteGroups.Length; i++)
             {
-                if (i == selection) // if group has been selected
+                /// if group has been selected
+                if (i == _selection) 
                 {
-                    m_moistureSpriteGroups[i].SetActive(true); // enable (show) group
+                    /// enable (show) group
+                    m_moistureSpriteGroups[i].SetActive(true); 
                 }
-                else // if group has not been selected
+                /// if group has not been selected
+                else
                 {
-                    m_moistureSpriteGroups[i].SetActive(false); // disable (hide) group
+                    /// disable (hide) group
+                    m_moistureSpriteGroups[i].SetActive(false); 
                 }
             }
         }
