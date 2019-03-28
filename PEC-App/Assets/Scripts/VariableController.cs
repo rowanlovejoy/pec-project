@@ -9,8 +9,12 @@ namespace Master
     /// <summary>
     /// Connects the GUI to the core algorithm.
     /// </summary>
+    /// 
+
     public class VariableController : MonoBehaviour
     {
+        [SerializeField]
+        private GameEvent m_slideAnimationEvent;
         /// <summary>
         /// Reference to CoreAlgorithm
         /// </summary>
@@ -222,8 +226,9 @@ namespace Master
             m_coreAlgorithm.StopSimulation();
 
             /// Hides the Simulation Display GUI when the simulation stops.
-            m_simulationDisplayGUI.SetActive(false);
+         //   m_simulationDisplayGUI.SetActive(false);
 
+            m_slideAnimationEvent.Raise();
             /// Shows the Main Panel when the simulation stops.
             m_mainPanel.SetActive(true);
         }
