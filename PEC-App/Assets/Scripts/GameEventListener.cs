@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameEventListener : MonoBehaviour
+
+namespace Master
 {
+    public class GameEventListener : MonoBehaviour
+    {
 
 
+
+    }
 
 }
