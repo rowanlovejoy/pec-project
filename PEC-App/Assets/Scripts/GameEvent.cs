@@ -8,7 +8,7 @@ namespace Master
     [CreateAssetMenu]
     public class GameEvent : ScriptableObject
     {
-
-
+        [SerializeField]
+        private List<EventListener> m_eventListeners = new List<EventListener>();
     }
 }
