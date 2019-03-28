@@ -11,6 +11,8 @@ namespace Master
         [SerializeField]
         private UnityEvent m_response;
 
+        [SerializeField]
+        private GameEvent m_event;
 
     }
 }
