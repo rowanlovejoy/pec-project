@@ -18,8 +18,7 @@ public class SpriteManager : MonoBehaviour
 
     void Start()
     {
-        UpdateMoistureProductionSprites(0); // initialize setting to low
-        UpdateVentilationSprites(0); // initialize setting to low
+        ResetSprites(); // initialize setting to minimum
     }
 
     // Update is called once per frame
