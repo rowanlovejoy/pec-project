@@ -1,18 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class EventListener : MonoBehaviour
+
+namespace Master
 {
-    // Start is called before the first frame update
-    void Start()
+    public class EventListener : MonoBehaviour
     {
-        
-    }
+        [SerializeField]
+        private UnityEvent m_response;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
     }
 }
