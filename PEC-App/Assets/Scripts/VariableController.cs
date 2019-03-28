@@ -211,8 +211,8 @@ namespace Master
             m_coreAlgorithm.StartSimulation();
 
             /// Hides the Main Panel when the simulation starts
-            m_mainPanel.SetActive(false);
-
+            // m_mainPanel.SetActive(false);
+            m_slideAnimationEvent.Raise();
             /// Shows the Simulation Display GUI when the simulation starts
             m_simulationDisplayGUI.SetActive(true);
         }
@@ -228,7 +228,7 @@ namespace Master
             /// Hides the Simulation Display GUI when the simulation stops.
          //   m_simulationDisplayGUI.SetActive(false);
 
-            m_slideAnimationEvent.Raise();
+            
             /// Shows the Main Panel when the simulation stops.
             m_mainPanel.SetActive(true);
         }
