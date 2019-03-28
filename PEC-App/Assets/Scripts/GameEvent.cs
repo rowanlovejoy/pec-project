@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace Master
 {
-    public class GameEvent : MonoBehaviour
+    [CreateAssetMenu]
+    public class GameEvent : ScriptableObject
     {
 
 
