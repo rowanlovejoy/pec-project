@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 
 namespace Master
 {
-    public class GameEventListener : MonoBehaviour
-    {
 
+    [CustomEditor(typeof(GameEvent))]
+    public class GameEventListener : Editor
+    {
+        
 
 
     }
