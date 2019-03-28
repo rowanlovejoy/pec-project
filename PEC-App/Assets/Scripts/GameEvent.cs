@@ -15,7 +15,7 @@ namespace Master
         {
             for (int i = 0; i < m_eventListeners.Count; i++)
             {
-
+                m_eventListeners[i].OnEventRaised();
             }
         }
 
@@ -24,6 +24,13 @@ namespace Master
             if (!m_eventListeners.Contains(_listener))
             {
                 m_eventListeners.Add(_listener);
+            }
+        }
+        public void DeRegister(EventListener _listener)
+        {
+            if (m_eventListeners.Contains(_listener))
+            {
+                m_eventListeners.Remove(_listener);
             }
         }
     }
