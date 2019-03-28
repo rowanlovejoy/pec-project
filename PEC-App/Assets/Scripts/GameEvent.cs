@@ -10,5 +10,13 @@ namespace Master
     {
         [SerializeField]
         private List<EventListener> m_eventListeners = new List<EventListener>();
+
+        public void Raise()
+        {
+            for (int i = 0; i < m_eventListeners.Count; i++)
+            {
+
+            }
+        }
     }
 }
