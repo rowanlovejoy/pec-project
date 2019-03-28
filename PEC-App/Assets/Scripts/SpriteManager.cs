@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class SpriteManager : MonoBehaviour
 {
+    /// <summary>
+    /// Reference to array of gameobjects that group sprites into low, medium and high
+    /// </summary>
     [SerializeField]
     private GameObject[] m_moistureSpriteGroups;
 
+    /// <summary>
+    /// Reference to array of gameobjects that group sprites into low, medium and high
+    /// </summary>
     [SerializeField]
     private GameObject[] m_ventilationSpriteGroups;
+
+    void Start()
+    {
+        UpdateMoistureProductionSprites(0); // initialize setting to low
+        UpdateVentilationSprites(0); // initialize setting to low
+    }
 
     // Update is called once per frame
     void Update()
@@ -89,5 +101,14 @@ public class SpriteManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Resets graphics to lowest selection.
+    /// </summary>
+    public void ResetSprites()
+    {
+        UpdateMoistureProductionSprites(0);
+        UpdateVentilationSprites(0);
     }
 }
