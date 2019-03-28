@@ -36,7 +36,7 @@ public class SpriteManager : MonoBehaviour
     /// <param name="selection">The selection made by the user. An integer between 0 and 2 (inclusive).</param>
     public void UpdateVentilationSprites(int selection)
     {
-        if (m_ventilationSpriteGroups.Length >= selection || selection < 0) // error handling
+        if (m_ventilationSpriteGroups.Length <= selection || selection < 0) // error handling
         {
             Debug.LogError("Selection made is out of bounds of array.");
         }
@@ -46,11 +46,11 @@ public class SpriteManager : MonoBehaviour
             {
                 if (i == selection) // if group has been selected
                 {
-                    m_ventilationSpriteGroups[selection].SetActive(true); // enable (show) group
+                    m_ventilationSpriteGroups[i].SetActive(true); // enable (show) group
                 }
                 else // if group has not been selected
                 {
-                    m_ventilationSpriteGroups[selection].SetActive(false); // disable (hide) group
+                    m_ventilationSpriteGroups[i].SetActive(false); // disable (hide) group
                 }
             }
         }
@@ -62,7 +62,7 @@ public class SpriteManager : MonoBehaviour
     /// <param name="selection">The selection made by the user. An integer between 0 and 2 (inclusive).</param>
     public void UpdateMoistureProductionSprites(int selection)
     {
-        if (m_moistureSpriteGroups.Length >= selection || selection < 0) // error handling
+        if (m_moistureSpriteGroups.Length <= selection || selection < 0) // error handling
         {
             Debug.LogError("Selection made is out of bounds of array.");
         }
@@ -72,11 +72,11 @@ public class SpriteManager : MonoBehaviour
             {
                 if (i == selection) // if group has been selected
                 {
-                    m_moistureSpriteGroups[selection].SetActive(true); // enable (show) group
+                    m_moistureSpriteGroups[i].SetActive(true); // enable (show) group
                 }
                 else // if group has not been selected
                 {
-                    m_moistureSpriteGroups[selection].SetActive(false); // disable (hide) group
+                    m_moistureSpriteGroups[i].SetActive(false); // disable (hide) group
                 }
             }
         }
