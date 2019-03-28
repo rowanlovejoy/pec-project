@@ -19,5 +19,9 @@ namespace Master
             m_event.Register(this);
         }
 
+        private void OnDisable()
+        {
+            m_event.Register
+        }
     }
 }
