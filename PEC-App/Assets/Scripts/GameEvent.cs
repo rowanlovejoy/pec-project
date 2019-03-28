@@ -18,5 +18,13 @@ namespace Master
 
             }
         }
+
+        public void Register(EventListener _listener)
+        {
+            if (!m_eventListeners.Contains(_listener))
+            {
+                m_eventListeners.Add(_listener);
+            }
+        }
     }
 }
