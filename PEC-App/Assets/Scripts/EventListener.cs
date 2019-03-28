@@ -14,5 +14,10 @@ namespace Master
         [SerializeField]
         private GameEvent m_event;
 
+        private void OnEnable()
+        {
+            m_event.Register(this);
+        }
+
     }
 }
