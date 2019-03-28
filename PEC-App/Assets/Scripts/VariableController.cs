@@ -83,9 +83,26 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateHeatingPeriodSelection(float _value)
         {
-            m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection = (int)_value;
+            string _valueDisplayed = null;
 
-            m_sliderValueDisplays[0].text = m_coreAlgorithm.TemperatureModel.SelectedHeatingPeriodSetting.ToString();
+            switch(_value)
+            {
+                case 0:
+                    _valueDisplayed = "Short";
+                    break;
+                case 1:
+                    _valueDisplayed = "Medium";
+                    break;
+                case 2:
+                    _valueDisplayed = "Long";
+                    break;
+                default:
+                    break;
+            }
+
+            m_sliderValueDisplays[0].text = _valueDisplayed;
+
+            m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection = (int)_value;
         }
 
         /// <summary>
@@ -94,9 +111,29 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateThermostatSelection(float _value)
         {
-            m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection = (int)_value;
+            string _valueDisplayed = null;
 
-            m_sliderValueDisplays[1].text = m_coreAlgorithm.TemperatureModel.SelectedThermostatSetting.ToString();
+            switch (_value)
+            {
+                case 0:
+                    _valueDisplayed = "Low";
+                    break;
+
+                case 1:
+                    _valueDisplayed = "Medium";
+                    break;
+
+                case 2:
+                    _valueDisplayed = "High";
+                    break;
+
+                default:
+                    break;
+            }
+
+            m_sliderValueDisplays[1].text = _valueDisplayed;
+
+            m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection = (int)_value;
         }
 
         /// <summary>
@@ -105,9 +142,29 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateMoistureProductionSelection(float _value)
         {
-            m_coreAlgorithm.MoistureModel.MoistureProductionSelection = (int)_value;
+            string _valueDisplayed = null;
 
-            m_sliderValueDisplays[2].text = m_coreAlgorithm.MoistureModel.SelectedMoistureProductionSetting.ToString();
+            switch (_value)
+            {
+                case 0:
+                    _valueDisplayed = "Low";
+                    break;
+
+                case 1:
+                    _valueDisplayed = "Medium";
+                    break;
+
+                case 2:
+                    _valueDisplayed = "High";
+                    break;
+
+                default:
+                    break;
+            }
+
+            m_sliderValueDisplays[2].text = _valueDisplayed;
+
+            m_coreAlgorithm.MoistureModel.MoistureProductionSelection = (int)_value;
         }
 
         /// <summary>
@@ -116,9 +173,29 @@ namespace Master
         /// <param name="_value">Float value from slider - either 0, 1 or 2</param>
         public void UpdateMoistureRemovalSelection(float _value)
         {
-            m_coreAlgorithm.MoistureModel.MoistureRemovalSelection = (int)_value;
+            string _valueDisplayed = null;
 
-            m_sliderValueDisplays[3].text = m_coreAlgorithm.MoistureModel.SelectedMoistureRemovalSetting.ToString();
+            switch (_value)
+            {
+                case 0:
+                    _valueDisplayed = "Low";
+                    break;
+
+                case 1:
+                    _valueDisplayed = "Medium";
+                    break;
+
+                case 2:
+                    _valueDisplayed = "High";
+                    break;
+
+                default:
+                    break;
+            }
+
+            m_sliderValueDisplays[3].text = _valueDisplayed;
+
+            m_coreAlgorithm.MoistureModel.MoistureRemovalSelection = (int)_value;
         }
 
         /// <summary>
