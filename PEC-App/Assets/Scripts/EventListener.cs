@@ -21,7 +21,12 @@ namespace Master
 
         private void OnDisable()
         {
-            m_event.Register
+            m_event.Register(this);
+        }
+
+        public void OnEventRaised()
+        {
+            m_response.Invoke();
         }
     }
 }
