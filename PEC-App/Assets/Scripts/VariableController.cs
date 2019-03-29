@@ -13,8 +13,14 @@ namespace Master
 
     public class VariableController : MonoBehaviour
     {
+        /// <summary>
+        /// 
+        /// </summary>
         [SerializeField]
-        private GameEvent m_slideAnimationEvent;
+        private GameEvent m_slideAnimationEventStart = null;
+
+        [SerializeField]
+        private GameEvent m_slideAnimationEventEnd = null;
         /// <summary>
         /// Reference to CoreAlgorithm
         /// </summary>
@@ -211,8 +217,8 @@ namespace Master
             m_coreAlgorithm.StartSimulation();
 
             /// Hides the Main Panel when the simulation starts
-            m_mainPanel.SetActive(false);
-
+            //m_mainPanel.SetActive(false);
+            m_slideAnimationEventStart.Raise();
             /// Shows the Simulation Display GUI when the simulation starts
             m_simulationDisplayGUI.SetActive(true);
         }
@@ -228,7 +234,7 @@ namespace Master
             /// Hides the Simulation Display GUI when the simulation stops.
          //   m_simulationDisplayGUI.SetActive(false);
 
-            m_slideAnimationEvent.Raise();
+            m_slideAnimationEventEnd.Raise();
             /// Shows the Main Panel when the simulation stops.
             m_mainPanel.SetActive(true);
         }
