@@ -323,10 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec655af9cc07c6499fc042235eb1368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_slideAnimationEventStart: {fileID: 11400000, guid: 1442c7d8340010e4abfc6e476c0010ef,
-    type: 2}
-  m_slideAnimationEventEnd: {fileID: 11400000, guid: d44364671ae09c144b496c9ffc18a9ad,
-    type: 2}
+  m_startSimulationEvent: {fileID: 0}
+  m_stopSimulationEvent: {fileID: 0}
   m_coreAlgorithm: {fileID: 1553040066}
   m_mainPanel: {fileID: 891316250}
   m_simulationDisplayGUI: {fileID: 455638464}
@@ -1376,7 +1374,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 79249962}
-        m_MethodName: StopSimulation
+        m_MethodName: StartBtnOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1875,7 +1873,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 79249962}
-        m_MethodName: StartSimulation
+        m_MethodName: StartBtnOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1994,7 +1992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.67800003, y: 0.17615667}
   m_AnchorMax: {x: 0.97931606, y: 0.46246085}
-  m_AnchoredPosition: {x: -0.14349365, y: -0.897995}
+  m_AnchoredPosition: {x: -0.14349365, y: -0.8979988}
   m_SizeDelta: {x: 0.28699875, y: 1.7959785}
   m_Pivot: {x: 0.49999994, y: 0.4999993}
 --- !u!114 &808145724
@@ -2157,7 +2155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.76487416, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.1999512, y: -2.7000122}
+  m_AnchoredPosition: {x: 3.1998901, y: -2.7000122}
   m_SizeDelta: {x: 12.200012, y: 20.599976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891316252

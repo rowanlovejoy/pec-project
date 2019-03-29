@@ -14,13 +14,16 @@ namespace Master
     public class VariableController : MonoBehaviour
     {
         /// <summary>
-        /// 
+        /// Reference to the startSimulation event
         /// </summary>
         [SerializeField]
-        private GameEvent m_slideAnimationEventStart = null;
+        private GameEvent m_startSimulationEvent = null;
 
+        /// <summary>
+        /// Reference to the stopSimulation event
+        /// </summary>
         [SerializeField]
-        private GameEvent m_slideAnimationEventEnd = null;
+        private GameEvent m_stopSimulationEvent = null;
         /// <summary>
         /// Reference to CoreAlgorithm
         /// </summary>
@@ -215,10 +218,7 @@ namespace Master
         {
             /// Starts the simulation if it is not ongoing
             m_coreAlgorithm.StartSimulation();
-
-            /// Hides the Main Panel when the simulation starts
-            //m_mainPanel.SetActive(false);
-            m_slideAnimationEventStart.Raise();
+      
             /// Shows the Simulation Display GUI when the simulation starts
             m_simulationDisplayGUI.SetActive(true);
         }
@@ -232,11 +232,23 @@ namespace Master
             m_coreAlgorithm.StopSimulation();
 
             /// Hides the Simulation Display GUI when the simulation stops.
-         //   m_simulationDisplayGUI.SetActive(false);
+            m_simulationDisplayGUI.SetActive(false);
+      
+        }
 
-            m_slideAnimationEventEnd.Raise();
-            /// Shows the Main Panel when the simulation stops.
-            m_mainPanel.SetActive(true);
+        /// <summary>
+        /// Raises the startSimulation event
+        /// </summary>
+        public void StartBtnOnClick()
+        {
+             m_startSimulationEvent.Raise();
+        }
+        /// <summary>
+        /// Raises the stopSimulation event
+        /// </summary>
+        public void StopBtnOnClick()
+        {
+            m_stopSimulationEvent.Raise();
         }
     }
 }
