@@ -221,6 +221,8 @@ namespace Master
       
             /// Shows the Simulation Display GUI when the simulation starts
             m_simulationDisplayGUI.SetActive(true);
+
+            m_startSimulationEvent.Raise();
         }
 
         /// <summary>
@@ -233,22 +235,9 @@ namespace Master
 
             /// Hides the Simulation Display GUI when the simulation stops.
             m_simulationDisplayGUI.SetActive(false);
-      
-        }
 
-        /// <summary>
-        /// Raises the startSimulation event
-        /// </summary>
-        public void StartBtnOnClick()
-        {
-             m_startSimulationEvent.Raise();
-        }
-        /// <summary>
-        /// Raises the stopSimulation event
-        /// </summary>
-        public void StopBtnOnClick()
-        {
             m_stopSimulationEvent.Raise();
+
         }
     }
 }

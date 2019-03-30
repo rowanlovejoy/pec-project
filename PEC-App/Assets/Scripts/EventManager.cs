@@ -30,8 +30,5 @@ namespace Master
                 _event.Raise();
             }
         }
-
-
     }
-
 }

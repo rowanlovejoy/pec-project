@@ -5,15 +5,14 @@ using UnityEngine;
 
 namespace Master
 {
-
     [CreateAssetMenu]
     public class GameEvent : ScriptableObject
     {
         /// <summary>
         ///  A list of all registered EventListeners
         /// </summary>
-
         private List<EventListener> m_eventListeners = new List<EventListener>();
+
         /// <summary>
         /// Raises the events even listener and calls its responses
         /// </summary>
@@ -24,6 +23,7 @@ namespace Master
                 m_eventListeners[i].OnEventRaised();
             }
         }
+
         /// <summary>
         /// Adds a listener to the EventListener list
         /// </summary>
@@ -35,6 +35,7 @@ namespace Master
                 m_eventListeners.Add(_listener);
             }
         }
+
         /// <summary>
         ///  Removes a listener from the EventListener list
         /// </summary>
