@@ -25,6 +25,12 @@ public class EventManager : MonoBehaviour
     private GameEvent m_endSimulationEvent = null;
 
     /// <summary>
+    /// Reference to the PauseSimulation event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_pauseSimulationEvent = null;
+
+    /// <summary>
     /// Reference to the HeatingOn event
     /// </summary>
     [SerializeField]
@@ -128,6 +134,23 @@ public class EventManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Raises the PauseSimulation event.
+    /// </summary>
+    public void RaisePauseSimulationEvent()
+    {
+        /// error handling
+        if (m_pauseSimulationEvent != null)
+        {
+            m_pauseSimulationEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The pause simulation event has not been assigned.");
+        }
+    }
+    
+
+    /// <summary>
     /// Raises the HeatingOn event.
     /// </summary>
     public void RaiseHeatingOnEvent()
@@ -208,7 +231,7 @@ public class EventManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Raises the MouldProductionOf event.
+    /// Raises the MouldProductionOff event.
     /// </summary>
     public void RaiseMouldProductionOffEvent()
     {
