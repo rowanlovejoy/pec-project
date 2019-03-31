@@ -123,11 +123,12 @@ namespace Master
         }
 
         /// <summary>
-        /// Calls methods to reset values in the models.
+        /// Resets all simulation values in the models.
         /// </summary>
         private void ResetValues()
         {
-
+            TemperatureModel.Reset();
+            MoistureModel.Reset();
         }
     }
 }
