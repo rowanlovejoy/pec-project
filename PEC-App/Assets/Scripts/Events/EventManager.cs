@@ -85,6 +85,12 @@ public class EventManager : MonoBehaviour
     private GameEvent m_statScreenCloseEvent = null;
 
     /// <summary>
+    /// Reference to the LowTemperatureOn event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_lowTemperatureOnEvent = null;
+
+    /// <summary>
     /// Method called before Start function
     /// </summary>
     void Awake()
@@ -309,6 +315,22 @@ public class EventManager : MonoBehaviour
         else
         {
             Debug.LogError("The stat screen close event has not been assigned.");
+        }
+    }
+
+    /// <summary>
+    /// Raises the LowTemperatureOn event.
+    /// </summary>
+    public void RaiseLowTemperatureOnEvent()
+    {
+        /// error handling
+        if (m_lowTemperatureOnEvent != null)
+        {
+            m_lowTemperatureOnEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The low temperature on event has not been assigned.");
         }
     }
 }

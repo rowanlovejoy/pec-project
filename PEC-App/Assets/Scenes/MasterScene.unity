@@ -499,6 +499,8 @@ MonoBehaviour:
     type: 2}
   m_statScreenCloseEvent: {fileID: 11400000, guid: 857f86f038b2ddd42a43073d3c240c40,
     type: 2}
+  m_lowTemperatureOnEvent: {fileID: 11400000, guid: 38d918185ddd4ff48bde47893acc272a,
+    type: 2}
 --- !u!4 &273170137
 Transform:
   m_ObjectHideFlags: 0
