@@ -52,7 +52,7 @@ namespace Master
         /// <summary>
         /// The percentage of total possible litres of water in wall based on temperature.
         /// </summary>
-        private float m_wallSaturation;
+        private float m_wallSaturation = 10f;
 
         /// <summary>
         /// Instance of the air saturation table.
@@ -110,10 +110,23 @@ namespace Master
             }
 
             /// Get saturation value using temperature and air moisture.
-            m_airSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir)); 
+            m_airSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir));
 
-            /// Get impact using air saturation and add it to wall saturation.
-            m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]; 
+            /// Limit minimum wall saturation
+            if ((m_wallSaturation + m_wallSaturationDictionary[m_airSaturation]) < 0)
+            {
+                m_wallSaturation = 0f;
+            }
+            /// Limit maxiumum wall saturation
+            else if ((m_wallSaturation + m_wallSaturationDictionary[m_airSaturation]) > 100)
+            {
+                m_wallSaturation = 100f;
+            }
+            else
+            {
+                /// Get impact using air saturation and add it to wall saturation.
+                m_wallSaturation += m_wallSaturationDictionary[m_airSaturation];
+            }
 
             /// Debug messages.
             Debug.Log("MoistureProductionSelection: " + MoistureProductionSelection + " MoistureRemovalSelection: " + MoistureRemovalSelection);
@@ -157,6 +170,16 @@ namespace Master
             {
                 return m_moistureRemoval[MoistureRemovalSelection];
             }
+        }
+
+        /// <summary>
+        /// Resets simulation variables to default values
+        /// </summary>
+        public void Reset()
+        {
+            m_moistureInAir = 1f;
+            m_airSaturation = 50;
+            m_wallSaturation = 10f;
         }
     }
 }

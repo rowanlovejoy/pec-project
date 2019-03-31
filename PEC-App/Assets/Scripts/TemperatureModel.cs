@@ -22,7 +22,7 @@ namespace Master
         /// <summary>
         /// The current temperature of air inside the house (degrees celsius).
         /// </summary>
-        public float AirTemperature { get; private set; } = 18f;
+        public float AirTemperature { get; private set; } = 14f;
 
         /// <summary>
         /// Heating period options. Determines how long heating is on for after coming on in ticks.
@@ -113,6 +113,16 @@ namespace Master
             {
                 return m_heatingPeriod[HeatingPeriodSelection];
             }
+        }
+
+        /// <summary>
+        /// Resets simulation variables to default values
+        /// </summary>
+        public void Reset()
+        {
+            AirTemperature = 14f;
+            m_activeHeatingPeriod = false;
+            m_heatingIsOn = false;
         }
     }
 }
