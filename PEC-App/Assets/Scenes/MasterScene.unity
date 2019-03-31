@@ -489,6 +489,8 @@ MonoBehaviour:
     type: 2}
   m_mouldProductionOnEvent: {fileID: 11400000, guid: 8bbbe441e94f8cb4484ddb08990c0cc1,
     type: 2}
+  m_mouldProductionOffEvent: {fileID: 11400000, guid: d8bd56cd05dcbee47b76a33e4a349022,
+    type: 2}
 --- !u!4 &273170137
 Transform:
   m_ObjectHideFlags: 0

@@ -55,6 +55,12 @@ public class EventManager : MonoBehaviour
     private GameEvent m_mouldProductionOnEvent = null;
 
     /// <summary>
+    /// Reference to the MouldProductionOn event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_mouldProductionOffEvent = null;
+    
+    /// <summary>
     /// Method called before Start function
     /// </summary>
     void Awake()
@@ -201,5 +207,19 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    
+    /// <summary>
+    /// Raises the MouldProductionOf event.
+    /// </summary>
+    public void RaiseMouldProductionOffEvent()
+    {
+        /// error handling
+        if (m_mouldProductionOffEvent != null)
+        {
+            m_mouldProductionOffEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The mould production off event has not been assigned.");
+        }
+    }
 }
