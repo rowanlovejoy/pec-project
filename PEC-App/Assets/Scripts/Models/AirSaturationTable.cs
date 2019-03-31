@@ -13,7 +13,7 @@ public class AirSaturationTable
 
     public AirSaturationTable()
     {
-        Dictionary<int, int> firstRow = new Dictionary<int, int>()
+        Dictionary<int, int> _firstRow = new Dictionary<int, int>()
         {
             [1] = 50,
             [2] = 70,
@@ -22,7 +22,7 @@ public class AirSaturationTable
             [5] = 100
         };
 
-        Dictionary<int, int> secondRow = new Dictionary<int, int>()
+        Dictionary<int, int> _secondRow = new Dictionary<int, int>()
         {
             [1] = 50,
             [2] = 70,
@@ -31,7 +31,7 @@ public class AirSaturationTable
             [5] = 100
         };
 
-        Dictionary<int, int> thirdRow = new Dictionary<int, int>()
+        Dictionary<int, int> _thirdRow = new Dictionary<int, int>()
         {
             [1] = 50,
             [2] = 60,
@@ -40,7 +40,7 @@ public class AirSaturationTable
             [5] = 100
         };
 
-        Dictionary<int, int> fourthRow = new Dictionary<int, int>()
+        Dictionary<int, int> _fourthRow = new Dictionary<int, int>()
         {
             [1] = 50,
             [2] = 50,
@@ -49,7 +49,7 @@ public class AirSaturationTable
             [5] = 100
         };
 
-        Dictionary<int, int> fifthRow = new Dictionary<int, int>()
+        Dictionary<int, int> _fifthRow = new Dictionary<int, int>()
         {
             [1] = 50,
             [2] = 50,
@@ -60,11 +60,11 @@ public class AirSaturationTable
 
         m_wallSaturationDictionary = new Dictionary<int, Dictionary<int, int>>()
         {
-            [14] = firstRow,
-            [16] = secondRow,
-            [18] = thirdRow,
-            [20] = fourthRow,
-            [22] = fifthRow
+            [14] = _firstRow,
+            [16] = _secondRow,
+            [18] = _thirdRow,
+            [20] = _fourthRow,
+            [22] = _fifthRow
         };
     }
 
