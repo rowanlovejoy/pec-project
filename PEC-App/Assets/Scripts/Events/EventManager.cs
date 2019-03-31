@@ -19,6 +19,12 @@ public class EventManager : MonoBehaviour
     private GameEvent m_stopSimulationEvent = null;
 
     /// <summary>
+    /// Reference to the EndSimulation event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_endSimulationEvent = null;
+
+    /// <summary>
     /// Method called before Start function
     /// </summary>
     void Awake()
@@ -66,6 +72,22 @@ public class EventManager : MonoBehaviour
         else
         {
             Debug.LogError("The stop simulation event has not been assigned.");
+        }
+    }
+
+    /// <summary>
+    /// Raises the EndSimulation event.
+    /// </summary>
+    public void RaiseEndSimulationEvent()
+    {
+        /// error handling
+        if (m_endSimulationEvent != null)
+        {
+            m_endSimulationEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The end simulation event has not been assigned.");
         }
     }
 }
