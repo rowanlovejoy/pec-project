@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static EventManager instance = null;
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Method called before Start function
+    /// </summary>
+    void Awake()
     {
-        
+        /// if instance does not already exist
+        if (instance == null)
+        {
+            instance = this;
+        }
+        /// else if another instance already exists that is not this gameobject
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 }
