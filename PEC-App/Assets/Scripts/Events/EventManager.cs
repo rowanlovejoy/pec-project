@@ -6,6 +6,7 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance = null;
 
+    #region EVENT VARIABLES
     [Header("Simulation Events")]
     /// <summary>
     /// Reference to the StartSimulation event
@@ -114,6 +115,7 @@ public class EventManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameEvent m_highMouldOffEvent = null;
+    #endregion
 
     /// <summary>
     /// Method called before Start function
@@ -200,7 +202,7 @@ public class EventManager : MonoBehaviour
     }
     #endregion
 
-
+    #region HEATING EVENTS
     /// <summary>
     /// Raises the HeatingOn event.
     /// </summary>
@@ -232,7 +234,9 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The heating off event has not been assigned.");
         }
     }
+    #endregion
 
+    #region MOISTURE PRODUCTION EVENTS
     /// <summary>
     /// Raises the MoistureProductionOn event.
     /// </summary>
@@ -264,7 +268,9 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The moisture production off event has not been assigned.");
         }
     }
+    #endregion
 
+    #region MOULD PRODUCTION EVENTS
     /// <summary>
     /// Raises the MouldProductionOn event.
     /// </summary>
@@ -296,7 +302,9 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The mould production off event has not been assigned.");
         }
     }
+    #endregion
 
+    #region GUI EVENTS
     /// <summary>
     /// Raises the EndScreenClose event.
     /// </summary>
@@ -344,7 +352,9 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The stat screen close event has not been assigned.");
         }
     }
+    #endregion
 
+    #region LOW TEMPERATURE EVENTS
     /// <summary>
     /// Raises the LowTemperatureOn event.
     /// </summary>
@@ -376,7 +386,9 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The low temperature off event has not been assigned.");
         }
     }
+    #endregion
 
+    #region HIGH MOULD EVENTS
     /// <summary>
     /// Raises the HighMouldOn event.
     /// </summary>
@@ -408,4 +420,5 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The high mould off event has not been assigned.");
         }
     }
+    #endregion
 }
