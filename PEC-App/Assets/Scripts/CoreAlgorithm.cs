@@ -18,6 +18,9 @@ public class CoreAlgorithm : MonoBehaviour
     /// </summary>
     public MoistureModel MoistureModel { get; private set; } = null;
 
+    /// <summary>
+    /// Array of all model classes.
+    /// </summary>
     private IAdjustable[] models;
 
     /// <summary>
