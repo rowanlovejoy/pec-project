@@ -7,7 +7,7 @@ namespace Master
     /// <summary>
     /// Contains the logic for simulation of temperature change.
     /// </summary>
-    public class TemperatureModel
+    public class TemperatureModel : IAdjustable
     {
         /// <summary>
         /// Index of selected heating period.
@@ -43,13 +43,13 @@ namespace Master
         /// <summary>
         /// Indicates if the heating is turned on. True if so; false otherwise. Based on whether simulation is in a period of active heating, current air temperature, and themostat setting.
         /// </summary>
-        private bool m_heatingIsOn = false; 
+        private bool m_heatingIsOn = false;
 
         /// <summary>
         /// Checks the current tick and updates the heating values based on the selection settings accordingly.
         /// </summary>
-        /// <param name="_currentTick">The current tick of the simulation</param>
-        public void AdjustHeating(int _currentTick)
+        /// <param name="currentTick">The current tick of the simulation</param>
+        public void AdjustVariables(int _currentTick)
         {
             /// if currentTick is within heating period.
             if ((_currentTick >= 12 && _currentTick < (12 + m_heatingPeriod[HeatingPeriodSelection])) || (_currentTick >= 34 && _currentTick < (34 + m_heatingPeriod[HeatingPeriodSelection])))
@@ -75,7 +75,7 @@ namespace Master
                 if (AirTemperature - 0.2f < 14)
                 {
                     /// Air temperature should not drop below 14.
-                    AirTemperature = 14f; 
+                    AirTemperature = 14f;
                 }
                 else
                 {
@@ -91,6 +91,16 @@ namespace Master
             Debug.Log("Active heating period: " + m_activeHeatingPeriod +
                 "        Heating is on: " + m_heatingIsOn +
                 "        Air temperature: " + AirTemperature);
+        }
+
+        /// <summary>
+        /// Resets simulation variables to default values
+        /// </summary>
+        public void ResetVariables()
+        {
+            AirTemperature = 14f;
+            m_activeHeatingPeriod = false;
+            m_heatingIsOn = false;
         }
 
         /// <summary>
@@ -113,16 +123,6 @@ namespace Master
             {
                 return m_heatingPeriod[HeatingPeriodSelection];
             }
-        }
-
-        /// <summary>
-        /// Resets simulation variables to default values
-        /// </summary>
-        public void Reset()
-        {
-            AirTemperature = 14f;
-            m_activeHeatingPeriod = false;
-            m_heatingIsOn = false;
         }
     }
 }
