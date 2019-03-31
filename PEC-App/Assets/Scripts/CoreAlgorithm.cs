@@ -21,7 +21,7 @@ public class CoreAlgorithm : MonoBehaviour
     /// <summary>
     /// Array of all model classes.
     /// </summary>
-    private IAdjustable[] models;
+    private IAdjustable[] m_models;
 
     /// <summary>
     /// The actual length of time in seconds the simulation runs.
