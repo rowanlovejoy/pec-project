@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// Interface used by environmental models
+/// </summary>
 interface IAdjustable
 {
     /// <summary>
