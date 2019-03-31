@@ -3,32 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace Master
+/// <summary>
+/// Creates a custom menu button "Raise"
+/// </summary>
+[CustomEditor(typeof(GameEvent))]
+public class EventManager : Editor
 {
     /// <summary>
-    /// Creates a custom menu button "Raise"
+    /// overrides the default OnInspectorGUI to enable the "Raise" button when the scene is in play mode
     /// </summary>
-    [CustomEditor(typeof(GameEvent))]
-    public class EventManager : Editor
+    public override void OnInspectorGUI()
     {
-        /// <summary>
-        /// overrides the default OnInspectorGUI to enable the "Raise" button when the scene is in play mode
-        /// </summary>
-        public override void OnInspectorGUI()
+        ///implements base class functionality
+        base.OnInspectorGUI();
+        ///if the application is playing, the GUI is enabled
+        GUI.enabled = Application.isPlaying;
+
+        ///sets _event as the target
+        GameEvent _event = target as GameEvent;
+
+        ///on pressing the button, raise the event
+        if (GUILayout.Button("Raise"))
         {
-            ///implements base class functionality
-            base.OnInspectorGUI();
-            ///if the application is playing, the GUI is enabled
-            GUI.enabled = Application.isPlaying;
-
-            ///sets _event as the target
-            GameEvent _event = target as GameEvent;
-
-            ///on pressing the button, raise the event
-            if (GUILayout.Button("Raise"))
-            {
-                _event.Raise();
-            }
+            _event.Raise();
         }
     }
 }
