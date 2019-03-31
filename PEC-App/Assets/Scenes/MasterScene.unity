@@ -479,6 +479,14 @@ MonoBehaviour:
     type: 2}
   m_stopSimulationEvent: {fileID: 11400000, guid: d44364671ae09c144b496c9ffc18a9ad,
     type: 2}
+  m_endSimulationEvent: {fileID: 11400000, guid: 17eadf5c7e37c3847b875c53f82c5f73,
+    type: 2}
+  m_heatingOnEvent: {fileID: 11400000, guid: 2a0febe0aefdb1a4fad8cb3f92daeb23, type: 2}
+  m_heatingOffEvent: {fileID: 11400000, guid: e96ef77378f175649a10400d88d31bd0, type: 2}
+  m_moistureProductionOnEvent: {fileID: 11400000, guid: bc5ccec5b4972be428e1e8cad186a0ca,
+    type: 2}
+  m_moistureProductionOffEvent: {fileID: 11400000, guid: ede7084bb46defa499504330bbcd9230,
+    type: 2}
 --- !u!4 &273170137
 Transform:
   m_ObjectHideFlags: 0

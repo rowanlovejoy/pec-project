@@ -42,6 +42,13 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_moistureProductionOnEvent = null;
 
+    /// <summary>
+    /// Reference to the MoistureProductionOff event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_moistureProductionOffEvent = null;
+
+
 
     /// <summary>
     /// Method called before Start function
@@ -158,5 +165,19 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    
+    /// <summary>
+    /// Raises the MoistureProductionOf event.
+    /// </summary>
+    public void RaiseMoistureProductionOffEvent()
+    {
+        /// error handling
+        if (m_moistureProductionOffEvent != null)
+        {
+            m_moistureProductionOffEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The moisture production off event has not been assigned.");
+        }
+    }
 }
