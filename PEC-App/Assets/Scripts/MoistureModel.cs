@@ -7,7 +7,7 @@ namespace Master
     /// <summary>
     /// Contains the logic for simulation of moisture change.
     /// </summary>
-    public class MoistureModel
+    public class MoistureModel : IAdjustable
     {
         /// <summary>
         /// Reference to TemperatureModel.
@@ -85,26 +85,26 @@ namespace Master
         /// Checks the current tick and updates the moisture values based on the selection settings accordingly.
         /// </summary>
         /// <param name="_currentTick">The current tick of the simulation.</param>
-        public void AdjustMoisture(int _currentTick)
+        public void AdjustVariables(int _currentTick)
         {
             /// If currentTick is within moisture production period.
             if ((_currentTick >= 16 && _currentTick < (16 + m_moistureProductionLength[MoistureProductionSelection])) || (_currentTick >= 30 && _currentTick < (30 + m_moistureProductionLength[MoistureProductionSelection])))
             {
                 /// Increase moisture.
-                m_moistureInAir += m_moistureProduction[MoistureProductionSelection]; 
+                m_moistureInAir += m_moistureProduction[MoistureProductionSelection];
             }
             else
             {
                 /// Decrease moisture.
-                m_moistureInAir -= m_moistureRemoval[MoistureRemovalSelection]; 
+                m_moistureInAir -= m_moistureRemoval[MoistureRemovalSelection];
             }
 
             /// Limit max and min moisture in air.
-            if (m_moistureInAir > 5) 
+            if (m_moistureInAir > 5)
             {
                 m_moistureInAir = 5f;
             }
-            else if (m_moistureInAir < 1) 
+            else if (m_moistureInAir < 1)
             {
                 m_moistureInAir = 1f;
             }
@@ -136,6 +136,16 @@ namespace Master
             Debug.Log("Moisture in air: " + m_moistureInAir +
                 "       Air saturation: " + m_airSaturation +
                 "       Wall saturation: " + m_wallSaturation);
+        }
+
+        /// <summary>
+        /// Resets simulation variables to default values
+        /// </summary>
+        public void ResetVariables()
+        {
+            m_moistureInAir = 1f;
+            m_airSaturation = 50;
+            m_wallSaturation = 10f;
         }
 
         /// <summary>
@@ -172,14 +182,6 @@ namespace Master
             }
         }
 
-        /// <summary>
-        /// Resets simulation variables to default values
-        /// </summary>
-        public void Reset()
-        {
-            m_moistureInAir = 1f;
-            m_airSaturation = 50;
-            m_wallSaturation = 10f;
-        }
+
     }
 }
