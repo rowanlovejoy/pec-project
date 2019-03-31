@@ -91,6 +91,13 @@ public class EventManager : MonoBehaviour
     private GameEvent m_lowTemperatureOnEvent = null;
 
     /// <summary>
+    /// Reference to the LowTemperatureOff event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_lowTemperatureOffEvent = null;
+
+
+    /// <summary>
     /// Method called before Start function
     /// </summary>
     void Awake()
@@ -333,4 +340,23 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The low temperature on event has not been assigned.");
         }
     }
+
+    /// <summary>
+    /// Raises the LowTemperatureOff event.
+    /// </summary>
+    public void RaiseLowTemperatureOffEvent()
+    {
+        /// error handling
+        if (m_lowTemperatureOffEvent != null)
+        {
+            m_lowTemperatureOffEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The low temperature off event has not been assigned.");
+        }
+    }
+
+
+
 }

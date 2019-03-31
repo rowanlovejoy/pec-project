@@ -501,6 +501,9 @@ MonoBehaviour:
     type: 2}
   m_lowTemperatureOnEvent: {fileID: 11400000, guid: 38d918185ddd4ff48bde47893acc272a,
     type: 2}
+  m_lowTemperatureOffEvent: {fileID: 11400000, guid: bcf4c465e2ac56943b30619a6df49af9,
+    type: 2}
+  m_highMouldOnEvent: {fileID: 0}
 --- !u!4 &273170137
 Transform:
   m_ObjectHideFlags: 0
