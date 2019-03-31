@@ -121,5 +121,13 @@ namespace Master
 
             Debug.Log("The simulation has been stopped prematurely.");
         }
+
+        /// <summary>
+        /// Calls methods to reset values in the models.
+        /// </summary>
+        private void ResetValues()
+        {
+
+        }
     }
 }
