@@ -31,6 +31,19 @@ public class EventManager : MonoBehaviour
     private GameEvent m_heatingOnEvent = null;
 
     /// <summary>
+    /// Reference to the HeatingOff event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_heatingOffEvent = null;
+
+    /// <summary>
+    /// Reference to the MoistureProductionOn event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_moistureProductionOnEvent = null;
+
+
+    /// <summary>
     /// Method called before Start function
     /// </summary>
     void Awake()
@@ -112,4 +125,38 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The heating on event has not been assigned.");
         }
     }
+
+    /// <summary>
+    /// Raises the HeatingOff event.
+    /// </summary>
+    public void RaiseHeatingOffEvent()
+    {
+        /// error handling
+        if (m_heatingOffEvent != null)
+        {
+            m_heatingOffEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The heating off event has not been assigned.");
+        }
+    }
+
+    /// <summary>
+    /// Raises the MoistureProductionOn event.
+    /// </summary>
+    public void RaiseMoistureProductionOnEvent()
+    {
+        /// error handling
+        if (m_moistureProductionOnEvent != null)
+        {
+            m_moistureProductionOnEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The moisture production on event has not been assigned.");
+        }
+    }
+
+    
 }
