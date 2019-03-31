@@ -25,6 +25,12 @@ public class EventManager : MonoBehaviour
     private GameEvent m_endSimulationEvent = null;
 
     /// <summary>
+    /// Reference to the HeatingOn event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_heatingOnEvent = null;
+
+    /// <summary>
     /// Method called before Start function
     /// </summary>
     void Awake()
@@ -88,6 +94,22 @@ public class EventManager : MonoBehaviour
         else
         {
             Debug.LogError("The end simulation event has not been assigned.");
+        }
+    }
+
+    /// <summary>
+    /// Raises the HeatingOn event.
+    /// </summary>
+    public void RaiseHeatingOnEvent()
+    {
+        /// error handling
+        if (m_heatingOnEvent != null)
+        {
+            m_heatingOnEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The heating on event has not been assigned.");
         }
     }
 }
