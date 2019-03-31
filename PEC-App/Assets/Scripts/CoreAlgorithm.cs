@@ -44,6 +44,11 @@ public class CoreAlgorithm : MonoBehaviour
     /// </summary>
     private bool m_simulationInProgress = false;
 
+    /// <summary>
+    /// Cache of EventManager singleton instance
+    /// </summary>
+    private EventManager m_eventManager;
+
     private void Awake()
     {
         TemperatureModel = new TemperatureModel();
@@ -53,6 +58,12 @@ public class CoreAlgorithm : MonoBehaviour
         m_models = new IAdjustable[2] { TemperatureModel, MoistureModel };
 
         m_tickLength = m_simulationLength / 48;
+    }
+
+    private void Start()
+    {
+        /// caching 
+        m_eventManager = EventManager.instance;
     }
 
     void Update()
@@ -74,6 +85,8 @@ public class CoreAlgorithm : MonoBehaviour
             Debug.Log("Simulation starting");
 
             m_simulationInProgress = true;
+
+            m_eventManager.RaiseStartSimulationEvent();
 
             StartCoroutine(Tick(m_tickLength)); 
         }
@@ -125,6 +138,8 @@ public class CoreAlgorithm : MonoBehaviour
     public void StopSimulation()
     {
         m_simulationInProgress = false;
+
+        m_eventManager.RaiseStopSimulationEvent();
 
         StopAllCoroutines();
         ResetValues();

@@ -12,17 +12,6 @@ using UnityEngine.UI;
 public class VariableController : MonoBehaviour
 {
     /// <summary>
-    /// Reference to the startSimulation event
-    /// </summary>
-    [SerializeField]
-    private GameEvent m_startSimulationEvent = null;
-
-    /// <summary>
-    /// Reference to the stopSimulation event
-    /// </summary>
-    [SerializeField]
-    private GameEvent m_stopSimulationEvent = null;
-    /// <summary>
     /// Reference to CoreAlgorithm
     /// </summary>
     [SerializeField]
@@ -219,8 +208,6 @@ public class VariableController : MonoBehaviour
       
         /// Shows the Simulation Display GUI when the simulation starts
         m_simulationDisplayGUI.SetActive(true);
-
-        m_startSimulationEvent.Raise();
     }
 
     /// <summary>
@@ -233,8 +220,5 @@ public class VariableController : MonoBehaviour
 
         /// Hides the Simulation Display GUI when the simulation stops.
         m_simulationDisplayGUI.SetActive(false);
-
-        m_stopSimulationEvent.Raise();
-
     }
 }
