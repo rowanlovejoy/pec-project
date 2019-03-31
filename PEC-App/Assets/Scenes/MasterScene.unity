@@ -493,6 +493,8 @@ MonoBehaviour:
     type: 2}
   m_mouldProductionOffEvent: {fileID: 11400000, guid: d8bd56cd05dcbee47b76a33e4a349022,
     type: 2}
+  m_endScreenCloseEvent: {fileID: 11400000, guid: 1c6904e2455872d40a013661c1a6c483,
+    type: 2}
 --- !u!4 &273170137
 Transform:
   m_ObjectHideFlags: 0

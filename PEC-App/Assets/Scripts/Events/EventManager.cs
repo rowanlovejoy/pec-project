@@ -61,11 +61,17 @@ public class EventManager : MonoBehaviour
     private GameEvent m_mouldProductionOnEvent = null;
 
     /// <summary>
-    /// Reference to the MouldProductionOn event
+    /// Reference to the MouldProductionOff event
     /// </summary>
     [SerializeField]
     private GameEvent m_mouldProductionOffEvent = null;
-    
+
+    /// <summary>
+    /// Reference to the EndScreenClose event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_endScreenCloseEvent = null;
+
     /// <summary>
     /// Method called before Start function
     /// </summary>
@@ -245,4 +251,21 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The mould production off event has not been assigned.");
         }
     }
+
+    /// <summary>
+    /// Raises the EndScreenClose event.
+    /// </summary>
+    public void RaiseEndScreenCloseEvent()
+    {
+        /// error handling
+        if (m_endScreenCloseEvent != null)
+        {
+            m_endScreenCloseEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The end screen close event has not been assigned.");
+        }
+    }
+    
 }
