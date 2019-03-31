@@ -52,7 +52,7 @@ namespace Master
         /// <summary>
         /// The percentage of total possible litres of water in wall based on temperature.
         /// </summary>
-        private float m_wallSaturation;
+        private float m_wallSaturation = 10f;
 
         /// <summary>
         /// Instance of the air saturation table.
@@ -157,6 +157,16 @@ namespace Master
             {
                 return m_moistureRemoval[MoistureRemovalSelection];
             }
+        }
+
+        /// <summary>
+        /// Resets simulation variables to default values
+        /// </summary>
+        public void Reset()
+        {
+            m_moistureInAir = 1f;
+            m_airSaturation = 50;
+            m_wallSaturation = 10f;
         }
     }
 }
