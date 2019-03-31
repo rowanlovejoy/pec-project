@@ -181,7 +181,5 @@ namespace Master
                 return m_moistureRemoval[MoistureRemovalSelection];
             }
         }
-
-
     }
 }

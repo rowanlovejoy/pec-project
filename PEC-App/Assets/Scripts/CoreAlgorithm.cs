@@ -19,6 +19,8 @@ namespace Master
         /// </summary>
         public MoistureModel MoistureModel { get; private set; } = null;
 
+        private IAdjustable[] models;
+
         /// <summary>
         /// The actual length of time in seconds the simulation runs.
         /// </summary>
@@ -45,6 +47,8 @@ namespace Master
             TemperatureModel = new TemperatureModel();
 
             MoistureModel = new MoistureModel(TemperatureModel);
+
+            models = new IAdjustable[2] { TemperatureModel, MoistureModel };
 
             m_tickLength = m_simulationLength / 48;
         }
@@ -87,9 +91,10 @@ namespace Master
             {
                 Debug.Log("TICK: " + m_currentTick);
 
-                TemperatureModel.AdjustHeating(m_currentTick);
-
-                MoistureModel.AdjustMoisture(m_currentTick);
+                foreach (IAdjustable model in models)
+                {
+                    model.AdjustVariables(m_currentTick);
+                }
 
                 /// Wait time period for animations
                 yield return new WaitForSeconds(_tickLength); 
@@ -131,8 +136,11 @@ namespace Master
         private void ResetValues()
         {
             m_currentTick = 0;
-            TemperatureModel.Reset();
-            MoistureModel.Reset();
+
+            foreach (IAdjustable model in models)
+            {
+                model.ResetVariables();
+            }
         }
     }
 }
