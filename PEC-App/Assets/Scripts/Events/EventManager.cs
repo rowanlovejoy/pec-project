@@ -7,6 +7,12 @@ public class EventManager : MonoBehaviour
     public static EventManager instance = null;
 
     /// <summary>
+    /// Reference to the startSimulation event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_startSimulationEvent = null;
+
+    /// <summary>
     /// Method called before Start function
     /// </summary>
     void Awake()
@@ -23,5 +29,20 @@ public class EventManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    /// <summary>
+    /// Raises the StartSimulation event.
+    /// </summary>
+    public void RaiseStartSimulationEvent()
+    {
+        if (m_startSimulationEvent != null)
+        {
+            m_startSimulationEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The start simulation event has not been assigned.");
+        }
     }
 }
