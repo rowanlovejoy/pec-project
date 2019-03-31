@@ -110,10 +110,18 @@ namespace Master
             }
 
             /// Get saturation value using temperature and air moisture.
-            m_airSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir)); 
+            m_airSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir));
 
-            /// Get impact using air saturation and add it to wall saturation.
-            m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]; 
+            /// Limit minimum wall saturation
+            if ((m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]) < 0)
+            {
+                m_wallSaturation = 0f;
+            }
+            else
+            {
+                /// Get impact using air saturation and add it to wall saturation.
+                m_wallSaturation += m_wallSaturationDictionary[m_airSaturation];
+            }
 
             /// Debug messages.
             Debug.Log("MoistureProductionSelection: " + MoistureProductionSelection + " MoistureRemovalSelection: " + MoistureRemovalSelection);
