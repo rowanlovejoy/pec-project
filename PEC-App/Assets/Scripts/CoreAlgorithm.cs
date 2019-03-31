@@ -50,7 +50,7 @@ public class CoreAlgorithm : MonoBehaviour
 
         MoistureModel = new MoistureModel(TemperatureModel);
 
-        models = new IAdjustable[2] { TemperatureModel, MoistureModel };
+        m_models = new IAdjustable[2] { TemperatureModel, MoistureModel };
 
         m_tickLength = m_simulationLength / 48;
     }
@@ -93,7 +93,7 @@ public class CoreAlgorithm : MonoBehaviour
         {
             Debug.Log("TICK: " + m_currentTick);
 
-            foreach (IAdjustable model in models)
+            foreach (IAdjustable model in m_models)
             {
                 model.AdjustVariables(m_currentTick);
             }
@@ -139,7 +139,7 @@ public class CoreAlgorithm : MonoBehaviour
     {
         m_currentTick = 0;
 
-        foreach (IAdjustable model in models)
+        foreach (IAdjustable model in m_models)
         {
             model.ResetVariables();
         }
