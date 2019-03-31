@@ -497,6 +497,8 @@ MonoBehaviour:
     type: 2}
   m_statScreenOpenEvent: {fileID: 11400000, guid: fdc57a76cb272654c886b5cd066e9883,
     type: 2}
+  m_statScreenCloseEvent: {fileID: 11400000, guid: 857f86f038b2ddd42a43073d3c240c40,
+    type: 2}
 --- !u!4 &273170137
 Transform:
   m_ObjectHideFlags: 0

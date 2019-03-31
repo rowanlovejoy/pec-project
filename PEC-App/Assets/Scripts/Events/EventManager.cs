@@ -79,6 +79,12 @@ public class EventManager : MonoBehaviour
     private GameEvent m_statScreenOpenEvent = null;
 
     /// <summary>
+    /// Reference to the StatScreenClose event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_statScreenCloseEvent = null;
+
+    /// <summary>
     /// Method called before Start function
     /// </summary>
     void Awake()
@@ -287,6 +293,22 @@ public class EventManager : MonoBehaviour
         else
         {
             Debug.LogError("The stat screen open event has not been assigned.");
+        }
+    }
+
+    /// <summary>
+    /// Raises the StatScreenClose event.
+    /// </summary>
+    public void RaiseStatScreenCloseEvent()
+    {
+        /// error handling
+        if (m_statScreenCloseEvent != null)
+        {
+            m_statScreenCloseEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The stat screen close event has not been assigned.");
         }
     }
 }
