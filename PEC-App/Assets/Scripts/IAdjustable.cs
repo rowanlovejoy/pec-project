@@ -8,4 +8,8 @@ interface IAdjustable
     /// </summary>
     void AdjustVariables(int currentTick);
 
+    /// <summary>
+    /// Resets simulation variables to default values
+    /// </summary>
+    void ResetVariables();
 }
