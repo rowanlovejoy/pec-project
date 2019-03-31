@@ -117,6 +117,7 @@ namespace Master
             {
                 m_wallSaturation = 0f;
             }
+            /// Limit maxiumum wall saturation
             else if ((m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]) > 100)
             {
                 m_wallSaturation = 100f;

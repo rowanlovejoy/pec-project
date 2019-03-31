@@ -107,6 +107,8 @@ namespace Master
         {
             m_simulationInProgress = false;
 
+            ResetValues();
+
             Debug.Log("The simulation has ended.");
         }
 
@@ -118,6 +120,7 @@ namespace Master
             m_simulationInProgress = false;
 
             StopAllCoroutines();
+            ResetValues();
 
             Debug.Log("The simulation has been stopped prematurely.");
         }
@@ -127,6 +130,7 @@ namespace Master
         /// </summary>
         private void ResetValues()
         {
+            m_currentTick = 0;
             TemperatureModel.Reset();
             MoistureModel.Reset();
         }
