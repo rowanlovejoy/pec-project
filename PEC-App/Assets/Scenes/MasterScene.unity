@@ -487,6 +487,8 @@ MonoBehaviour:
     type: 2}
   m_moistureProductionOffEvent: {fileID: 11400000, guid: ede7084bb46defa499504330bbcd9230,
     type: 2}
+  m_mouldProductionOnEvent: {fileID: 11400000, guid: 8bbbe441e94f8cb4484ddb08990c0cc1,
+    type: 2}
 --- !u!4 &273170137
 Transform:
   m_ObjectHideFlags: 0
