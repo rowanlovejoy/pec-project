@@ -117,6 +117,10 @@ namespace Master
             {
                 m_wallSaturation = 0f;
             }
+            else if ((m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]) > 100)
+            {
+                m_wallSaturation = 100f;
+            }
             else
             {
                 /// Get impact using air saturation and add it to wall saturation.
