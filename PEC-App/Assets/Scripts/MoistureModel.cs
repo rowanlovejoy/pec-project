@@ -113,12 +113,12 @@ namespace Master
             m_airSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir));
 
             /// Limit minimum wall saturation
-            if ((m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]) < 0)
+            if ((m_wallSaturation + m_wallSaturationDictionary[m_airSaturation]) < 0)
             {
                 m_wallSaturation = 0f;
             }
             /// Limit maxiumum wall saturation
-            else if ((m_wallSaturation += m_wallSaturationDictionary[m_airSaturation]) > 100)
+            else if ((m_wallSaturation + m_wallSaturationDictionary[m_airSaturation]) > 100)
             {
                 m_wallSaturation = 100f;
             }
