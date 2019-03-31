@@ -6,6 +6,7 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance = null;
 
+    [Header("Simulation Events")]
     /// <summary>
     /// Reference to the StartSimulation event
     /// </summary>
@@ -30,6 +31,7 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_pauseSimulationEvent = null;
 
+    [Header("Heating Events")]
     /// <summary>
     /// Reference to the HeatingOn event
     /// </summary>
@@ -42,6 +44,7 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_heatingOffEvent = null;
 
+    [Header("Moisture Production Events")]
     /// <summary>
     /// Reference to the MoistureProductionOn event
     /// </summary>
@@ -54,6 +57,7 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_moistureProductionOffEvent = null;
 
+    [Header("Mould Production Events")]
     /// <summary>
     /// Reference to the MouldProductionOn event
     /// </summary>
@@ -66,6 +70,7 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_mouldProductionOffEvent = null;
 
+    [Header("GUI Events")]
     /// <summary>
     /// Reference to the EndScreenClose event
     /// </summary>
@@ -84,6 +89,7 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_statScreenCloseEvent = null;
 
+    [Header("Low Temperature Events")]
     /// <summary>
     /// Reference to the LowTemperatureOn event
     /// </summary>
@@ -96,6 +102,18 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_lowTemperatureOffEvent = null;
 
+    [Header("High Mould Events")]
+    /// <summary>
+    /// Reference to the HighMouldOn event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_highMouldOnEvent = null;
+
+    /// <summary>
+    /// Reference to the HighMouldOff event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_highMouldOffEvent = null;
 
     /// <summary>
     /// Method called before Start function
@@ -116,6 +134,7 @@ public class EventManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    #region SIMULATION EVENTS
     /// <summary>
     /// Raises the StartSimulation event.
     /// </summary>
@@ -179,7 +198,8 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The pause simulation event has not been assigned.");
         }
     }
-    
+    #endregion
+
 
     /// <summary>
     /// Raises the HeatingOn event.
@@ -357,6 +377,35 @@ public class EventManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Raises the HighMouldOn event.
+    /// </summary>
+    public void RaiseHighMouldOnEvent()
+    {
+        /// error handling
+        if (m_highMouldOnEvent != null)
+        {
+            m_highMouldOnEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The high mould on event has not been assigned.");
+        }
+    }
 
-
+    /// <summary>
+    /// Raises the HighMouldOff event.
+    /// </summary>
+    public void RaiseHighMouldOffEvent()
+    {
+        /// error handling
+        if (m_highMouldOffEvent != null)
+        {
+            m_highMouldOffEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The high mould off event has not been assigned.");
+        }
+    }
 }
