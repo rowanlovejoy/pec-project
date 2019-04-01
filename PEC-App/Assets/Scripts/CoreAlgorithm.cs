@@ -127,6 +127,8 @@ public class CoreAlgorithm : MonoBehaviour
     {
         m_simulationInProgress = false;
 
+        m_eventManager.RaiseEndSimulationEvent();
+
         ResetValues();
 
         Debug.Log("The simulation has ended.");
