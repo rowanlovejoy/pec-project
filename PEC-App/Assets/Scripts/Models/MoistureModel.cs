@@ -83,6 +83,7 @@ public class MoistureModel : IAdjustable
     public MoistureModel(TemperatureModel _tempModel)
     {
         m_temperatureModel = _tempModel;
+
         /// caching 
         m_eventManager = EventManager.instance;
     }
@@ -112,9 +113,9 @@ public class MoistureModel : IAdjustable
         {
             m_moistureInAir = 5f;
         }
-        else if (m_moistureInAir < 0)
+        else if (m_moistureInAir < 1)
         {
-            m_moistureInAir = 0f;
+            m_moistureInAir = 1f;
         }
 
         /// Get saturation value using temperature and air moisture.
