@@ -489,6 +489,10 @@ MonoBehaviour:
     type: 2}
   m_moistureProductionOffEvent: {fileID: 11400000, guid: ede7084bb46defa499504330bbcd9230,
     type: 2}
+  m_condensationOnEvent: {fileID: 11400000, guid: f0b0c3115391b184ebfb5db17cab0790,
+    type: 2}
+  m_condensationOffEvent: {fileID: 11400000, guid: a0e28cf26b402a246968c7b47937af60,
+    type: 2}
   m_mouldProductionOnEvent: {fileID: 11400000, guid: 8bbbe441e94f8cb4484ddb08990c0cc1,
     type: 2}
   m_mouldProductionOffEvent: {fileID: 11400000, guid: d8bd56cd05dcbee47b76a33e4a349022,
@@ -4760,7 +4764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.6236404}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.0562744, y: 0.12820435}
+  m_AnchoredPosition: {x: -1.0562897, y: 0.12820435}
   m_SizeDelta: {x: -2.1115723, y: 0.059448242}
   m_Pivot: {x: 0.5, y: 0.5000001}
 --- !u!114 &1970844176

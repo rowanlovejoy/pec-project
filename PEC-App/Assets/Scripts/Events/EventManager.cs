@@ -58,6 +58,19 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_moistureProductionOffEvent = null;
 
+    [Header("Condensation Events")]
+    /// <summary>
+    /// Reference to the CondensationOn event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_condensationOnEvent = null;
+
+    /// <summary>
+    /// Reference to the CondensationOff event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_condensationOffEvent = null;
+
     [Header("Mould Production Events")]
     /// <summary>
     /// Reference to the MouldProductionOn event
@@ -266,6 +279,40 @@ public class EventManager : MonoBehaviour
         else
         {
             Debug.LogError("The moisture production off event has not been assigned.");
+        }
+    }
+    #endregion
+
+    #region CONDENSATION EVENTS
+    /// <summary>
+    /// Raises the CondensationOn event.
+    /// </summary>
+    public void RaiseCondensationOnEvent()
+    {
+        /// error handling
+        if (m_condensationOnEvent != null)
+        {
+            m_condensationOnEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The condensation on event has not been assigned.");
+        }
+    }
+
+    /// <summary>
+    /// Raises the CondensationOff event.
+    /// </summary>
+    public void RaiseCondensationOffEvent()
+    {
+        /// error handling
+        if (m_condensationOffEvent != null)
+        {
+            m_condensationOffEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The condensation off event has not been assigned.");
         }
     }
     #endregion
