@@ -121,6 +121,15 @@ public class MoistureModel : IAdjustable
         /// Get saturation value using temperature and air moisture.
         m_airSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir));
 
+        if (m_airSaturation >= 70)
+        {
+            m_eventManager.RaiseCondensationOnEvent();
+        }
+        else
+        {
+            m_eventManager.RaiseCondensationOffEvent();
+        }
+
         /// Limit minimum wall saturation
         if ((m_wallSaturation + m_wallSaturationDictionary[m_airSaturation]) < 0)
         {
