@@ -46,9 +46,30 @@ public class EffectManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Hides all possible effects
+    /// </summary>
     public void HideAllEffects()
     {
+        for (int i = 0; i < m_moistureEffects.Length; i++)
+        {
+            m_moistureEffects[i].SetActive(false);
+        }
 
+        for (int i = 0; i < m_condensationEffects.Length; i++)
+        {
+            m_condensationEffects[i].SetActive(false);
+        }
+
+        for (int i = 0; i < m_heatEffects.Length; i++)
+        {
+            m_heatEffects[i].SetActive(false);
+        }
+
+        for (int i = 0; i < m_mouldEffects.Length; i++)
+        {
+            m_mouldEffects[i].SetActive(false);
+        }
     }
 
 }
