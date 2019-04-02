@@ -44,26 +44,15 @@ public class CoreAlgorithm : MonoBehaviour
     /// </summary>
     private bool m_simulationInProgress = false;
 
-    /// <summary>
-    /// Cache of EventManager singleton instance
-    /// </summary>
-    private EventManager m_eventManager;
-
     private void Awake()
     {
         TemperatureModel = new TemperatureModel();
 
         MoistureModel = new MoistureModel(TemperatureModel);
 
-        m_models = new IAdjustable[2] { TemperatureModel, MoistureModel };
+        models = new IAdjustable[2] { TemperatureModel, MoistureModel };
 
         m_tickLength = m_simulationLength / 48;
-    }
-
-    private void Start()
-    {
-        /// caching 
-        m_eventManager = EventManager.Instance;
     }
 
     void Update()
@@ -86,8 +75,6 @@ public class CoreAlgorithm : MonoBehaviour
 
             m_simulationInProgress = true;
 
-            m_eventManager.RaiseStartSimulationEvent();
-
             StartCoroutine(Tick(m_tickLength)); 
         }
         else
@@ -106,7 +93,7 @@ public class CoreAlgorithm : MonoBehaviour
         {
             Debug.Log("TICK: " + m_currentTick);
 
-            foreach (IAdjustable model in m_models)
+            foreach (IAdjustable model in models)
             {
                 model.AdjustVariables(m_currentTick);
             }
@@ -127,8 +114,6 @@ public class CoreAlgorithm : MonoBehaviour
     {
         m_simulationInProgress = false;
 
-        m_eventManager.RaiseEndSimulationEvent();
-
         ResetValues();
 
         Debug.Log("The simulation has ended.");
@@ -140,8 +125,6 @@ public class CoreAlgorithm : MonoBehaviour
     public void StopSimulation()
     {
         m_simulationInProgress = false;
-
-        m_eventManager.RaiseStopSimulationEvent();
 
         StopAllCoroutines();
         ResetValues();
@@ -156,7 +139,7 @@ public class CoreAlgorithm : MonoBehaviour
     {
         m_currentTick = 0;
 
-        foreach (IAdjustable model in m_models)
+        foreach (IAdjustable model in models)
         {
             model.ResetVariables();
         }
