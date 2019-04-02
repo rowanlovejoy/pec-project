@@ -47,6 +47,17 @@ public class EffectManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Hides all moisture production effects
+    /// </summary>
+    public void HideMoistureProductionEffects()
+    {
+        for (int i = 0; i < m_moistureEffects.Length; i++)
+        {
+            m_moistureEffects[i].SetActive(false);
+        }
+    }
+
+    /// <summary>
     /// Enables all condensation effects
     /// </summary>
     public void ShowCondensationEffects()
@@ -54,6 +65,17 @@ public class EffectManager : MonoBehaviour
         for (int i = 0; i < m_condensationEffects.Length; i++)
         {
             m_condensationEffects[i].SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Hides all condensation effects
+    /// </summary>
+    public void HideCondensationEffects()
+    {
+        for (int i = 0; i < m_condensationEffects.Length; i++)
+        {
+            m_condensationEffects[i].SetActive(false);
         }
     }
 
