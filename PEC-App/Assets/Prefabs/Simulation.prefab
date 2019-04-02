@@ -974,7 +974,6 @@ Transform:
   - {fileID: 7924442183558128871}
   - {fileID: 7924442184071710688}
   - {fileID: 7924442183911896078}
-  - {fileID: 7924442184164658473}
   m_Father: {fileID: 7924442183205052152}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3112,11 +3111,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7924442184164658478}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.82, y: 5.46, z: 0}
+  m_LocalPosition: {x: 11, y: 5.5, z: 0}
   m_LocalScale: {x: 0.318, y: 0.318, z: 0.318}
   m_Children: []
-  m_Father: {fileID: 7924442183216820575}
-  m_RootOrder: 3
+  m_Father: {fileID: 4175261492177800825}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7924442184164658472
 SpriteRenderer:
@@ -3977,6 +3976,7 @@ Transform:
   m_Children:
   - {fileID: 7924442184452359299}
   - {fileID: 7924442182774774666}
+  - {fileID: 7924442184164658473}
   m_Father: {fileID: 7924442183205052152}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4045,7 +4045,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3191570183378615105}
-        m_MethodName: ResetTrigger
+        m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
