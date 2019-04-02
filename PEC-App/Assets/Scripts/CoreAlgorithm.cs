@@ -63,7 +63,7 @@ public class CoreAlgorithm : MonoBehaviour
     private void Start()
     {
         /// caching 
-        m_eventManager = EventManager.m_instance;
+        m_eventManager = EventManager.Instance;
     }
 
     void Update()

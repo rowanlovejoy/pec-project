@@ -85,7 +85,7 @@ public class MoistureModel : IAdjustable
         m_temperatureModel = _tempModel;
 
         /// caching 
-        m_eventManager = EventManager.m_instance;
+        m_eventManager = EventManager.Instance;
     }
 
     /// <summary>

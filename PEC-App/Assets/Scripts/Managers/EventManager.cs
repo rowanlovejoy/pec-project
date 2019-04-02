@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
-    public static EventManager m_instance = null;
+    /// <summary>
+    /// Instance of the EventManager singleton.
+    /// </summary>
+    public static EventManager Instance { get; private set; } = null;
 
     #region EVENT VARIABLES
     [Header("Simulation Events")]
@@ -136,12 +139,12 @@ public class EventManager : MonoBehaviour
     void Awake()
     {
         /// if instance does not already exist
-        if (m_instance == null)
+        if (Instance == null)
         {
-            m_instance = this;
+            Instance = this;
         }
         /// else if another instance already exists that is not this gameobject
-        else if (m_instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
