@@ -79,6 +79,27 @@ public class EffectManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enables all heat effects
+    /// </summary>
+    public void ShowHeatEffects()
+    {
+        for (int i = 0; i < m_heatEffects.Length; i++)
+        {
+            m_heatEffects[i].SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Disables all heat effects
+    /// </summary>
+    public void HideHeatEffects()
+    {
+        for (int i = 0; i < m_heatEffects.Length; i++)
+        {
+            m_heatEffects[i].SetActive(false);
+        }
+    }
 
     /// <summary>
     /// Enables all Mould effects
@@ -90,6 +111,7 @@ public class EffectManager : MonoBehaviour
             m_mouldEffects[i].SetActive(true);
         }
     }
+
     /// <summary>
     /// Disables all condensation effects
     /// </summary>
