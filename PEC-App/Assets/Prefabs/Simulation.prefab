@@ -758,6 +758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7924442183205052152}
+  - component: {fileID: 324248835194720550}
   m_Layer: 0
   m_Name: Simulation
   m_TagString: Untagged
@@ -787,6 +788,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324248835194720550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924442183205052153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dbfd871bc2b8e446971cd08f6f7a594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_moistureSpriteGroups:
+  - {fileID: 7924442184154659161}
+  - {fileID: 7924442184391084049}
+  - {fileID: 7924442183206802244}
+  m_ventilationSpriteGroups:
+  - {fileID: 7924442184004808271}
+  - {fileID: 7924442184049410740}
+  - {fileID: 7924442184370552881}
 --- !u!1 &7924442183206802244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3997,12 +4018,12 @@ PrefabInstance:
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.506
+      value: 1.5060002
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.942
+      value: -2.9419997
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
@@ -4057,12 +4078,12 @@ PrefabInstance:
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.102772534
+      value: 0.102772646
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.102772534
+      value: 0.102772646
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
@@ -4472,17 +4493,17 @@ PrefabInstance:
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.03458194
+      value: 0.034581944
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.05219927
+      value: 0.052199326
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.09291468
+      value: 0.092914745
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
