@@ -41,6 +41,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Outside
+    uniqueID: 1865884015
+    locked: 0
+  - name: Background Walls
+    uniqueID: 1764189327
+    locked: 0
+  - name: Background Objects
+    uniqueID: 1353065003
+    locked: 0
+  - name: Environmental Effects
+    uniqueID: 2729839599
+    locked: 0
   - name: Occupant
     uniqueID: 371276627
+    locked: 0
+  - name: Foreground Objects
+    uniqueID: 2488729029
+    locked: 0
+  - name: Foreground Walls
+    uniqueID: 2856270753
     locked: 0
