@@ -7,7 +7,7 @@ using UnityEditor;
 /// Creates a custom menu button "Raise"
 /// </summary>
 [CustomEditor(typeof(GameEvent))]
-public class EventManager : Editor
+public class GameEventEditor : Editor
 {
     /// <summary>
     /// overrides the default OnInspectorGUI to enable the "Raise" button when the scene is in play mode
