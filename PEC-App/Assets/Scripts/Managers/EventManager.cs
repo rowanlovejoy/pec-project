@@ -131,6 +131,18 @@ public class EventManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameEvent m_highMouldOffEvent = null;
+
+    /// <summary>
+    /// Reference to the DayStart event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_dayStartEvent = null;
+
+    /// <summary>
+    /// Reference to the DayEnd event
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_dayEndEvent = null;
     #endregion
 
     /// <summary>
@@ -468,6 +480,40 @@ public class EventManager : MonoBehaviour
         else
         {
             Debug.LogError("The high mould off event has not been assigned.");
+        }
+    }
+    #endregion
+
+    #region DAY EVENTS
+    /// <summary>
+    /// Raises the DayStart event.
+    /// </summary>
+    public void RaiseDayStartEvent()
+    {
+        /// error handling
+        if (m_dayStartEvent != null)
+        {
+            m_dayStartEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The day start event has not been assigned.");
+        }
+    }
+
+    /// <summary>
+    /// Raises the DayEnd event.
+    /// </summary>
+    public void RaiseDayEndEvent()
+    {
+        /// error handling
+        if (m_dayEndEvent != null)
+        {
+            m_dayEndEvent.Raise();
+        }
+        else
+        {
+            Debug.LogError("The day end event has not been assigned.");
         }
     }
     #endregion
