@@ -72,12 +72,20 @@ public class MoistureModel : IAdjustable
     };
 
     /// <summary>
+    /// Cache of EventManager singleton instance
+    /// </summary>
+    private EventManager m_eventManager;
+
+    /// <summary>
     /// Constructor for MoistureModel. Initialises the TemperatureModel reference.
     /// </summary>
     /// <param name="_tempModel"></param>
     public MoistureModel(TemperatureModel _tempModel)
     {
         m_temperatureModel = _tempModel;
+
+        /// caching 
+        m_eventManager = EventManager.Instance;
     }
 
     /// <summary>
@@ -91,11 +99,13 @@ public class MoistureModel : IAdjustable
         {
             /// Increase moisture.
             m_moistureInAir += m_moistureProduction[MoistureProductionSelection];
+            m_eventManager.RaiseMoistureProductionOnEvent();
         }
         else
         {
             /// Decrease moisture.
             m_moistureInAir -= m_moistureRemoval[MoistureRemovalSelection];
+            m_eventManager.RaiseMoistureProductionOffEvent();
         }
 
         /// Limit max and min moisture in air.
@@ -110,6 +120,15 @@ public class MoistureModel : IAdjustable
 
         /// Get saturation value using temperature and air moisture.
         m_airSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir));
+
+        if (m_airSaturation >= 70)
+        {
+            m_eventManager.RaiseCondensationOnEvent();
+        }
+        else
+        {
+            m_eventManager.RaiseCondensationOffEvent();
+        }
 
         /// Limit minimum wall saturation
         if ((m_wallSaturation + m_wallSaturationDictionary[m_airSaturation]) < 0)
