@@ -5,13 +5,7 @@ using UnityEngine;
 public class EffectManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject m_kettleSteam = null;
-
-    [SerializeField]
-    private GameObject m_potSteam = null;
-
-    [SerializeField]
-    private GameObject m_bathSteam = null;
+    private GameObject[] m_moistureEffects = null;
 
     [SerializeField]
     private GameObject[] m_condensationEffects = null;
@@ -25,5 +19,36 @@ public class EffectManager : MonoBehaviour
     [SerializeField]
     private CoreAlgorithm m_coreAlgorithm = null;
 
-   
+    void Start()
+    {
+        /// initialize setting to minimum
+        HideAllEffects();
+    }
+
+    /// <summary>
+    /// Enables moisture production effects based on the selection made by the user.
+    /// </summary>
+    public void EnableMoistureProductionEffects()
+    {
+        for (int i = 0; i < m_moistureEffects.Length; i++)
+        {
+            /// if group has been seleced
+            if (i == m_coreAlgorithm.MoistureModel.MoistureProductionSelection)
+            {
+                /// enable (show) effects
+                m_moistureEffects[i].SetActive(true);
+            }
+            else
+            {
+                /// disable (hide) effects
+                m_moistureEffects[i].SetActive(false);
+            }
+        }
+    }
+
+    public void HideAllEffects()
+    {
+
+    }
+
 }
