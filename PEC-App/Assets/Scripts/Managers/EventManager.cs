@@ -132,6 +132,7 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_highMouldOffEvent = null;
 
+    [Header("Day Events")]
     /// <summary>
     /// Reference to the DayStart event
     /// </summary>
