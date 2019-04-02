@@ -47,7 +47,7 @@ public class EffectManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Hides all moisture production effects
+    /// Disables all moisture production effects
     /// </summary>
     public void HideMoistureProductionEffects()
     {
@@ -69,7 +69,7 @@ public class EffectManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Hides all condensation effects
+    /// Disables all condensation effects
     /// </summary>
     public void HideCondensationEffects()
     {
@@ -79,8 +79,30 @@ public class EffectManager : MonoBehaviour
         }
     }
 
+
     /// <summary>
-    /// Hides all possible effects
+    /// Enables all Mould effects
+    /// </summary>
+    public void ShowMouldEffects()
+    {
+        for (int i = 0; i < m_mouldEffects.Length; i++)
+        {
+            m_mouldEffects[i].SetActive(true);
+        }
+    }
+    /// <summary>
+    /// Disables all condensation effects
+    /// </summary>
+    public void HideMouldEffects()
+    {
+        for (int i = 0; i < m_mouldEffects.Length; i++)
+        {
+            m_mouldEffects[i].SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Disables all possible effects
     /// </summary>
     public void HideAllEffects()
     {
