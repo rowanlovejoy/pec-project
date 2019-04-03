@@ -5,6 +5,12 @@ using UnityEngine;
 public class EndRatingsCalculator : MonoBehaviour
 {
     /// <summary>
+    /// Reference to core algorithm. Used to access models to obtain final values used in ratings calculation.
+    /// </summary>
+    [SerializeField]
+    private CoreAlgorithm coreAlgorithm = null;
+
+    /// <summary>
     /// The ideal wall saturation value. Used to determine final wall saturation rating.
     /// </summary>
     [SerializeField]
