@@ -22,35 +22,6 @@ public class SpriteManager : MonoBehaviour
         ResetSprites(); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) // FOR TESTING PURPOSES, DELETE LATER
-        {
-            UpdateVentilationSprites(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) // FOR TESTING PURPOSES, DELETE LATER
-        {
-            UpdateVentilationSprites(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))// FOR TESTING PURPOSES, DELETE LATER
-        {
-            UpdateVentilationSprites(2);
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))// FOR TESTING PURPOSES, DELETE LATER
-        {
-            UpdateMoistureProductionSprites(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.W))// FOR TESTING PURPOSES, DELETE LATER
-        {
-            UpdateMoistureProductionSprites(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.E))// FOR TESTING PURPOSES, DELETE LATER
-        {
-            UpdateMoistureProductionSprites(2);
-        }
-    }
-
     /// <summary>
     /// Enables a group of sprites related to ventilation and hides any that aren't selected
     /// </summary>

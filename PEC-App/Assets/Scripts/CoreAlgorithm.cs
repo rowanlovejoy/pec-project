@@ -106,6 +106,15 @@ public class CoreAlgorithm : MonoBehaviour
         {
             Debug.Log("TICK: " + m_currentTick);
 
+            if (m_currentTick == 10)
+            {
+                m_eventManager.RaiseDayStartEvent();
+            }
+            else if (m_currentTick == 38)
+            {
+                m_eventManager.RaiseDayEndEvent();
+            }
+
             foreach (IAdjustable model in m_models)
             {
                 model.AdjustVariables(m_currentTick);

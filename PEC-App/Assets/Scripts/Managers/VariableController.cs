@@ -41,6 +41,12 @@ public class VariableController : MonoBehaviour
     [SerializeField]
     private Slider[] m_sliders = null;
 
+    /// <summary>
+    /// Reference to the SpriteManager
+    /// </summary>
+    [SerializeField]
+    private SpriteManager m_spriteManager = null;
+
     private void Start()
     {
         InitialiseSliderValueDisplays();
@@ -164,6 +170,8 @@ public class VariableController : MonoBehaviour
 
         m_sliderValueDisplays[2].text = _valueDisplayed;
 
+        m_spriteManager.UpdateMoistureProductionSprites((int)_value);
+
         m_coreAlgorithm.MoistureModel.MoistureProductionSelection = (int)_value;
     }
 
@@ -194,6 +202,8 @@ public class VariableController : MonoBehaviour
         }
 
         m_sliderValueDisplays[3].text = _valueDisplayed;
+
+        m_spriteManager.UpdateVentilationSprites((int)_value);
 
         m_coreAlgorithm.MoistureModel.MoistureRemovalSelection = (int)_value;
     }
