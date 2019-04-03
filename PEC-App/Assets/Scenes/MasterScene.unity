@@ -112,9 +112,9 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &9838930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1170346279664054008, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!198 &9838933 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1170346279664053990, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
@@ -2118,21 +2118,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad63f311768c88b4cbeeba0f9aad8819, type: 3}
---- !u!1 &717724279 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7588991849297937346, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!4 &717724282 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8018795680057877778, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &717724280 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5326129932994881669, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!4 &717724283 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7919043992390033291, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &717724281 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8137235280665561058, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!4 &717724284 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5289891007165922840, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
@@ -2172,9 +2172,9 @@ RectTransform:
   m_AnchoredPosition: {x: -5.0000076, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &782020422 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5343893611507057670, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!198 &782020425 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5343893611507057668, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
@@ -3581,15 +3581,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369090821}
   m_CullTransparentMesh: 0
---- !u!1 &1453804112 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4191113717767824889, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!198 &1453804115 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4191113717767824871, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1454398515 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4191113718700453659, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!198 &1454398518 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4191113718700453637, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
@@ -4088,9 +4088,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637784720}
   m_CullTransparentMesh: 0
---- !u!1 &1648316288 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4622599152242498592, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!198 &1648316291 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4622599152242498594, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
@@ -4824,9 +4824,9 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1932214303 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4191113718506783588, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!198 &1932214306 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4191113718506783610, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
@@ -5303,9 +5303,9 @@ RectTransform:
   m_AnchoredPosition: {x: 1.2789307, y: 0.2211914}
   m_SizeDelta: {x: -3.743, y: -2.4422}
   m_Pivot: {x: 0.49999994, y: 0.50000006}
---- !u!1 &2120441001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5282154329663692255, guid: ad63f311768c88b4cbeeba0f9aad8819,
+--- !u!198 &2120441004 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5282154329663692253, guid: ad63f311768c88b4cbeeba0f9aad8819,
     type: 3}
   m_PrefabInstance: {fileID: 717724278}
   m_PrefabAsset: {fileID: 0}
@@ -5456,52 +5456,52 @@ PrefabInstance:
         type: 3}
       propertyPath: m_moistureEffects.Array.data[0]
       value: 
-      objectReference: {fileID: 717724281}
+      objectReference: {fileID: 717724284}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_moistureEffects.Array.data[1]
       value: 
-      objectReference: {fileID: 717724280}
+      objectReference: {fileID: 717724283}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_moistureEffects.Array.data[2]
       value: 
-      objectReference: {fileID: 717724279}
+      objectReference: {fileID: 717724282}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_condensationEffects.Array.data[0]
       value: 
-      objectReference: {fileID: 782020422}
+      objectReference: {fileID: 782020425}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_condensationEffects.Array.data[1]
       value: 
-      objectReference: {fileID: 1648316288}
+      objectReference: {fileID: 1648316291}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_condensationEffects.Array.data[2]
       value: 
-      objectReference: {fileID: 2120441001}
+      objectReference: {fileID: 2120441004}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_heatEffects.Array.data[0]
       value: 
-      objectReference: {fileID: 9838930}
+      objectReference: {fileID: 9838933}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_mouldEffects.Array.data[0]
       value: 
-      objectReference: {fileID: 1454398515}
+      objectReference: {fileID: 1454398518}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_mouldEffects.Array.data[1]
       value: 
-      objectReference: {fileID: 1932214303}
+      objectReference: {fileID: 1932214306}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_mouldEffects.Array.data[2]
       value: 
-      objectReference: {fileID: 1453804112}
+      objectReference: {fileID: 1453804115}
     - target: {fileID: 3059340419234074142, guid: 3bc12d990de59af4bbdbf5bb83664bf9,
         type: 3}
       propertyPath: m_coreAlgorithm

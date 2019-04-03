@@ -4,18 +4,33 @@ using UnityEngine;
 
 public class EffectManager : MonoBehaviour
 {
+    /// <summary>
+    /// Array of Transforms containing group of particle systems as the children of each transform - Transforms represent low, medium, high
+    /// </summary>
     [SerializeField]
-    private GameObject[] m_moistureEffects = null;
+    private Transform[] m_moistureEffects = null;
 
+    /// <summary>
+    /// Array of all condensation effects
+    /// </summary>
     [SerializeField]
-    private GameObject[] m_condensationEffects = null;
+    private ParticleSystem[] m_condensationEffects = null;
 
+    /// <summary>
+    /// Array of all heat effects
+    /// </summary>
     [SerializeField]
-    private GameObject[] m_heatEffects = null;
+    private ParticleSystem[] m_heatEffects = null;
 
+    /// <summary>
+    /// Array of all mould effects
+    /// </summary>
     [SerializeField]
-    private GameObject[] m_mouldEffects = null;
+    private ParticleSystem[] m_mouldEffects = null;
 
+    /// <summary>
+    /// Reference to core algorithm
+    /// </summary>
     [SerializeField]
     private CoreAlgorithm m_coreAlgorithm = null;
 
@@ -32,16 +47,23 @@ public class EffectManager : MonoBehaviour
     {
         for (int i = 0; i < m_moistureEffects.Length; i++)
         {
-            /// if group has been seleced
+            /// if group has been selected
             if (i == m_coreAlgorithm.MoistureModel.MoistureProductionSelection)
             {
-                /// enable (show) effects
-                m_moistureEffects[i].SetActive(true);
+                /// loop through group and start playing each particle system
+                for (int j = 0; j < m_moistureEffects[i].childCount; j++)
+                {
+                    m_moistureEffects[i].GetChild(j).GetComponent<ParticleSystem>().Play();
+                }
             }
+            /// if group has not been selected
             else
             {
-                /// disable (hide) effects
-                m_moistureEffects[i].SetActive(false);
+                /// loop through group and stop emmission of all particle systems
+                for (int j = 0; j < m_moistureEffects[i].childCount; j++)
+                {
+                    m_moistureEffects[i].GetChild(j).GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
+                }
             }
         }
     }
@@ -53,7 +75,10 @@ public class EffectManager : MonoBehaviour
     {
         for (int i = 0; i < m_moistureEffects.Length; i++)
         {
-            m_moistureEffects[i].SetActive(false);
+            for (int j = 0; j < m_moistureEffects[i].childCount; j++)
+            {
+                m_moistureEffects[i].GetChild(j).GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmitting);
+            }
         }
     }
 
@@ -64,7 +89,7 @@ public class EffectManager : MonoBehaviour
     {
         for (int i = 0; i < m_condensationEffects.Length; i++)
         {
-            m_condensationEffects[i].SetActive(true);
+            m_condensationEffects[i].Play();
         }
     }
 
@@ -75,7 +100,7 @@ public class EffectManager : MonoBehaviour
     {
         for (int i = 0; i < m_condensationEffects.Length; i++)
         {
-            m_condensationEffects[i].SetActive(false);
+            m_condensationEffects[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
 
@@ -86,7 +111,7 @@ public class EffectManager : MonoBehaviour
     {
         for (int i = 0; i < m_heatEffects.Length; i++)
         {
-            m_heatEffects[i].SetActive(true);
+            m_heatEffects[i].Play();
         }
     }
 
@@ -97,7 +122,7 @@ public class EffectManager : MonoBehaviour
     {
         for (int i = 0; i < m_heatEffects.Length; i++)
         {
-            m_heatEffects[i].SetActive(false);
+            m_heatEffects[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
 
@@ -108,7 +133,7 @@ public class EffectManager : MonoBehaviour
     {
         for (int i = 0; i < m_mouldEffects.Length; i++)
         {
-            m_mouldEffects[i].SetActive(true);
+            m_mouldEffects[i].Play();
         }
     }
 
@@ -119,7 +144,7 @@ public class EffectManager : MonoBehaviour
     {
         for (int i = 0; i < m_mouldEffects.Length; i++)
         {
-            m_mouldEffects[i].SetActive(false);
+            m_mouldEffects[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
     }
 
@@ -128,25 +153,13 @@ public class EffectManager : MonoBehaviour
     /// </summary>
     public void HideAllEffects()
     {
-        for (int i = 0; i < m_moistureEffects.Length; i++)
-        {
-            m_moistureEffects[i].SetActive(false);
-        }
+        HideMoistureProductionEffects();
 
-        for (int i = 0; i < m_condensationEffects.Length; i++)
-        {
-            m_condensationEffects[i].SetActive(false);
-        }
+        HideHeatEffects();
 
-        for (int i = 0; i < m_heatEffects.Length; i++)
-        {
-            m_heatEffects[i].SetActive(false);
-        }
+        HideMouldEffects();
 
-        for (int i = 0; i < m_mouldEffects.Length; i++)
-        {
-            m_mouldEffects[i].SetActive(false);
-        }
+        HideCondensationEffects();
     }
 
 }
