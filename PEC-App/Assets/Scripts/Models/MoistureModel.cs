@@ -51,7 +51,7 @@ public class MoistureModel : IAdjustable
     /// <summary>
     /// The percentage of total possible litres of water in wall based on temperature.
     /// </summary>
-    private float m_wallSaturation = 10f;
+    public int WallSaturation { get; private set; } = 10;
 
     /// <summary>
     /// Instance of the air saturation table.
@@ -131,19 +131,19 @@ public class MoistureModel : IAdjustable
         }
 
         /// Limit minimum wall saturation
-        if ((m_wallSaturation + m_wallSaturationDictionary[AirSaturation]) < 0)
+        if ((WallSaturation + m_wallSaturationDictionary[AirSaturation]) < 0)
         {
-            m_wallSaturation = 0f;
+            WallSaturation = 0;
         }
         /// Limit maxiumum wall saturation
-        else if ((m_wallSaturation + m_wallSaturationDictionary[AirSaturation]) > 100)
+        else if ((WallSaturation + m_wallSaturationDictionary[AirSaturation]) > 100)
         {
-            m_wallSaturation = 100f;
+            WallSaturation = 100;
         }
         else
         {
             /// Get impact using air saturation and add it to wall saturation.
-            m_wallSaturation += m_wallSaturationDictionary[AirSaturation];
+            WallSaturation += m_wallSaturationDictionary[AirSaturation];
         }
 
         /// Debug messages.
@@ -153,7 +153,7 @@ public class MoistureModel : IAdjustable
 
         Debug.Log("Moisture in air: " + m_moistureInAir +
             "       Air saturation: " + AirSaturation +
-            "       Wall saturation: " + m_wallSaturation);
+            "       Wall saturation: " + WallSaturation);
     }
 
     /// <summary>
@@ -163,7 +163,7 @@ public class MoistureModel : IAdjustable
     {
         m_moistureInAir = 1f;
         AirSaturation = 50;
-        m_wallSaturation = 10f;
+        WallSaturation = 10;
     }
 
     /// <summary>
