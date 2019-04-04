@@ -21,6 +21,6 @@ public class MoneyModel : IAdjustable
 
     public void ResetVariables()
     {
-        throw new System.NotImplementedException();
+        m_moneySpent = 0;
     }
 }
