@@ -60,7 +60,9 @@ public class CoreAlgorithm : MonoBehaviour
 
         MoistureModel = new MoistureModel(TemperatureModel);
 
-        m_models = new IAdjustable[2] { TemperatureModel, MoistureModel };
+        MoneyModel = new MoneyModel();
+
+        m_models = new IAdjustable[3] { TemperatureModel, MoistureModel, MoneyModel };
 
         m_tickLength = m_simulationLength / 48;
     }
