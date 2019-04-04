@@ -46,7 +46,7 @@ public class MoistureModel : IAdjustable
     /// <summary>
     /// The percentage of total possible litres of water in air based on temperature.
     /// </summary>
-    private int m_airSaturation = 50;
+    public int AirSaturation { get; private set; } = 50;
 
     /// <summary>
     /// The percentage of total possible litres of water in wall based on temperature.
@@ -119,9 +119,9 @@ public class MoistureModel : IAdjustable
         }
 
         /// Get saturation value using temperature and air moisture.
-        m_airSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir));
+        AirSaturation = m_airSaturationTable.GetValue(RoundToNearestEven(m_temperatureModel.AirTemperature), Mathf.RoundToInt(m_moistureInAir));
 
-        if (m_airSaturation >= 70)
+        if (AirSaturation >= 70)
         {
             m_eventManager.RaiseCondensationOnEvent();
         }
@@ -131,19 +131,19 @@ public class MoistureModel : IAdjustable
         }
 
         /// Limit minimum wall saturation
-        if ((m_wallSaturation + m_wallSaturationDictionary[m_airSaturation]) < 0)
+        if ((m_wallSaturation + m_wallSaturationDictionary[AirSaturation]) < 0)
         {
             m_wallSaturation = 0f;
         }
         /// Limit maxiumum wall saturation
-        else if ((m_wallSaturation + m_wallSaturationDictionary[m_airSaturation]) > 100)
+        else if ((m_wallSaturation + m_wallSaturationDictionary[AirSaturation]) > 100)
         {
             m_wallSaturation = 100f;
         }
         else
         {
             /// Get impact using air saturation and add it to wall saturation.
-            m_wallSaturation += m_wallSaturationDictionary[m_airSaturation];
+            m_wallSaturation += m_wallSaturationDictionary[AirSaturation];
         }
 
         /// Debug messages.
@@ -152,7 +152,7 @@ public class MoistureModel : IAdjustable
         Debug.Log("moistureProductionLength: " + m_moistureProductionLength[MoistureProductionSelection] + " moistureRemoval: " + m_moistureRemoval[MoistureRemovalSelection]);
 
         Debug.Log("Moisture in air: " + m_moistureInAir +
-            "       Air saturation: " + m_airSaturation +
+            "       Air saturation: " + AirSaturation +
             "       Wall saturation: " + m_wallSaturation);
     }
 
@@ -162,7 +162,7 @@ public class MoistureModel : IAdjustable
     public void ResetVariables()
     {
         m_moistureInAir = 1f;
-        m_airSaturation = 50;
+        AirSaturation = 50;
         m_wallSaturation = 10f;
     }
 
