@@ -42,7 +42,7 @@ public class TemperatureModel : IAdjustable
     /// <summary>
     /// Indicates if the heating is turned on. True if so; false otherwise. Based on whether simulation is in a period of active heating, current air temperature, and themostat setting.
     /// </summary>
-    private bool m_heatingIsOn = false;
+    public bool HeatingIsOn { get; private set; } = false;
 
     /// <summary>
     /// Cache of EventManager singleton instance
@@ -77,7 +77,7 @@ public class TemperatureModel : IAdjustable
         /// If activeHeatingPeriod is true and airTemp is less than thermostatSetting.
         if (m_activeHeatingPeriod && (AirTemperature < m_thermostatSetting[ThermostatSettingSelection]))
         {
-            m_heatingIsOn = true;
+            HeatingIsOn = true;
 
             AirTemperature += 1f;
 
@@ -86,7 +86,7 @@ public class TemperatureModel : IAdjustable
         }
         else
         {
-            m_heatingIsOn = false;
+            HeatingIsOn = false;
             m_eventManager.RaiseHeatingOffEvent();
 
             if (AirTemperature - 0.2f < 14)
@@ -107,7 +107,7 @@ public class TemperatureModel : IAdjustable
         Debug.Log("m_heatingPeriod: " + m_heatingPeriod[HeatingPeriodSelection] + " m_thermostatSetting: " + m_thermostatSetting[ThermostatSettingSelection]);
 
         Debug.Log("Active heating period: " + m_activeHeatingPeriod +
-            "        Heating is on: " + m_heatingIsOn +
+            "        Heating is on: " + HeatingIsOn +
             "        Air temperature: " + AirTemperature);
     }
 
@@ -118,7 +118,7 @@ public class TemperatureModel : IAdjustable
     {
         AirTemperature = 14f;
         m_activeHeatingPeriod = false;
-        m_heatingIsOn = false;
+        HeatingIsOn = false;
     }
 
     /// <summary>
