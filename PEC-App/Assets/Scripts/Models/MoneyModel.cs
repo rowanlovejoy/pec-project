@@ -16,9 +16,16 @@ public class MoneyModel : IAdjustable
 
     public void AdjustVariables(int _currentTick)
     {
-        throw new System.NotImplementedException();
+        /// If heating is currently turned on, increase money spent
+        if (m_temperatureModel.HeatingIsOn)
+        {
+            m_moneySpent += 5;
+        }
     }
 
+    /// <summary>
+    /// Resets simulation variables to default values
+    /// </summary>
     public void ResetVariables()
     {
         m_moneySpent = 0;
