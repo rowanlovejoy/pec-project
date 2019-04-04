@@ -51,7 +51,7 @@ public class MoistureModel : IAdjustable
     /// <summary>
     /// The percentage of total possible litres of water in wall based on temperature.
     /// </summary>
-    private float m_wallSaturation = 10f;
+    public int WallSaturation { get; private set; } = 10;
 
     /// <summary>
     /// Instance of the air saturation table.
