@@ -2,7 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoneyModel : MonoBehaviour
+public class MoneyModel : IAdjustable
 {
-    
+    public void AdjustVariables(int _currentTick)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void ResetVariables()
+    {
+        throw new System.NotImplementedException();
+    }
 }
