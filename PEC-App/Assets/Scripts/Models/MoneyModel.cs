@@ -15,6 +15,15 @@ public class MoneyModel : IAdjustable
     private int m_moneySpent = 0;
 
     /// <summary>
+    /// Constructor for MoneyModel. Initialises the TemperatureModel reference.
+    /// </summary>
+    /// <param name="_temperatureModel">Reference to a TemperatureModel instance.</param>
+    public MoneyModel(TemperatureModel _temperatureModel)
+    {
+        m_temperatureModel = _temperatureModel;
+    }
+
+    /// <summary>
     /// Updates money spent based on whether heating is turned on during the current tick.
     /// </summary>
     /// <param name="_currentTick"></param>
