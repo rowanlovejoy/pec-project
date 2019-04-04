@@ -5,6 +5,11 @@ using UnityEngine;
 public class MoneyModel : IAdjustable
 {
     /// <summary>
+    /// Reference to TemperatureModel.
+    /// </summary>
+    private TemperatureModel m_temperatureModel = null;
+
+    /// <summary>
     /// The amount of money spent so far in the current simulation.
     /// </summary>
     private int m_moneySpent = 0;
