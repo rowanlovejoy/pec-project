@@ -60,7 +60,7 @@ public class CoreAlgorithm : MonoBehaviour
 
         MoistureModel = new MoistureModel(TemperatureModel);
 
-        MoneyModel = new MoneyModel();
+        MoneyModel = new MoneyModel(TemperatureModel);
 
         m_models = new IAdjustable[3] { TemperatureModel, MoistureModel, MoneyModel };
 
