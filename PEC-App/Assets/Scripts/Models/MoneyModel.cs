@@ -14,17 +14,24 @@ public class MoneyModel : IAdjustable
     /// </summary>
     private int m_moneySpent = 0;
 
+    /// <summary>
+    /// Updates money spent based on whether heating is turned on during the current tick.
+    /// </summary>
+    /// <param name="_currentTick"></param>
     public void AdjustVariables(int _currentTick)
     {
-        /// If heating is currently turned on, increase money spent
+        /// If heating is currently turned on, increase money spent.
         if (m_temperatureModel.HeatingIsOn)
         {
             m_moneySpent += 5;
         }
+
+        /// Debug statements.
+        Debug.Log("Money spent so far: " + m_moneySpent);
     }
 
     /// <summary>
-    /// Resets simulation variables to default values
+    /// Resets simulation variables to default values.
     /// </summary>
     public void ResetVariables()
     {
