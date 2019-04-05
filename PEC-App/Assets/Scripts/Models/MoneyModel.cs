@@ -12,7 +12,7 @@ public class MoneyModel : IAdjustable
     /// <summary>
     /// The amount of money spent so far in the current simulation.
     /// </summary>
-    private int m_moneySpent = 0;
+    public int MoneySpent { get; private set; } = 0;
 
     /// <summary>
     /// Constructor for MoneyModel. Initialises the TemperatureModel reference.
@@ -32,11 +32,11 @@ public class MoneyModel : IAdjustable
         /// If heating is currently turned on, increase money spent.
         if (m_temperatureModel.HeatingIsOn)
         {
-            m_moneySpent += 1;
+            MoneySpent += 1;
         }
 
         /// Debug statements.
-        Debug.Log("Money spent so far: " + m_moneySpent);
+        Debug.Log("Money spent so far: " + MoneySpent);
     }
 
     /// <summary>
@@ -44,6 +44,6 @@ public class MoneyModel : IAdjustable
     /// </summary>
     public void ResetVariables()
     {
-        m_moneySpent = 0;
+        MoneySpent = 0;
     }
 }
