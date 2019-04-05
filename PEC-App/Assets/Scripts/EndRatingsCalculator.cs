@@ -8,7 +8,7 @@ public class EndRatingsCalculator : MonoBehaviour
     /// Reference to core algorithm. Used to access models to obtain final values used in ratings calculation.
     /// </summary>
     [SerializeField]
-    private CoreAlgorithm coreAlgorithm = null;
+    private CoreAlgorithm m_coreAlgorithm = null;
 
     /// <summary>
     /// The ideal wall saturation value. Used to determine final wall saturation rating.
@@ -42,4 +42,9 @@ public class EndRatingsCalculator : MonoBehaviour
     /// The final money spent rating value.
     /// </summary>
     private float m_moneySpentRating = 0;
+
+    public void CalculateEndRatings()
+    {
+       
+    }
 }
