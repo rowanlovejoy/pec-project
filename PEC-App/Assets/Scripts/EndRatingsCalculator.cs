@@ -45,6 +45,12 @@ public class EndRatingsCalculator : MonoBehaviour
 
     public void CalculateEndRatings()
     {
-       
+        m_wallSaturationRating = Mathf.Abs(m_idealWallSaturation - m_coreAlgorithm.MoistureModel.WallSaturation);
+
+        m_airSaturationRating = Mathf.Abs(m_idealAirSaturation - m_coreAlgorithm.MoistureModel.AirSaturation);
+
+        m_moneySpentRating = Mathf.Abs(m_idealMondaySpent - m_coreAlgorithm.MoneyModel.MoneySpent);
+
+        Debug.Log("Ratings - Wall Sat: " + m_wallSaturationRating + " - Air Sat: " + m_airSaturationRating + " - Money Spent: " + m_moneySpentRating);
     }
 }
