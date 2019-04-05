@@ -45,12 +45,46 @@ public class EndRatingsCalculator : MonoBehaviour
 
     public void CalculateEndRatings()
     {
-        m_wallSaturationRating = Mathf.Abs(m_idealWallSaturation - m_coreAlgorithm.MoistureModel.WallSaturation);
+        m_wallSaturationRating = CalculateRating(m_idealWallSaturation, m_coreAlgorithm.MoistureModel.WallSaturation);
 
-        m_airSaturationRating = Mathf.Abs(m_idealAirSaturation - m_coreAlgorithm.MoistureModel.AirSaturation);
+        m_airSaturationRating = CalculateRating(m_airSaturationRating, m_coreAlgorithm.MoistureModel.AirSaturation);
 
-        m_moneySpentRating = Mathf.Abs(m_idealMondaySpent - m_coreAlgorithm.MoneyModel.MoneySpent);
+        m_moneySpentRating = CalculateRating(m_idealMondaySpent, m_coreAlgorithm.MoneyModel.MoneySpent);
 
         Debug.Log("Ratings - Wall Sat: " + m_wallSaturationRating + " - Air Sat: " + m_airSaturationRating + " - Money Spent: " + m_moneySpentRating);
+    }
+
+    private int CalculateRating(int _idealValue, int _actualValue)
+    {
+        int _highestNumber = Mathf.Max(_idealValue, _actualValue);
+
+        int _lowestNumber = Mathf.Min(_idealValue, _actualValue);
+
+        int _difference = _highestNumber - _lowestNumber;
+
+        int _rating = 0;
+
+        if (_difference <= 5)
+        {
+            _rating = 5;
+        }
+        else if (_difference <= 10)
+        {
+            _rating = 4;
+        }
+        else if (_difference <= 15)
+        {
+            _rating = 3;
+        }
+        else if (_difference <= 20)
+        {
+            _rating = 2;
+        }
+        else
+        {
+            _rating = 1;
+        }
+
+        return _rating;
     }
 }
