@@ -64,19 +64,19 @@ public class EndRatingsCalculator : MonoBehaviour
 
         int _rating = 0;
 
-        if (_difference <= 5)
+        if (_difference <= 10)
         {
             _rating = 5;
         }
-        else if (_difference <= 10)
+        else if (_difference <= 15)
         {
             _rating = 4;
         }
-        else if (_difference <= 15)
+        else if (_difference <= 20)
         {
             _rating = 3;
         }
-        else if (_difference <= 20)
+        else if (_difference <= 25)
         {
             _rating = 2;
         }
