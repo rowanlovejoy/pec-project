@@ -45,20 +45,6 @@ public class TemperatureModel : IAdjustable
     public bool HeatingIsOn { get; private set; } = false;
 
     /// <summary>
-    /// Cache of EventManager singleton instance
-    /// </summary>
-    private EventManager m_eventManager;
-
-    /// <summary>
-    /// Constructor for TemperatureModel
-    /// </summary>
-    public TemperatureModel()
-    {
-        /// caching 
-        m_eventManager = EventManager.Instance;
-    }
-
-    /// <summary>
     /// Checks the current tick and updates the heating values based on the selection settings accordingly.
     /// </summary>
     /// <param name="currentTick">The current tick of the simulation</param>
@@ -81,19 +67,19 @@ public class TemperatureModel : IAdjustable
 
             AirTemperature += 1f;
 
-            m_eventManager.RaiseHeatingOnEvent();
-            m_eventManager.RaiseLowTemperatureOffEvent();
+            EventManager.Instance.RaiseHeatingOnEvent();
+            EventManager.Instance.RaiseLowTemperatureOffEvent();
         }
         else
         {
             HeatingIsOn = false;
-            m_eventManager.RaiseHeatingOffEvent();
+            EventManager.Instance.RaiseHeatingOffEvent();
 
             if (AirTemperature - 0.2f < 14)
             {
                 /// Air temperature should not drop below 14.
                 AirTemperature = 14f;
-                m_eventManager.RaiseLowTemperatureOnEvent();
+                EventManager.Instance.RaiseLowTemperatureOnEvent();
             }
             else
             {
