@@ -42,4 +42,13 @@ public class EndRatingsDisplayManager : MonoBehaviour
             Debug.Log("Incorrect number of rating icons.");
         }
     }
+
+    public void DisplayRatings()
+    {
+        DisplayRatingIcons(m_endRatingsCalculator.WallSaturationRating, m_wallSaturationRatingIcons);
+
+        DisplayRatingIcons(m_endRatingsCalculator.AirSaturationRating, m_airSaturationRatingIcons);
+
+        DisplayRatingIcons(m_endRatingsCalculator.MoneySpentRating, m_moneySpentRatingIcons);
+    }
 }
