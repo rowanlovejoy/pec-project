@@ -31,7 +31,7 @@ public class EndRatingsCalculator : MonoBehaviour
     /// <summary>
     /// The final wall saturation rating value.
     /// </summary>
-    private int m_wallSaturationRating = 0;
+    public int WallSaturationRating { get; private set; } = 0;
 
     /// <summary>
     /// The final air saturation rating value.
@@ -45,13 +45,13 @@ public class EndRatingsCalculator : MonoBehaviour
 
     public void CalculateEndRatings()
     {
-        m_wallSaturationRating = CalculateRating(m_idealWallSaturation, m_coreAlgorithm.MoistureModel.WallSaturation);
+        WallSaturationRating = CalculateRating(m_idealWallSaturation, m_coreAlgorithm.MoistureModel.WallSaturation);
 
         m_airSaturationRating = CalculateRating(m_airSaturationRating, m_coreAlgorithm.MoistureModel.AirSaturation);
 
         m_moneySpentRating = CalculateRating(m_idealMondaySpent, m_coreAlgorithm.MoneyModel.MoneySpent);
 
-        Debug.Log("Ratings - Wall Sat: " + m_wallSaturationRating + " - Air Sat: " + m_airSaturationRating + " - Money Spent: " + m_moneySpentRating);
+        Debug.Log("Ratings - Wall Sat: " + WallSaturationRating + " - Air Sat: " + m_airSaturationRating + " - Money Spent: " + m_moneySpentRating);
     }
 
     private int CalculateRating(int _idealValue, int _actualValue)

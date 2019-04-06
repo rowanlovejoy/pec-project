@@ -21,4 +21,6 @@ public class EndRatingsDisplayManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject[] m_moneySpentRatingIcons;
+
+
 }
