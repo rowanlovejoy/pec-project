@@ -2596,8 +2596,8 @@ MonoBehaviour:
   m_coreAlgorithm: {fileID: 314420404}
   m_endRatingsDisplayManager: {fileID: 1857375922}
   m_idealWallSaturation: 0
-  m_idealAirSaturation: 20
-  m_idealMondaySpent: 10
+  m_idealAirSaturation: 50
+  m_idealMondaySpent: 40
 --- !u!114 &952543902
 MonoBehaviour:
   m_ObjectHideFlags: 0
