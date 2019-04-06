@@ -5,6 +5,12 @@ using UnityEngine;
 public class EndRatingsDisplayManager : MonoBehaviour
 {
     /// <summary>
+    /// Reference to EndRatingsCalculator.
+    /// </summary>
+    [SerializeField]
+    private EndRatingsCalculator m_endRatingsCalculator = null;
+
+    /// <summary>
     /// Rating icons for the wall saturation end rating;
     /// </summary>
     [SerializeField]
@@ -21,6 +27,5 @@ public class EndRatingsDisplayManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject[] m_moneySpentRatingIcons;
-
 
 }
