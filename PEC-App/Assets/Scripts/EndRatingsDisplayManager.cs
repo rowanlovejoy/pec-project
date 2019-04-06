@@ -15,4 +15,10 @@ public class EndRatingsDisplayManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameObject[] m_airSaturationRatingIcons;
+
+    /// <summary>
+    /// Rating icons for the money spent end rating.
+    /// </summary>
+    [SerializeField]
+    private GameObject[] m_moneySpentRatingIcons;
 }
