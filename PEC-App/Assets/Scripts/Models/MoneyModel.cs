@@ -15,12 +15,6 @@ public class MoneyModel : IAdjustable
     public int MoneySpent { get; private set; } = 0;
 
     /// <summary>
-    /// The amount of by which MoneySpent is increased by tick.
-    /// </summary>
-    [SerializeField]
-    private int m_spendPerTick = 5;
-
-    /// <summary>
     /// Constructor for MoneyModel. Initialises the TemperatureModel reference.
     /// </summary>
     /// <param name="_temperatureModel">Reference to a TemperatureModel instance.</param>
