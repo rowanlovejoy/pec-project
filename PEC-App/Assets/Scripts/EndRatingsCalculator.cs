@@ -47,7 +47,7 @@ public class EndRatingsCalculator : MonoBehaviour
     {
         WallSaturationRating = CalculateRating(m_idealWallSaturation, m_coreAlgorithm.MoistureModel.WallSaturation);
 
-        AirSaturationRating = CalculateRating(AirSaturationRating, m_coreAlgorithm.MoistureModel.AirSaturation);
+        AirSaturationRating = CalculateRating(m_idealAirSaturation, m_coreAlgorithm.MoistureModel.AirSaturation);
 
         MoneySpentRating = CalculateRating(m_idealMondaySpent, m_coreAlgorithm.MoneyModel.MoneySpent);
 
