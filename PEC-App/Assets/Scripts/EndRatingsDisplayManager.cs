@@ -28,4 +28,18 @@ public class EndRatingsDisplayManager : MonoBehaviour
     [SerializeField]
     private GameObject[] m_moneySpentRatingIcons;
 
+    private void DisplayRatingIcons(int _rating, GameObject[] _ratingIconsSet)
+    {
+        if (_rating == _ratingIconsSet.Length)
+        {
+            for (int i = 0; i < _rating; i++)
+            {
+                _ratingIconsSet[i].SetActive(true);
+            }
+        }
+        else
+        {
+            Debug.Log("Incorrect number of rating icons.");
+        }
+    }
 }
