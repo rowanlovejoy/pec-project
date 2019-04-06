@@ -5,7 +5,13 @@ using UnityEngine;
 public class EndRatingsDisplayManager : MonoBehaviour
 {
     /// <summary>
-    /// Ratings icons for the air saturation end rating.
+    /// Rating icons for the wall saturation end rating;
+    /// </summary>
+    [SerializeField]
+    private GameObject[] m_wallSaturationRatingIcons;
+
+    /// <summary>
+    /// Rating icons for the air saturation end rating.
     /// </summary>
     [SerializeField]
     private GameObject[] m_airSaturationRatingIcons;
