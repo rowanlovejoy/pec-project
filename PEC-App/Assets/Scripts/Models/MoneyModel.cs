@@ -38,7 +38,7 @@ public class MoneyModel : IAdjustable
         /// If heating is currently turned on, increase money spent.
         if (m_temperatureModel.HeatingIsOn)
         {
-            MoneySpent += 5;
+            MoneySpent += m_spendPerTick;
         }
 
         /// Debug statements.
