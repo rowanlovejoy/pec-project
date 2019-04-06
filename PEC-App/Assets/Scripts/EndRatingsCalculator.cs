@@ -11,6 +11,12 @@ public class EndRatingsCalculator : MonoBehaviour
     private CoreAlgorithm m_coreAlgorithm = null;
 
     /// <summary>
+    /// Reference to EndRatingsDisplayManager.
+    /// </summary>
+    [SerializeField]
+    private EndRatingsDisplayManager m_endRatingsDisplayManager = null;
+
+    /// <summary>
     /// The ideal wall saturation value. Used to determine final wall saturation rating.
     /// </summary>
     [SerializeField]
@@ -43,27 +49,48 @@ public class EndRatingsCalculator : MonoBehaviour
     /// </summary>
     public int MoneySpentRating { get; private set; } = 0;
 
+    /// <summary>
+    /// Calculate and store the ratings for each of the rated values, then call EndRatingsDisplayManager to display the ratings.
+    /// </summary>
     public void CalculateEndRatings()
     {
+        /// Calculate the rating for Wall Saturation.
         WallSaturationRating = CalculateRating(m_idealWallSaturation, m_coreAlgorithm.MoistureModel.WallSaturation);
 
+        /// Calculate the rating for Air Saturation.
         AirSaturationRating = CalculateRating(m_idealAirSaturation, m_coreAlgorithm.MoistureModel.AirSaturation);
 
+        /// Calculate the rating for Money Spent.
         MoneySpentRating = CalculateRating(m_idealMondaySpent, m_coreAlgorithm.MoneyModel.MoneySpent);
 
+        /// Debug statements.
         Debug.Log("Ratings - Wall Sat: " + WallSaturationRating + " - Air Sat: " + AirSaturationRating + " - Money Spent: " + MoneySpentRating);
+
+        /// Call EndRatingsDisplayManger to display the correct number of icons according to the calculated ratings.
+        m_endRatingsDisplayManager.DisplayRatings();
     }
 
+    /// <summary>
+    /// Calculate the rating for a value based on the difference between it and its corresponding ideal value.
+    /// </summary>
+    /// <param name="_idealValue">The ideal for this rated value.</param>
+    /// <param name="_actualValue">The final value to be rated.</param>
+    /// <returns>The calculated rating for the given actual value.</returns>
     private int CalculateRating(int _idealValue, int _actualValue)
     {
+        /// Determine which is the highest value between the ideal and actual.
         int _highestNumber = Mathf.Max(_idealValue, _actualValue);
 
+        /// Determine which is the lowest value between the ideal and actual.
         int _lowestNumber = Mathf.Min(_idealValue, _actualValue);
 
+        /// Calculate the difference between the values determined to be the highest and lowest.
         int _difference = _highestNumber - _lowestNumber;
 
+        /// Variable to store the calculated rating.
         int _rating = 0;
 
+        /// Determine the rating based on the difference between the actual value and the ideal.
         if (_difference <= 10)
         {
             _rating = 5;
@@ -85,6 +112,7 @@ public class EndRatingsCalculator : MonoBehaviour
             _rating = 1;
         }
 
+        /// Return the calculated rating.
         return _rating;
     }
 }
