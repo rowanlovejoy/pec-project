@@ -30,7 +30,7 @@ public class EndRatingsDisplayManager : MonoBehaviour
 
     private void DisplayRatingIcons(int _rating, GameObject[] _ratingIconsSet)
     {
-        if (_rating == _ratingIconsSet.Length)
+        if (_ratingIconsSet != null)
         {
             for (int i = 0; i < _rating; i++)
             {
