@@ -14,9 +14,14 @@ public class CoreAlgorithm : MonoBehaviour
     public TemperatureModel TemperatureModel { get; private set; } = null;
 
     /// <summary>
-    /// Refernece to MoistureModel instance.
+    /// Reference to MoistureModel instance.
     /// </summary>
     public MoistureModel MoistureModel { get; private set; } = null;
+
+    /// <summary>
+    /// Reference to MoneyModel instance.
+    /// </summary>
+    public MoneyModel MoneyModel { get; private set; } = null;
 
     /// <summary>
     /// Array of all model classes.
@@ -55,7 +60,9 @@ public class CoreAlgorithm : MonoBehaviour
 
         MoistureModel = new MoistureModel(TemperatureModel);
 
-        m_models = new IAdjustable[2] { TemperatureModel, MoistureModel };
+        MoneyModel = new MoneyModel(TemperatureModel);
+
+        m_models = new IAdjustable[3] { TemperatureModel, MoistureModel, MoneyModel };
 
         m_tickLength = m_simulationLength / 48;
     }
