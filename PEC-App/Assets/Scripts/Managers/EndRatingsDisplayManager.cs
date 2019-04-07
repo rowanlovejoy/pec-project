@@ -77,4 +77,19 @@ public class EndRatingsDisplayManager : MonoBehaviour
         /// Display icons for the Money Spent rating.
         DisplayRatingIcons(m_endRatingsCalculator.MoneySpentRating, m_moneySpentRatingIcons);
     }
+
+    /// <summary>
+    /// Hides all displayed rating icons.
+    /// </summary>
+    public void ResetDisplayedRatings()
+    {
+        /// Hide icons for the Wall Saturation rating.
+        ResetDisplayedIcons(m_wallSaturationRatingIcons);
+
+        /// Hides icons for the Air Saturation rating.
+        ResetDisplayedIcons(m_airSaturationRatingIcons);
+
+        /// Hides icons for the Money Spent rating.
+        ResetDisplayedIcons(m_moneySpentRatingIcons);
+    }
 }
