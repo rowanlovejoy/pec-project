@@ -826,10 +826,10 @@ RectTransform:
   m_Father: {fileID: 6537861147644328919}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.828385, y: 0.027874565}
+  m_AnchorMin: {x: 0.8216254, y: 0.027874565}
   m_AnchorMax: {x: 0.97469234, y: 0.07625784}
-  m_AnchoredPosition: {x: 0.10003662, y: -0.2999878}
-  m_SizeDelta: {x: 8, y: 2}
+  m_AnchoredPosition: {x: -0.57995605, y: 1.95018}
+  m_SizeDelta: {x: 9.84, y: -2.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6537861147911928490
 CanvasRenderer:
@@ -1379,10 +1379,10 @@ RectTransform:
   m_Father: {fileID: 6537861147644328919}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.828385, y: 0.08838328}
+  m_AnchorMin: {x: 0.8216254, y: 0.08664112}
   m_AnchorMax: {x: 0.97469234, y: 0.13522647}
-  m_AnchoredPosition: {x: -0.3998413, y: -0.10003662}
-  m_SizeDelta: {x: 9, y: 3}
+  m_AnchoredPosition: {x: -0.44000244, y: 0.39996338}
+  m_SizeDelta: {x: 9.48, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6537861148264658819
 CanvasRenderer:
@@ -1602,7 +1602,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Help/Information
+  m_text: Help & Information
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5, type: 2}
   m_sharedMaterial: {fileID: 21238538014903172, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5,
@@ -1672,9 +1672,9 @@ MonoBehaviour:
   m_margin: {x: 1.5757926, y: -0.5554651, z: 0.6639145, w: 1.1608652}
   m_textInfo:
     textComponent: {fileID: 6537861148347606766}
-    characterCount: 16
+    characterCount: 18
     spriteCount: 0
-    spaceCount: 0
+    spaceCount: 2
     wordCount: 2
     linkCount: 0
     lineCount: 1
