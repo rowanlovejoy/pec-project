@@ -50,27 +50,6 @@ public class EndRatingsCalculator : MonoBehaviour
     public int MoneySpentRating { get; private set; } = 0;
 
     /// <summary>
-    /// Calculate and store the ratings for each of the rated values, then call EndRatingsDisplayManager to display the ratings.
-    /// </summary>
-    public void CalculateEndRatings()
-    {
-        /// Calculate the rating for Wall Saturation.
-        WallSaturationRating = CalculateRating(m_idealWallSaturation, m_coreAlgorithm.MoistureModel.WallSaturation);
-
-        /// Calculate the rating for Air Saturation.
-        AirSaturationRating = CalculateRating(m_idealAirSaturation, m_coreAlgorithm.MoistureModel.AirSaturation);
-
-        /// Calculate the rating for Money Spent.
-        MoneySpentRating = CalculateRating(m_idealMondaySpent, m_coreAlgorithm.MoneyModel.MoneySpent);
-
-        /// Debug statements.
-        Debug.Log("Ratings - Wall Sat: " + WallSaturationRating + " - Air Sat: " + AirSaturationRating + " - Money Spent: " + MoneySpentRating);
-
-        /// Call EndRatingsDisplayManger to display the correct number of icons according to the calculated ratings.
-        m_endRatingsDisplayManager.DisplayRatings();
-    }
-
-    /// <summary>
     /// Calculate the rating for a value based on the difference between it and its corresponding ideal value.
     /// </summary>
     /// <param name="_idealValue">The ideal for this rated value.</param>
@@ -114,5 +93,26 @@ public class EndRatingsCalculator : MonoBehaviour
 
         /// Return the calculated rating.
         return _rating;
+    }
+
+    /// <summary>
+    /// Calculate and store the ratings for each of the rated values, then call EndRatingsDisplayManager to display the ratings.
+    /// </summary>
+    public void CalculateEndRatings()
+    {
+        /// Calculate the rating for Wall Saturation.
+        WallSaturationRating = CalculateRating(m_idealWallSaturation, m_coreAlgorithm.MoistureModel.WallSaturation);
+
+        /// Calculate the rating for Air Saturation.
+        AirSaturationRating = CalculateRating(m_idealAirSaturation, m_coreAlgorithm.MoistureModel.AirSaturation);
+
+        /// Calculate the rating for Money Spent.
+        MoneySpentRating = CalculateRating(m_idealMondaySpent, m_coreAlgorithm.MoneyModel.MoneySpent);
+
+        /// Debug statements.
+        Debug.Log("Ratings - Wall Sat: " + WallSaturationRating + " - Air Sat: " + AirSaturationRating + " - Money Spent: " + MoneySpentRating);
+
+        /// Call EndRatingsDisplayManger to display the correct number of icons according to the calculated ratings.
+        m_endRatingsDisplayManager.DisplayRatings();
     }
 }
