@@ -52,6 +52,18 @@ public class EndRatingsDisplayManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Hides all rating icons in the given set, effectively resetting the display.
+    /// </summary>
+    /// <param name="_ratingIconSet">The set of rating icons to hide.</param>
+    private void ResetDisplayedIcons(GameObject[] _ratingIconSet)
+    {
+        for (int i = 0; i < _ratingIconSet.Length; i++)
+        {
+            _ratingIconSet[i].SetActive(false);
+        }
+    }
+
+    /// <summary>
     /// Display the correct number of icons for each rating.
     /// </summary>
     public void DisplayRatings()
