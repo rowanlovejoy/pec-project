@@ -585,6 +585,8 @@ GameObject:
   - component: {fileID: 6537861147644328924}
   - component: {fileID: 6537861147644328913}
   - component: {fileID: 6537861147644328912}
+  - component: {fileID: 65066395}
+  - component: {fileID: 65066396}
   - component: {fileID: 6537861147644328915}
   m_Layer: 5
   m_Name: pnl_EndScreenPanel
@@ -689,6 +691,54 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &65066395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537861147644328918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749ae4d5e55030e46803d9bbd0482b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_endRatingsCalculator: {fileID: 65066396}
+  m_wallSaturationRatingIcons:
+  - {fileID: 6537861148459373201}
+  - {fileID: 6537861148073008348}
+  - {fileID: 6537861147538704837}
+  - {fileID: 6537861147601452439}
+  - {fileID: 6537861148275538177}
+  m_airSaturationRatingIcons:
+  - {fileID: 6537861149045528128}
+  - {fileID: 6537861147547298653}
+  - {fileID: 6537861149046243046}
+  - {fileID: 6537861148088654146}
+  - {fileID: 6537861149243851415}
+  m_moneySpentRatingIcons:
+  - {fileID: 6537861147605883326}
+  - {fileID: 6537861148204294545}
+  - {fileID: 6537861148590507261}
+  - {fileID: 6537861148425898579}
+  - {fileID: 6537861147228332949}
+--- !u!114 &65066396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537861147644328918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd9dc7ea0852e641a05a24989ea1927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_coreAlgorithm: {fileID: 0}
+  m_endRatingsDisplayManager: {fileID: 65066395}
+  m_idealWallSaturation: 20
+  m_idealAirSaturation: 60
+  m_idealMondaySpent: 20
 --- !u!114 &6537861147644328915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,6 +764,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: DoSlideInAnimation
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 65066396}
+        m_MethodName: CalculateEndRatings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -828,7 +889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8216254, y: 0.027874565}
   m_AnchorMax: {x: 0.97469234, y: 0.07625784}
-  m_AnchoredPosition: {x: -0.57995605, y: 1.95018}
+  m_AnchoredPosition: {x: -0.5800171, y: 1.9503326}
   m_SizeDelta: {x: 9.84, y: -2.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6537861147911928490
