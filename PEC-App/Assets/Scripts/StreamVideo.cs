@@ -17,4 +17,20 @@ public class StreamVideo : MonoBehaviour
     [SerializeField]
     private AudioSource m_audioSource;
 
+
+
+    private void Start()
+    {
+        Application.runInBackground = true;
+        StartCoroutine(playVideo());
+    }
+
+    IEnumerator playVideo()
+    {
+
+        
+
+
+
+    }
 }
