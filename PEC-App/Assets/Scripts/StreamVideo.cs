@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using TMPro;
+
 public class StreamVideo : MonoBehaviour
 {
     [SerializeField]
@@ -17,7 +19,8 @@ public class StreamVideo : MonoBehaviour
 
     private AudioSource m_audioSource;
 
-
+    [SerializeField]
+    private TextMeshProUGUI m_text;
 
     private void Start()
     {
@@ -64,13 +67,35 @@ public class StreamVideo : MonoBehaviour
             break;
         }
 
+
+     
+
+
+    }
+    /// <summary>
+    /// Plays or pauses the video when fired
+    /// </summary>
+    public void PlayPause()
+    {
         ///Assign the texture from video to rawimage to be displayed
         m_rawImage.texture = m_videoPlayer.texture;
+        if (!m_videoPlayer.isPlaying)
+        {
 
-        ///play video
-        m_videoPlayer.Play();
+            m_text.text = "Pause";
+            ///play video
+            m_videoPlayer.Play();
+            ///play sound
+            m_audioSource.Play();
+        }
+        else
+        {
+            m_text.text = "Play";
+            m_videoPlayer.Pause();
 
-        ///play sound
-        m_audioSource.Play();
+            m_audioSource.Pause();
+
+        }
     }
+
 }
