@@ -6,34 +6,51 @@ using UnityEngine.Video;
 using TMPro;
 
 public class StreamVideo : MonoBehaviour
-{
+{/// <summary>
+/// A reference to the RawImage m_rawImage
+/// </summary>
     [SerializeField]
     private RawImage m_rawImage;
-
+/// <summary>
+/// A reference to the Videolip m_videoToPlay
+/// </summary>
     [SerializeField]
     private VideoClip m_videoToPlay;
-
+/// <summary>
+/// a reference to the VideoPlayer m_videoPlayer
+/// </summary>
     private VideoPlayer m_videoPlayer;
-
+/// <summary>
+/// a reference to the VideoSource m_videoSource
+/// </summary>
     private VideoSource m_videoSource;
-
+/// <summary>
+/// a reference to the AudioSource m_audioSource
+/// </summary>
     private AudioSource m_audioSource;
-
+/// <summary>
+/// a reference to the button text, m_text
+/// </summary>
     [SerializeField]
     private TextMeshProUGUI m_text;
-
+/// <summary>
+/// Starts when the application is run and plays a coroutine to play the video
+/// </summary>
     private void Start()
     {
         Application.runInBackground = true;
         StartCoroutine(playVideo());
     }
-
+/// <summary>
+/// plays the video through the RawImage component
+/// </summary>
+/// <returns></returns>
     IEnumerator playVideo()
     {
-        
+        ///Add a videoplayer to the gameObject    
         m_videoPlayer = gameObject.AddComponent<VideoPlayer>();
 
-
+        ///Add an audioSource to the gameObject
         m_audioSource = gameObject.AddComponent<AudioSource>();
 
         ///Disable play on awake for video/audio
@@ -81,7 +98,7 @@ public class StreamVideo : MonoBehaviour
         m_rawImage.texture = m_videoPlayer.texture;
         if (!m_videoPlayer.isPlaying)
         {
-
+            ///changes the button text to Pause
             m_text.text = "Pause";
             ///play video
             m_videoPlayer.Play();
@@ -89,10 +106,11 @@ public class StreamVideo : MonoBehaviour
             m_audioSource.Play();
         }
         else
-        {
+        { //changes the button text to Play
             m_text.text = "Play";
+            ///pause video
             m_videoPlayer.Pause();
-
+            ///pause sound
             m_audioSource.Pause();
 
         }
