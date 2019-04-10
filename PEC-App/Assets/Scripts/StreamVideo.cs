@@ -14,5 +14,7 @@ public class StreamVideo : MonoBehaviour
     [SerializeField]
     private VideoSource m_videoSource;
 
+    [SerializeField]
+    private AudioSource m_audioSource;
 
 }
