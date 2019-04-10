@@ -77,10 +77,10 @@ public class StreamVideo : MonoBehaviour
         WaitForSeconds waitTime = new WaitForSeconds(1);
         while (!m_videoPlayer.isPrepared)
         {
-            //Prepare/wait for 5 seconds
+            //Prepare/wait for 1 seconds
             yield return waitTime;
 
-            //break after 5 seconds
+            //break after 1 seconds
             break;
         }
 
