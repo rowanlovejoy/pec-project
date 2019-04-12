@@ -3015,7 +3015,7 @@ PrefabInstance:
     - target: {fileID: 6537861147911928495, guid: ed1d45b8e48e0ca42b7f9158f598c53a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.9514618
+      value: 1.9514923
       objectReference: {fileID: 0}
     - target: {fileID: 6537861147911928495, guid: ed1d45b8e48e0ca42b7f9158f598c53a,
         type: 3}
@@ -5950,6 +5950,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Infomation Screen
       objectReference: {fileID: 0}
+    - target: {fileID: 8588211111325693883, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 1592684196}
+    - target: {fileID: 8588211110279891270, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588211110279891270, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8588211110470334055, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6135,16 +6150,6 @@ PrefabInstance:
       propertyPath: m_textInfo.wordCount
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8588211110279891270, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8588211110279891270, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8588211110462479911, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -6295,17 +6300,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1560700660}
+      objectReference: {fileID: 8588211110911822113}
     - target: {fileID: 8588211110707517807, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayPause
+      value: PECSite
       objectReference: {fileID: 0}
-    - target: {fileID: 8588211111325693883, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
-        type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 1592684196}
     - target: {fileID: 8588211110279891269, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -6353,3 +6353,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fe3377cb5625124f9a8f3d78fdc8219, type: 3}
+--- !u!114 &8588211110911822113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8588211110470334056, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
+    type: 3}
+  m_PrefabInstance: {fileID: 8588211110911822112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d635064af87986341a2badafcf2b0e60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
