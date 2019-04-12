@@ -5,11 +5,11 @@ using UnityEngine;
 public class HyperLinkScript : MonoBehaviour
 {
     /// <summary>
-    /// Opens the Plymouth Energy Community Website when the method fires
+    /// Opens the Plymouth Energy Community Website when the method fires.
     /// </summary>
-public void PECSite()
+    public void PECSite()
     {
-        ///opens the url at the string contained within
+    ///Opens the url at the string contained within.
         Application.OpenURL("https://www.plymouthenergycommunity.com/help/tips");
 
     }
