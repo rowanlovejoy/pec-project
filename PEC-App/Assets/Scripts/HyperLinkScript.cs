@@ -9,8 +9,7 @@ public class HyperLinkScript : MonoBehaviour
     /// </summary>
     public void PECSite()
     {
-    ///Opens the url at the string contained within.
+    /// Opens the url at the string contained within.
         Application.OpenURL("https://www.plymouthenergycommunity.com/help/tips");
-
     }
 }

@@ -8,9 +8,9 @@ using TMPro;
 public class StreamVideo : MonoBehaviour
 {
 
-    /// <summary>
-    /// A reference to the RawImage m_rawImage.
-    /// </summary>
+      /// <summary>
+      /// A reference to the RawImage m_rawImage.
+      /// </summary>
     [SerializeField]
     private RawImage m_rawImage;
 
@@ -39,129 +39,104 @@ public class StreamVideo : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI m_text;
 
-       /// <summary>
-       /// Starts when the application is run and plays a coroutine to play the video.
-       /// </summary>
+    /// <summary>
+    /// Starts when the application is run and plays a coroutine to play the video.
+    /// </summary>
     private void Start()
     {
-
         Application.runInBackground = true;
 
-        StartCoroutine(playVideo());
-     
+        StartCoroutine(playVideo()); 
     }
-
-       /// <summary>
-       /// An update method that is called every frame, checking if the video is currently playing.
-       /// </summary>
+    /// <summary>
+    /// An update method that is called every frame, checking if the video is currently playing.
+    /// </summary>
     private void Update()
-    {
-    
+    { 
         if (!m_videoPlayer.isPlaying)
-
         {
-
             m_text.text = "Play";
-
         }
-
         else
-
         {
-
             m_text.text = "Pause";
-
         }
-
-
         if (m_videoPlayer.frame == (long)m_videoPlayer.frameCount)
         {
-
-        ///Video has finished playing.
+        /// Video has finished playing.
             m_videoPlayer.Pause();
         }
-
-       
-
     }
 
-        /// <summary>
-        /// Plays the video through the RawImage component.
-        /// </summary>
-        /// <returns></returns>
+    /// <summary>
+    /// Plays the video through the RawImage component.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator playVideo()
     {
-
-        ///Add a videoplayer to the gameObject.
+        /// Add a videoplayer to the gameObject.
         m_videoPlayer = gameObject.AddComponent<VideoPlayer>();
 
-        ///Add an audioSource to the gameObject.
+        /// Add an audioSource to the gameObject.
         m_audioSource = gameObject.AddComponent<AudioSource>();
 
-        ///Disable play on awake for video/audio.
+        /// Disable play on awake for video/audio.
         m_videoPlayer.playOnAwake = false;
 
         m_audioSource.playOnAwake = false;
 
         m_audioSource.Pause();
 
-        ///Playing from file not from url.
+        /// Playing from file not from url.
         m_videoPlayer.source = VideoSource.VideoClip;
 
-        ///Set audio output mode.
+        /// Set audio output mode.
         m_videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
 
-        ///Assign the Audio from Video to AudioSource.
+        /// Assign the Audio from Video to AudioSource.
         m_videoPlayer.EnableAudioTrack(0, true);
 
         m_videoPlayer.SetTargetAudioSource(0, m_audioSource);
 
-        ///Set video to play then prepare audiio to prevent buffering.
+        /// Set video to play then prepare audiio to prevent buffering.
         m_videoPlayer.clip = m_videoToPlay;
 
         m_videoPlayer.Prepare();
 
-
-        ///Wait until video is prepared.
+        /// Wait until video is prepared.
         WaitForSeconds waitTime = new WaitForSeconds(1);
 
         while (!m_videoPlayer.isPrepared)
         {
-
-            ///Prepare/wait for 1 seconds.
+            /// Prepare/wait for 1 seconds.
             yield return waitTime;
 
-            ///Break after 1 seconds.
+            /// Break after 1 seconds.
             break;
         }
-
         m_videoPlayer.isLooping = true;
-
     }
-
-        /// <summary>
-        ///Plays or pauses the video when fired.
-        /// </summary>
+    /// <summary>
+    /// Plays or pauses the video when fired.
+    /// </summary>
     public void PlayAndPause()
     {
-        ///Assign the texture from video to rawimage to be displayed.
+        /// Assign the texture from video to rawimage to be displayed.
         m_rawImage.texture = m_videoPlayer.texture;
 
-        ///Changes the video state to playing.
+        /// Changes the video state to playing.
         if (!m_videoPlayer.isPlaying)
         {
-        ///Play video.
+        /// Play video.
             m_videoPlayer.Play();
-        ///Play sound.
+        /// Play sound.
             m_audioSource.Play();
         }
         else
         {
         ///A reference to the PauseOnClose method.
             PauseOnClose();
-
         }
-
     }
 
     public void PauseOnClose()
@@ -174,8 +149,6 @@ public class StreamVideo : MonoBehaviour
             m_videoPlayer.Pause();
          ///Pause sound.
             m_audioSource.Pause();
-
         }
     }
-
 }
