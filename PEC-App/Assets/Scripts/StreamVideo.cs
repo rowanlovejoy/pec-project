@@ -52,6 +52,12 @@ public class StreamVideo : MonoBehaviour
     private Sprite m_pauseButtonSprite = null;
 
     /// <summary>
+    /// Button to toggle between the video between playing and paused.
+    /// </summary>
+    [SerializeField]
+    private Button m_playPauseButton = null;
+
+    /// <summary>
     /// Starts when the application is run and plays a coroutine to play the video.
     /// </summary>
     private void Start()
