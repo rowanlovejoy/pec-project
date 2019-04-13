@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
-using TMPro;
 
 public class StreamVideo : MonoBehaviour
 {
@@ -35,12 +34,6 @@ public class StreamVideo : MonoBehaviour
     private AudioSource m_audioSource;
 
     /// <summary>
-    /// A reference to the button text, m_text.
-    /// </summary>
-    [SerializeField]
-    private TextMeshProUGUI m_text;
-
-    /// <summary>
     /// Sprite to display when video is paused.
     /// </summary>
     [SerializeField]
@@ -66,27 +59,6 @@ public class StreamVideo : MonoBehaviour
         Application.runInBackground = true;
 
         StartCoroutine(playVideo()); 
-    }
-
-    /// <summary>
-    /// An update method that is called every frame, checking if the video is currently playing.
-    /// </summary>
-    private void Update()
-    { 
-        if (!m_videoPlayer.isPlaying)
-        {
-            m_text.text = "Play";
-        }
-        else
-        {
-            m_text.text = "Pause";
-        }
-
-        if (m_videoPlayer.frame == (long)m_videoPlayer.frameCount)
-        {
-            /// Video has finished playing.
-            m_videoPlayer.Pause();
-        }
     }
 
     /// <summary>
