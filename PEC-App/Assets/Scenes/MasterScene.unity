@@ -3593,6 +3593,18 @@ MonoBehaviour:
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1247435891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1247435891, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
+    type: 3}
+  m_PrefabInstance: {fileID: 8588211110911822112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1290530402
 GameObject:
   m_ObjectHideFlags: 0
@@ -6049,6 +6061,11 @@ PrefabInstance:
       propertyPath: m_playPauseButton
       value: 
       objectReference: {fileID: 1247435890}
+    - target: {fileID: 8588211111325693883, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
+        type: 3}
+      propertyPath: m_playPauseButtonImage
+      value: 
+      objectReference: {fileID: 1247435891}
     - target: {fileID: 1247435890, guid: 2fe3377cb5625124f9a8f3d78fdc8219, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2

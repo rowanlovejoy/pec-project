@@ -100,7 +100,7 @@ public class StreamVideo : MonoBehaviour
             m_playPauseButtonImage.sprite = m_pauseButtonSprite;
         }
         /// If the Pause sprite is currently displayed, swap it for the Play sprite.
-        else
+        else if (m_playPauseButtonImage.sprite == m_pauseButtonSprite)
         {
             m_playPauseButtonImage.sprite = m_playButtonSprite;
         }
@@ -109,7 +109,7 @@ public class StreamVideo : MonoBehaviour
     /// <summary>
     /// Plays the video through the RawImage component.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>WaitForSeconds instance.</returns>
     private IEnumerator playVideo()
     {
         /// Add a videoplayer to the gameObject.
@@ -188,6 +188,8 @@ public class StreamVideo : MonoBehaviour
             m_videoPlayer.Pause();
             /// Pause sound.
             m_audioSource.Pause();
+
+            TogglePlayPauseButtonSprite();
         }
     }
 }
