@@ -58,24 +58,7 @@ public class StreamVideo : MonoBehaviour
     {
         Application.runInBackground = true;
 
-        StartCoroutine(playVideo()); 
-    }
-
-    /// <summary>
-    /// Toggles the displayed sprite on the PlayPause button.
-    /// </summary>
-    public void TogglePlayPauseButtonSprite()
-    {
-        /// If the Play sprite is currently displayed, swap it for the Pause sprite.
-        if (m_playPauseButtonImage.sprite == m_playButtonSprite)
-        {
-            m_playPauseButtonImage.sprite = m_pauseButtonSprite;
-        }
-        /// If the Pause sprite is currently displayed, swap it for the Play sprite.
-        else if (m_playPauseButtonImage.sprite == m_pauseButtonSprite)
-        {
-            m_playPauseButtonImage.sprite = m_playButtonSprite;
-        }
+        StartCoroutine(playVideo());
     }
 
     /// <summary>
@@ -143,6 +126,9 @@ public class StreamVideo : MonoBehaviour
             m_videoPlayer.Play();
             /// Play sound.
             m_audioSource.Play();
+
+            /// Show the Play sprite on the PlayPause button.
+            m_playPauseButtonImage.sprite = m_pauseButtonSprite;
         }
         else
         {
@@ -161,7 +147,8 @@ public class StreamVideo : MonoBehaviour
             /// Pause sound.
             m_audioSource.Pause();
 
-            TogglePlayPauseButtonSprite();
+            /// Show the Pause sprite on the PlayPause button.
+            m_playPauseButtonImage.sprite = m_playButtonSprite;
         }
     }
 }
