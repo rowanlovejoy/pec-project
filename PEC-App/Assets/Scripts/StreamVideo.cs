@@ -46,6 +46,12 @@ public class StreamVideo : MonoBehaviour
     private Sprite m_playButtonSprite = null;
 
     /// <summary>
+    /// Sprite to display when is playing.
+    /// </summary>
+    [SerializeField]
+    private Sprite m_pauseButtonSprite = null;
+
+    /// <summary>
     /// Starts when the application is run and plays a coroutine to play the video.
     /// </summary>
     private void Start()
