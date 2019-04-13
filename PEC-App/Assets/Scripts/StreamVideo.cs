@@ -87,6 +87,23 @@ public class StreamVideo : MonoBehaviour
     }
 
     /// <summary>
+    /// Toggles the displayed sprite on the PlayPause button.
+    /// </summary>
+    public void TogglePlayPauseButtonSprite()
+    {
+        /// If the Play sprite is currently displayed, swap it for the Pause sprite.
+        if (m_playPauseButton.GetComponent<Image>().sprite == m_playButtonSprite)
+        {
+            m_playPauseButton.GetComponent<Image>().sprite = m_pauseButtonSprite;
+        }
+        /// If the Pause sprite is currently displayed, swap it for the Play sprite.
+        else
+        {
+            m_playPauseButton.GetComponent<Image>().sprite = m_playButtonSprite;
+        }
+    }
+
+    /// <summary>
     /// Plays the video through the RawImage component.
     /// </summary>
     /// <returns></returns>
