@@ -40,6 +40,12 @@ public class StreamVideo : MonoBehaviour
     private TextMeshProUGUI m_text;
 
     /// <summary>
+    /// Sprite to display when video is paused.
+    /// </summary>
+    [SerializeField]
+    private Sprite m_playButtonSprite = null;
+
+    /// <summary>
     /// Starts when the application is run and plays a coroutine to play the video.
     /// </summary>
     private void Start()
