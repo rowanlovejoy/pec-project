@@ -3,41 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
-using TMPro;
 
 public class StreamVideo : MonoBehaviour
 {
-
-      /// <summary>
-      /// A reference to the RawImage m_rawImage.
-      /// </summary>
+    /// <summary>
+    /// A reference to the RawImage m_rawImage.
+    /// </summary>
     [SerializeField]
     private RawImage m_rawImage;
 
-       /// <summary>
-       /// A reference to the Videolip m_videoToPlay.
-       /// </summary>
+    /// <summary>
+    /// A reference to the Videolip m_videoToPlay.
+    /// </summary>
     [SerializeField]
     private VideoClip m_videoToPlay;
 
-       /// <summary>
-       /// A reference to the VideoPlayer m_videoPlayer.
-       /// </summary>
+    /// <summary>
+    /// A reference to the VideoPlayer m_videoPlayer.
+    /// </summary>
     private VideoPlayer m_videoPlayer;
 
-       /// <summary>
-       /// A reference to the VideoSource m_videoSource.
-       /// </summary>
+    /// <summary>
+    /// A reference to the VideoSource m_videoSource.
+    /// </summary>
     private VideoSource m_videoSource;
-       /// <summary>
-       /// A reference to the AudioSource m_audioSource.
-       /// </summary>
+
+    /// <summary>
+    /// A reference to the AudioSource m_audioSource.
+    /// </summary>
     private AudioSource m_audioSource;
-       /// <summary>
-       /// A reference to the button text, m_text.
-       /// </summary>
+
+    /// <summary>
+    /// Sprite to display when video is paused.
+    /// </summary>
     [SerializeField]
-    private TextMeshProUGUI m_text;
+    private Sprite m_playButtonSprite = null;
+
+    /// <summary>
+    /// Sprite to display when is playing.
+    /// </summary>
+    [SerializeField]
+    private Sprite m_pauseButtonSprite = null;
+
+    /// <summary>
+    /// Image displayed on the PlayPause button.
+    /// </summary>
+    [SerializeField]
+    private Image m_playPauseButtonImage = null;
 
     /// <summary>
     /// Starts when the application is run and plays a coroutine to play the video.
@@ -46,33 +58,14 @@ public class StreamVideo : MonoBehaviour
     {
         Application.runInBackground = true;
 
-        StartCoroutine(playVideo()); 
-    }
-    /// <summary>
-    /// An update method that is called every frame, checking if the video is currently playing.
-    /// </summary>
-    private void Update()
-    { 
-        if (!m_videoPlayer.isPlaying)
-        {
-            m_text.text = "Play";
-        }
-        else
-        {
-            m_text.text = "Pause";
-        }
-        if (m_videoPlayer.frame == (long)m_videoPlayer.frameCount)
-        {
-        /// Video has finished playing.
-            m_videoPlayer.Pause();
-        }
+        StartCoroutine(playVideo());
     }
 
     /// <summary>
     /// Plays the video through the RawImage component.
     /// </summary>
-    /// <returns></returns>
-    IEnumerator playVideo()
+    /// <returns>WaitForSeconds instance.</returns>
+    private IEnumerator playVideo()
     {
         /// Add a videoplayer to the gameObject.
         m_videoPlayer = gameObject.AddComponent<VideoPlayer>();
@@ -114,8 +107,10 @@ public class StreamVideo : MonoBehaviour
             /// Break after 1 seconds.
             break;
         }
+
         m_videoPlayer.isLooping = true;
     }
+
     /// <summary>
     /// Plays or pauses the video when fired.
     /// </summary>
@@ -127,28 +122,33 @@ public class StreamVideo : MonoBehaviour
         /// Changes the video state to playing.
         if (!m_videoPlayer.isPlaying)
         {
-        /// Play video.
+            /// Play video.
             m_videoPlayer.Play();
-        /// Play sound.
+            /// Play sound.
             m_audioSource.Play();
+
+            /// Show the Play sprite on the PlayPause button.
+            m_playPauseButtonImage.sprite = m_pauseButtonSprite;
         }
         else
         {
-        ///A reference to the PauseOnClose method.
+            /// A reference to the PauseOnClose method.
             PauseOnClose();
         }
     }
 
     public void PauseOnClose()
     {
+        /// If video is playing, changes its state to paused.
         if (m_videoPlayer.isPlaying)
         {
-         ///Changes the video state to paused.
-
-         ///Pause video.
+            /// Pause video.
             m_videoPlayer.Pause();
-         ///Pause sound.
+            /// Pause sound.
             m_audioSource.Pause();
+
+            /// Show the Pause sprite on the PlayPause button.
+            m_playPauseButtonImage.sprite = m_playButtonSprite;
         }
     }
 }
