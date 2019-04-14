@@ -43,6 +43,8 @@ public class EndRatingsDisplayManager : MonoBehaviour
             {
                 _ratingIconsSet[i].SetActive(true);
             }
+
+            Debug.Log("Displayed " + _rating + " icons of set");
         }
         /// Log an error if no rating icons have been set.
         else
