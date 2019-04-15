@@ -12,7 +12,12 @@ public class MouldModel : IAdjustable
     /// <summary>
     /// Counter used to count how long wall saturation has been >= 70
     /// </summary>
-    private int m_counter = 0;
+    private int m_highSaturationCounter = 0;
+
+    /// <summary>
+    /// Counter used to count how long mould production has been active
+    /// </summary>
+    private int m_highMouldCounter = 0;
 
     /// <summary>
     /// Constructor for MouldModel. Initialises the MoistureModel reference.
@@ -32,22 +37,33 @@ public class MouldModel : IAdjustable
         /// if wall saturation is high enough for mould
         if (m_moistureModel.WallSaturation >= 70)
         {
-            m_counter++;
+            m_highSaturationCounter++;
         }
         /// else reset counter
         else
         {
-            m_counter = 0;
+            m_highSaturationCounter = 0;
         }
 
         /// if wall saturation has been high for 6 consecutive ticks (3 hours)
-        if (m_counter >= 6)
+        if (m_highSaturationCounter >= 6)
         {
             EventManager.Instance.RaiseMouldProductionOnEvent();
+            m_highMouldCounter++;
         }
         else
         {
             EventManager.Instance.RaiseMouldProductionOffEvent();
+        }
+
+        /// if mould production has been active for 3 consecutive ticks (1.5 hours)
+        if (m_highMouldCounter >= 3)
+        {
+            EventManager.Instance.RaiseHighMouldOnEvent();
+        }
+        else
+        {
+            EventManager.Instance.RaiseHighMouldOffEvent();
         }
     }
 
@@ -56,7 +72,7 @@ public class MouldModel : IAdjustable
     /// </summary>
     public void ResetVariables()
     {
-         m_counter = 0;
+         m_highSaturationCounter = 0;
     }
 
 }
