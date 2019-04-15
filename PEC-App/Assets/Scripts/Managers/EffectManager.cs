@@ -131,6 +131,7 @@ public class EffectManager : MonoBehaviour
     /// </summary>
     public void ShowMouldEffects()
     {
+        Debug.Log("MOULD TRIGGERED!");
         for (int i = 0; i < m_mouldEffects.Length; i++)
         {
             m_mouldEffects[i].Play();
@@ -142,6 +143,7 @@ public class EffectManager : MonoBehaviour
     /// </summary>
     public void HideMouldEffects()
     {
+        Debug.Log("MOULD HIDDEN!");
         for (int i = 0; i < m_mouldEffects.Length; i++)
         {
             m_mouldEffects[i].Stop(true, ParticleSystemStopBehavior.StopEmitting);

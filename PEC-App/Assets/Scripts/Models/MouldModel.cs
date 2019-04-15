@@ -43,11 +43,11 @@ public class MouldModel : IAdjustable
         /// if wall saturation has been high for 6 consecutive ticks (3 hours)
         if (m_counter >= 6)
         {
-            EventManager.Instance.RaiseHighMouldOnEvent();
+            EventManager.Instance.RaiseMouldProductionOnEvent();
         }
         else
         {
-            EventManager.Instance.RaiseHighMouldOffEvent();
+            EventManager.Instance.RaiseMouldProductionOffEvent();
         }
     }
 
