@@ -35,29 +35,13 @@ public class EndRatingsDisplayManager : MonoBehaviour
     /// <param name="_ratingIconsSet">The set of icons used to display the rating.</param>
     private void DisplayRatingIcons(int _rating, GameObject[] _ratingIconsSet)
     {
-        int _visibleIcons = 0;
-
         /// Check that rating icon objects have been set.
         if (_ratingIconsSet != null)
         {
-            ///// Display the correct number of icons for the rating.
-            //for (int i = 0; i < _rating; i++)
-            //{
-            //    _ratingIconsSet[i].SetActive(true);
-            //}
-
             /// Display the correct number of icons for the rating.
-            for (int i = 0; i < _ratingIconsSet.Length; i++)
+            for (int i = 0; i < _rating; i++)
             {
-                if (_visibleIcons < _rating)
-                {
-                    _ratingIconsSet[i].SetActive(true);
-                    _visibleIcons++;
-                }
-                else
-                {
-                    _ratingIconsSet[i].SetActive(false);
-                }
+                _ratingIconsSet[i].SetActive(true);
             }
 
             Debug.Log("Displayed " + _rating + " icons of set");
