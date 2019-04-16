@@ -52,7 +52,7 @@ public class SpriteOpacityChanger : MonoBehaviour
             /// lerp the alpha halfway towards the target opacity 
             m_tempColour.a = Mathf.Lerp(m_sprite.color.a, _targetOpacity, 0.5f);
             m_sprite.color = m_tempColour;
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
     }
 
