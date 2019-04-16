@@ -59,6 +59,8 @@ public class CoreAlgorithm : MonoBehaviour
     /// </summary>
     private EventManager m_eventManager;
 
+    private bool m_isPaused = false;
+
     private void Awake()
     {
         TemperatureModel = new TemperatureModel();
@@ -84,7 +86,14 @@ public class CoreAlgorithm : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartSimulation();
+            if (!m_isPaused)
+            {
+                PauseSimulation();
+            }
+            else
+            {
+                ResumeSimulation();
+            }
         }
     }
 
@@ -99,6 +108,8 @@ public class CoreAlgorithm : MonoBehaviour
             Debug.Log("Simulation starting");
 
             m_simulationInProgress = true;
+
+            m_isPaused = false;
 
             m_eventManager.RaiseStartSimulationEvent();
 
@@ -118,6 +129,11 @@ public class CoreAlgorithm : MonoBehaviour
     {
         while (m_currentTick < 48)
         {
+            while (m_isPaused)
+            {
+                yield return null;
+            }
+
             Debug.Log("TICK: " + m_currentTick);
 
             if (m_currentTick == 10)
@@ -134,13 +150,32 @@ public class CoreAlgorithm : MonoBehaviour
                 model.AdjustVariables(m_currentTick);
             }
 
+            m_currentTick++;
+
             /// Wait time period for animations
             yield return new WaitForSeconds(_tickLength); 
-
-            m_currentTick++;
         }
 
         EndSimulation();
+    }
+
+    /// <summary>
+    /// Pauses the simulation and triggers the PauseSimulation event
+    /// </summary>
+    public void PauseSimulation()
+    {
+        m_isPaused = true;
+
+        m_simulationInProgress = false;
+
+        EventManager.Instance.RaisePauseSimulationEvent();
+
+        Debug.Log("The simulation has been paused.");
+    }
+
+    public void ResumeSimulation()
+    {
+        m_isPaused = false;
     }
 
     /// <summary>
