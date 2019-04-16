@@ -39,7 +39,7 @@ public class EndRatingsCalculator : MonoBehaviour
     private int CalculateRating(int _finalValue)
     {
         /// Calculate the _quotient of the final value being rated divided and the divisor amount.
-        int _quotient = _finalValue / 5;
+        float _quotient = _finalValue / 5;
         Debug.Log("Actual value / 5: " + _quotient);
 
         /// Variable to store the calculated rating.
