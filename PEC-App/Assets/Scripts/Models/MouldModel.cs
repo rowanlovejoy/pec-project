@@ -54,6 +54,7 @@ public class MouldModel : IAdjustable
         else
         {
             EventManager.Instance.RaiseMouldProductionOffEvent();
+            m_highMouldCounter = 0;
         }
 
         /// if mould production has been active for 3 consecutive ticks (1.5 hours)
@@ -72,7 +73,8 @@ public class MouldModel : IAdjustable
     /// </summary>
     public void ResetVariables()
     {
-         m_highSaturationCounter = 0;
+        m_highSaturationCounter = 0;
+        m_highMouldCounter = 0;
     }
 
 }
