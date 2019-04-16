@@ -49,11 +49,21 @@ public class SpriteOpacityChanger : MonoBehaviour
         /// while the actual opacity is not the target opacity
         while (m_sprite.color.a != _targetOpacity)
         {
-            /// lerp the alpha halfway towards the target opacity 
-            m_tempColour.a = Mathf.Lerp(m_sprite.color.a, _targetOpacity, 0.5f);
+            /// lerp the alpha a fifth towards the target opacity 
+            m_tempColour.a = Mathf.Lerp(m_sprite.color.a, _targetOpacity, 0.2f);
             m_sprite.color = m_tempColour;
             yield return null;
         }
+    }
+
+    /// <summary>
+    /// Sets the opacity of the sprite to transparent (0).
+    /// </summary>
+    public void ResetOpacity()
+    {
+        StopAllCoroutines();
+        m_tempColour.a = 0f;
+        m_sprite.color = m_tempColour;
     }
 
     /// <summary>
