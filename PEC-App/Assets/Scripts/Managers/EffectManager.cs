@@ -149,7 +149,7 @@ public class EffectManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Disables all possible effects
+    /// Disables all possible effects by stopping emmission of particles
     /// </summary>
     public void HideAllEffects()
     {
@@ -162,4 +162,32 @@ public class EffectManager : MonoBehaviour
         HideCondensationEffects();
     }
 
+    /// <summary>
+    /// Disables all possible effects by stopping particle system completely and clearing existing particles
+    /// </summary>
+    public void StopAllEffects()
+    {
+        for (int i = 0; i < m_moistureEffects.Length; i++)
+        {
+            for (int j = 0; j < m_moistureEffects[i].childCount; j++)
+            {
+                m_moistureEffects[i].GetChild(j).GetComponent<ParticleSystem>().Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            }
+        }
+
+        for (int i = 0; i < m_condensationEffects.Length; i++)
+        {
+            m_condensationEffects[i].Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+
+        for (int i = 0; i < m_heatEffects.Length; i++)
+        {
+            m_heatEffects[i].Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+
+        for (int i = 0; i < m_mouldEffects.Length; i++)
+        {
+            m_mouldEffects[i].Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+    }
 }
