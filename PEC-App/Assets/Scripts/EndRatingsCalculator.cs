@@ -17,6 +17,12 @@ public class EndRatingsCalculator : MonoBehaviour
     private EndRatingsDisplayManager m_endRatingsDisplayManager = null;
 
     /// <summary>
+    /// Divisor used with the final rated value to calculate quotients for end ratings calculations.
+    /// </summary>
+    [SerializeField]
+    private float m_finalValueDivisor = 5;
+
+    /// <summary>
     /// The final wall saturation rating value.
     /// </summary>
     public int WallSaturationRating { get; private set; } = 0;
@@ -39,7 +45,7 @@ public class EndRatingsCalculator : MonoBehaviour
     private int CalculateRating(int _finalValue)
     {
         /// Calculate the _quotient of the final value being rated divided and the divisor amount.
-        float _quotient = _finalValue / 5;
+        float _quotient = _finalValue / m_finalValueDivisor;
         Debug.Log("Actual value / 5: " + _quotient);
 
         /// Variable to store the calculated rating.
