@@ -9,6 +9,16 @@ public class SpriteOpacityChanger : MonoBehaviour
 
     private Color m_tempColour;
 
+    void OnEnable()
+    {
+        MoistureModel.OnSendWallSaturation += ChangeOpacity;
+    }
+
+    void OnDisable()
+    {
+        MoistureModel.OnSendWallSaturation -= ChangeOpacity;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +26,9 @@ public class SpriteOpacityChanger : MonoBehaviour
         m_tempColour = m_sprite.color;
     }
 
-    public void ChangeOpacity(float _newValue)
+    void ChangeOpacity(float _dampValue)
     {
-        StartCoroutine(LerpAlpha(_newValue));
+        StartCoroutine(LerpAlpha(_dampValue));
     }
 
     IEnumerator LerpAlpha(float _targetValue)

@@ -72,6 +72,18 @@ public class MoistureModel : IAdjustable
     };
 
     /// <summary>
+    /// Delegate for sending wall saturation.
+    /// </summary>
+    /// <param name="_dampValue">The wall saturation converted to a value between 0-1</param>
+    public delegate void SendWallSaturation(float _dampValue);
+
+    /// <summary>
+    /// Event for triggering delegate.
+    /// </summary>
+    public static event SendWallSaturation OnSendWallSaturation;
+
+
+    /// <summary>
     /// Constructor for MoistureModel. Initialises the TemperatureModel reference.
     /// </summary>
     /// <param name="_tempModel"></param>
@@ -137,6 +149,9 @@ public class MoistureModel : IAdjustable
             /// Get impact using air saturation and add it to wall saturation.
             WallSaturation += m_wallSaturationDictionary[AirSaturation];
         }
+
+        /// Trigger event to send out wall saturation to listener
+        OnSendWallSaturation?.Invoke((float)(WallSaturation/100));
 
         /// Debug messages.
         Debug.Log("MoistureProductionSelection: " + MoistureProductionSelection + " MoistureRemovalSelection: " + MoistureRemovalSelection);
