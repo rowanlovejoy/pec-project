@@ -166,7 +166,7 @@ public class CoreAlgorithm : MonoBehaviour
     {
         m_isPaused = true;
 
-        m_simulationInProgress = false;
+        Time.timeScale = 0f;
 
         EventManager.Instance.RaisePauseSimulationEvent();
 
@@ -176,6 +176,8 @@ public class CoreAlgorithm : MonoBehaviour
     public void ResumeSimulation()
     {
         m_isPaused = false;
+
+        Time.timeScale = 1f;
     }
 
     /// <summary>
