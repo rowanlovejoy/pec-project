@@ -52,37 +52,31 @@ public class EndRatingsCalculator : MonoBehaviour
     /// <summary>
     /// Calculate the rating for a value based on the difference between it and its corresponding ideal value.
     /// </summary>
-    /// <param name="_idealValue">The ideal for this rated value.</param>
-    /// <param name="_actualValue">The final value to be rated.</param>
+    /// <param name="finalValue">The final value to be rated.</param>
     /// <returns>The calculated rating for the given actual value.</returns>
-    private int CalculateRating(int _idealValue, int _actualValue)
+    private int CalculateRating(int _finalValue)
     {
-        /// Determine which is the highest value between the ideal and actual.
-        int _highestNumber = Mathf.Max(_idealValue, _actualValue);
-
-        /// Determine which is the lowest value between the ideal and actual.
-        int _lowestNumber = Mathf.Min(_idealValue, _actualValue);
-
-        /// Calculate the difference between the values determined to be the highest and lowest.
-        int _difference = _highestNumber - _lowestNumber;
+        /// Calculate the _quotient of the final value being rated divided and the divisor amount.
+        int _quotient = _finalValue / 5;
+        Debug.Log("Actual value / 5: " + _quotient);
 
         /// Variable to store the calculated rating.
         int _rating = 0;
 
-        /// Determine the rating based on the difference between the actual value and the ideal.
-        if (_difference <= 10)
+        /// Determine the rating based on the quotient.
+        if (_quotient <= 2)
         {
             _rating = 5;
         }
-        else if (_difference <= 15)
+        else if (_quotient <= 3)
         {
             _rating = 4;
         }
-        else if (_difference <= 20)
+        else if (_quotient <= 4)
         {
             _rating = 3;
         }
-        else if (_difference <= 25)
+        else if (_quotient <= 5)
         {
             _rating = 2;
         }
