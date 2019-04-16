@@ -95,13 +95,13 @@ public class EndRatingsCalculator : MonoBehaviour
     public void CalculateEndRatings()
     {
         /// Calculate the rating for Wall Saturation.
-        WallSaturationRating = CalculateRating(m_idealWallSaturation, m_coreAlgorithm.MoistureModel.WallSaturation);
+        WallSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.WallSaturation);
 
         /// Calculate the rating for Air Saturation.
-        AirSaturationRating = CalculateRating(m_idealAirSaturation, m_coreAlgorithm.MoistureModel.AirSaturation);
+        AirSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.AirSaturation);
 
         /// Calculate the rating for Money Spent.
-        MoneySpentRating = CalculateRating(m_idealMondaySpent, m_coreAlgorithm.MoneyModel.MoneySpent);
+        MoneySpentRating = CalculateRating(m_coreAlgorithm.MoneyModel.MoneySpent);
 
         /// Debug statements.
         Debug.Log("Ratings - Wall Sat: " + WallSaturationRating + " - Air Sat: " + AirSaturationRating + " - Money Spent: " + MoneySpentRating);
