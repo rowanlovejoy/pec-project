@@ -17,24 +17,6 @@ public class EndRatingsCalculator : MonoBehaviour
     private EndRatingsDisplayManager m_endRatingsDisplayManager = null;
 
     /// <summary>
-    /// The ideal wall saturation value. Used to determine final wall saturation rating.
-    /// </summary>
-    [SerializeField]
-    private int m_idealWallSaturation;
-
-    /// <summary>
-    /// The ideal air saturation value. Used to determine final air saturation rating.
-    /// </summary>
-    [SerializeField]
-    private int m_idealAirSaturation;
-
-    /// <summary>
-    /// The ideal money spent value. Used to determine final air saturation rating.
-    /// </summary>
-    [SerializeField]
-    private int m_idealMondaySpent;
-
-    /// <summary>
     /// The final wall saturation rating value.
     /// </summary>
     public int WallSaturationRating { get; private set; } = 0;
