@@ -38,13 +38,13 @@ public class EndRatingsCalculator : MonoBehaviour
     public int MoneySpentRating { get; private set; } = 0;
 
     /// <summary>
-    /// Calculate the rating for a value based on the difference between it and its corresponding ideal value.
+    /// Calculate the rating for a given final value.
     /// </summary>
     /// <param name="finalValue">The final value to be rated.</param>
-    /// <returns>The calculated rating for the given actual value.</returns>
+    /// <returns>The calculated rating for the given final value.</returns>
     private int CalculateRating(int _finalValue)
     {
-        /// Calculate the _quotient of the final value being rated divided and the divisor amount.
+        /// Calculate the quotient of the final value being rated divided by the divisor value.
         float _quotient = _finalValue / m_finalValueDivisor;
         Debug.Log("Actual value / 5: " + _quotient);
 
