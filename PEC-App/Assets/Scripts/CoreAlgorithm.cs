@@ -82,14 +82,6 @@ public class CoreAlgorithm : MonoBehaviour
         m_eventManager = EventManager.Instance;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            PauseAndResumeSimulation(); /// DELETE THIS AFTER HOOKUP WITH BUTTON
-        }
-    }
-
     /// <summary>
     /// Starts the simulation.
     /// </summary>
