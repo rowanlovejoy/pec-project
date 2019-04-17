@@ -17,22 +17,22 @@ public class EndRatingsCalculator : MonoBehaviour
     private EndRatingsDisplayManager m_endRatingsDisplayManager = null;
 
     /// <summary>
-    /// The ideal wall saturation value. Used to determine final wall saturation rating.
+    /// Divisor used to calculate the quotient that determines the wall saturation rating.
     /// </summary>
     [SerializeField]
-    private int m_idealWallSaturation;
+    private float m_wallSaturationDivisor = 5;
 
     /// <summary>
-    /// The ideal air saturation value. Used to determine final air saturation rating.
+    /// Divisor used to calculate the quotient that determines the air saturation rating.
     /// </summary>
     [SerializeField]
-    private int m_idealAirSaturation;
+    private float m_airSaturationDivisor = 5;
 
     /// <summary>
-    /// The ideal money spent value. Used to determine final air saturation rating.
+    /// Divisor used to calculate the quotient that determines the money spent rating.
     /// </summary>
     [SerializeField]
-    private int m_idealMondaySpent;
+    private float m_moneySpentDivisor = 5;
 
     /// <summary>
     /// The final wall saturation rating value.
@@ -50,45 +50,40 @@ public class EndRatingsCalculator : MonoBehaviour
     public int MoneySpentRating { get; private set; } = 0;
 
     /// <summary>
-    /// Calculate the rating for a value based on the difference between it and its corresponding ideal value.
+    /// Calculate the rating for a given final value.
     /// </summary>
-    /// <param name="_idealValue">The ideal for this rated value.</param>
-    /// <param name="_actualValue">The final value to be rated.</param>
-    /// <returns>The calculated rating for the given actual value.</returns>
-    private int CalculateRating(int _idealValue, int _actualValue)
+    /// <param name="finalValue">The final value to be rated.</param>
+    /// <param name="_divisor">The divisor used with the final value to calculate the quotient that determines the rating.</param>
+    /// <returns>The calculated rating for the given final value.</returns>
+    private int CalculateRating(int _finalValue, float _divisor)
     {
-        /// Determine which is the highest value between the ideal and actual.
-        int _highestNumber = Mathf.Max(_idealValue, _actualValue);
-
-        /// Determine which is the lowest value between the ideal and actual.
-        int _lowestNumber = Mathf.Min(_idealValue, _actualValue);
-
-        /// Calculate the difference between the values determined to be the highest and lowest.
-        int _difference = _highestNumber - _lowestNumber;
+        /// Calculate the quotient of the final value being rated divided by the divisor value.
+        float _quotient = _finalValue / _divisor;
+        Debug.Log("Final value: " + _finalValue + " / " + _divisor + ": " + _quotient);
 
         /// Variable to store the calculated rating.
         int _rating = 0;
 
-        /// Determine the rating based on the difference between the actual value and the ideal.
-        if (_difference <= 10)
+        /// Determine the rating based on the quotient.
+        if (_quotient <= 2)
         {
-            _rating = 5;
+            _rating = 1;
         }
-        else if (_difference <= 15)
-        {
-            _rating = 4;
-        }
-        else if (_difference <= 20)
-        {
-            _rating = 3;
-        }
-        else if (_difference <= 25)
+        else if (_quotient <= 3)
         {
             _rating = 2;
         }
+        else if (_quotient <= 4)
+        {
+            _rating = 3;
+        }
+        else if (_quotient <= 5)
+        {
+            _rating = 4;
+        }
         else
         {
-            _rating = 1;
+            _rating = 5;
         }
 
         /// Return the calculated rating.
@@ -101,13 +96,13 @@ public class EndRatingsCalculator : MonoBehaviour
     public void CalculateEndRatings()
     {
         /// Calculate the rating for Wall Saturation.
-        WallSaturationRating = CalculateRating(m_idealWallSaturation, m_coreAlgorithm.MoistureModel.WallSaturation);
+        WallSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.WallSaturation, m_wallSaturationDivisor);
 
         /// Calculate the rating for Air Saturation.
-        AirSaturationRating = CalculateRating(m_idealAirSaturation, m_coreAlgorithm.MoistureModel.AirSaturation);
+        AirSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.AirSaturation, m_airSaturationDivisor);
 
         /// Calculate the rating for Money Spent.
-        MoneySpentRating = CalculateRating(m_idealMondaySpent, m_coreAlgorithm.MoneyModel.MoneySpent);
+        MoneySpentRating = CalculateRating(m_coreAlgorithm.MoneyModel.MoneySpent, m_moneySpentDivisor);
 
         /// Debug statements.
         Debug.Log("Ratings - Wall Sat: " + WallSaturationRating + " - Air Sat: " + AirSaturationRating + " - Money Spent: " + MoneySpentRating);
