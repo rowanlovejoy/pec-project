@@ -1811,9 +1811,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_coreAlgorithm: {fileID: 0}
   m_endRatingsDisplayManager: {fileID: 65066395}
-  m_wallSaturationDivisor: 25
-  m_airSaturationDivisor: 25
-  m_moneySpentDivisor: 10
+  m_idealWallSaturation: 0
+  m_idealAirSaturation: 60
+  m_idealMondaySpent: 20
 --- !u!114 &6537861147644328915
 MonoBehaviour:
   m_ObjectHideFlags: 0
