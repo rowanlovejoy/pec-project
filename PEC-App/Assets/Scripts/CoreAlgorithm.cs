@@ -202,7 +202,7 @@ public class CoreAlgorithm : MonoBehaviour
 
         m_eventManager.RaiseEndSimulationEvent();
 
-        ResetValues();
+        ResetSimulationTick();
 
         Debug.Log("The simulation has ended.");
     }
@@ -217,10 +217,11 @@ public class CoreAlgorithm : MonoBehaviour
 
         m_simulationInProgress = false;
 
-        m_eventManager.RaiseStopSimulationEvent();
-
         StopAllCoroutines();
+        ResetSimulationTick();
         ResetValues();
+
+        m_eventManager.RaiseStopSimulationEvent();
 
         Debug.Log("The simulation has been stopped prematurely.");
     }
@@ -242,5 +243,7 @@ public class CoreAlgorithm : MonoBehaviour
         {
             model.ResetVariables();
         }
+
+        EventManager.Instance.RaiseResetSimulationEvent();
     }
 }
