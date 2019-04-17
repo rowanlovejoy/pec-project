@@ -53,6 +53,7 @@ public class EndRatingsCalculator : MonoBehaviour
     /// Calculate the rating for a given final value.
     /// </summary>
     /// <param name="finalValue">The final value to be rated.</param>
+    /// <param name="_divisor">The divisor used with the final value to calculate the quotient that determines the rating.</param>
     /// <returns>The calculated rating for the given final value.</returns>
     private int CalculateRating(int _finalValue, float _divisor)
     {
