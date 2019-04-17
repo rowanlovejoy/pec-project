@@ -29,6 +29,11 @@ public class CoreAlgorithm : MonoBehaviour
     public MouldModel MouldModel { get; private set; } = null;
 
     /// <summary>
+    /// Indicates if the simulation is paused or not while in progress.
+    /// </summary>
+    public bool IsPaused { get; private set; } = false;
+
+    /// <summary>
     /// Array of all model classes.
     /// </summary>
     private IAdjustable[] m_models;
@@ -80,14 +85,6 @@ public class CoreAlgorithm : MonoBehaviour
         m_eventManager = EventManager.Instance;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartSimulation();
-        }
-    }
-
     /// <summary>
     /// Starts the simulation.
     /// </summary>
@@ -100,13 +97,15 @@ public class CoreAlgorithm : MonoBehaviour
 
             m_simulationInProgress = true;
 
+            IsPaused = false;
+
             m_eventManager.RaiseStartSimulationEvent();
 
             StartCoroutine(Tick(m_tickLength)); 
         }
         else
         {
-            Debug.LogError("Simulation already in progress.");
+            Debug.LogWarning("Simulation already in progress.");
         }
     }
 
@@ -118,6 +117,11 @@ public class CoreAlgorithm : MonoBehaviour
     {
         while (m_currentTick < 48)
         {
+            while (IsPaused)
+            {
+                yield return null;
+            }
+
             Debug.Log("TICK: " + m_currentTick);
 
             if (m_currentTick == 10)
@@ -134,13 +138,59 @@ public class CoreAlgorithm : MonoBehaviour
                 model.AdjustVariables(m_currentTick);
             }
 
+            m_currentTick++;
+
             /// Wait time period for animations
             yield return new WaitForSeconds(_tickLength); 
-
-            m_currentTick++;
         }
 
         EndSimulation();
+    }
+
+    /// <summary>
+    /// Pauses the simulation and triggers the PauseSimulation event
+    /// </summary>
+    public void PauseAndResumeSimulation()
+    {
+        /// if simulation has started and is playing
+        if (m_simulationInProgress)
+        {
+            if (!IsPaused)
+            {
+                IsPaused = true;
+
+                Time.timeScale = 0f;
+
+                EventManager.Instance.RaisePauseSimulationEvent();
+
+                Debug.Log("The simulation has been paused.");
+            }
+            else
+            {
+                IsPaused = false;
+
+                Time.timeScale = 1f;
+
+                Debug.Log("The simulation has been resumed.");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Cannot pause or resume simulation as it is not in progress.");
+        }
+    }
+
+    /// <summary>
+    /// Resumes simulation if it is paused.
+    /// </summary>
+    private void ResumeSimulation()
+    {
+        if (IsPaused)
+        {
+            IsPaused = false;
+
+            Time.timeScale = 1f;
+        }
     }
 
     /// <summary>
@@ -162,6 +212,9 @@ public class CoreAlgorithm : MonoBehaviour
     /// </summary>
     public void StopSimulation()
     {
+        /// this is for if the simulation is stopped while it is paused
+        ResumeSimulation();
+
         m_simulationInProgress = false;
 
         m_eventManager.RaiseStopSimulationEvent();
