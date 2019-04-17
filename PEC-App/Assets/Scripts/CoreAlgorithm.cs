@@ -186,6 +186,19 @@ public class CoreAlgorithm : MonoBehaviour
     }
 
     /// <summary>
+    /// Resumes simulation if it is paused.
+    /// </summary>
+    private void ResumeSimulation()
+    {
+        if (m_isPaused)
+        {
+            m_isPaused = false;
+
+            Time.timeScale = 1f;
+        }
+    }
+
+    /// <summary>
     /// Natural end to the simulation.
     /// </summary>
     private void EndSimulation()
@@ -205,7 +218,7 @@ public class CoreAlgorithm : MonoBehaviour
     public void StopSimulation()
     {
         /// this is for if the simulation is stopped while it is paused
-        PauseAndResumeSimulation();
+        ResumeSimulation();
 
         m_simulationInProgress = false;
 
