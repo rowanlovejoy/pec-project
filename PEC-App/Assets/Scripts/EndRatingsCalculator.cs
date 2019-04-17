@@ -46,7 +46,7 @@ public class EndRatingsCalculator : MonoBehaviour
     {
         /// Calculate the quotient of the final value being rated divided by the divisor value.
         float _quotient = _finalValue / m_finalValueDivisor;
-        Debug.Log("Actual value / 5: " + _quotient);
+        Debug.Log("Final value: " + _finalValue + " / " + m_finalValueDivisor + ": " + _quotient);
 
         /// Variable to store the calculated rating.
         int _rating = 0;
@@ -54,11 +54,11 @@ public class EndRatingsCalculator : MonoBehaviour
         /// Determine the rating based on the quotient.
         if (_quotient <= 2)
         {
-            _rating = 5;
+            _rating = 1;
         }
         else if (_quotient <= 3)
         {
-            _rating = 4;
+            _rating = 2;
         }
         else if (_quotient <= 4)
         {
@@ -66,11 +66,11 @@ public class EndRatingsCalculator : MonoBehaviour
         }
         else if (_quotient <= 5)
         {
-            _rating = 2;
+            _rating = 4;
         }
         else
         {
-            _rating = 1;
+            _rating = 5;
         }
 
         /// Return the calculated rating.
