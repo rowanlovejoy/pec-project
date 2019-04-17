@@ -51,7 +51,7 @@ public class MoistureModel : IAdjustable
     /// <summary>
     /// The percentage of total possible litres of water in wall based on temperature.
     /// </summary>
-    public int WallSaturation { get; private set; } = 10;
+    public int WallSaturation { get; private set; } = 0;
 
     /// <summary>
     /// Instance of the air saturation table.
@@ -70,6 +70,18 @@ public class MoistureModel : IAdjustable
         [90] = 6,
         [100] = 8
     };
+
+    /// <summary>
+    /// Delegate for sending wall saturation.
+    /// </summary>
+    /// <param name="_dampValue">The wall saturation converted to a value between 0-1</param>
+    public delegate void SendWallSaturation(float _dampValue);
+
+    /// <summary>
+    /// Event for triggering delegate.
+    /// </summary>
+    public static event SendWallSaturation OnSendWallSaturation;
+
 
     /// <summary>
     /// Constructor for MoistureModel. Initialises the TemperatureModel reference.
@@ -138,6 +150,9 @@ public class MoistureModel : IAdjustable
             WallSaturation += m_wallSaturationDictionary[AirSaturation];
         }
 
+        /// Trigger event to send out wall saturation to listener
+        OnSendWallSaturation?.Invoke((float)WallSaturation / 100);
+
         /// Debug messages.
         Debug.Log("MoistureProductionSelection: " + MoistureProductionSelection + " MoistureRemovalSelection: " + MoistureRemovalSelection);
 
@@ -155,7 +170,7 @@ public class MoistureModel : IAdjustable
     {
         m_moistureInAir = 1f;
         AirSaturation = 50;
-        WallSaturation = 10;
+        WallSaturation = 0;
     }
 
     /// <summary>
