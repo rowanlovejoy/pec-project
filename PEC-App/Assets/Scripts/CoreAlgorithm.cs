@@ -176,6 +176,14 @@ public class CoreAlgorithm : MonoBehaviour
 
                 Debug.Log("The simulation has been paused.");
             }
+            else
+            {
+                Debug.LogError("Cannot pause simulation as it is already paused.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Cannot pause simulation as it is not in progress.");
         }
     }
 
@@ -189,6 +197,10 @@ public class CoreAlgorithm : MonoBehaviour
             m_isPaused = false;
 
             Time.timeScale = 1f;
+        }
+        else
+        {
+            Debug.LogError("Cannot resume simulation as it is not paused.");
         }
     }
 
