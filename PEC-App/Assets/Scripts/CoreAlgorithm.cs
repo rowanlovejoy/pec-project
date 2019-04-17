@@ -179,11 +179,17 @@ public class CoreAlgorithm : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resumes the simulation if it is paused
+    /// </summary>
     public void ResumeSimulation()
     {
-        m_isPaused = false;
+        if (m_isPaused)
+        {
+            m_isPaused = false;
 
-        Time.timeScale = 1f;
+            Time.timeScale = 1f;
+        }
     }
 
     /// <summary>
@@ -205,6 +211,9 @@ public class CoreAlgorithm : MonoBehaviour
     /// </summary>
     public void StopSimulation()
     {
+        /// this is for if the simulation is stopped while it is paused
+        ResumeSimulation();
+
         m_simulationInProgress = false;
 
         m_eventManager.RaiseStopSimulationEvent();
