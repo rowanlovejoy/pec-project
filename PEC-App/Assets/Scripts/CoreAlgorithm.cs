@@ -226,12 +226,18 @@ public class CoreAlgorithm : MonoBehaviour
     }
 
     /// <summary>
-    /// Resets all simulation values in the models.
+    /// Resets the tick and all simulation values in the models
     /// </summary>
-    private void ResetValues()
+    private void ResetSimulationTick()
     {
         m_currentTick = 0;
+    }
 
+    /// <summary>
+    /// Resets all simulation values in the models.
+    /// </summary>
+    public void ResetValues()
+    {
         foreach (IAdjustable model in m_models)
         {
             model.ResetVariables();
