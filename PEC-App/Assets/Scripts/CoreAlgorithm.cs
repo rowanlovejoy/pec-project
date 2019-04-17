@@ -29,6 +29,11 @@ public class CoreAlgorithm : MonoBehaviour
     public MouldModel MouldModel { get; private set; } = null;
 
     /// <summary>
+    /// Indicates if the simulation is paused or not while in progress.
+    /// </summary>
+    public bool IsPaused { get; private set; } = false;
+
+    /// <summary>
     /// Array of all model classes.
     /// </summary>
     private IAdjustable[] m_models;
@@ -58,8 +63,6 @@ public class CoreAlgorithm : MonoBehaviour
     /// Cache of EventManager singleton instance
     /// </summary>
     private EventManager m_eventManager;
-
-    private bool m_isPaused = false;
 
     private void Awake()
     {
@@ -94,7 +97,7 @@ public class CoreAlgorithm : MonoBehaviour
 
             m_simulationInProgress = true;
 
-            m_isPaused = false;
+            IsPaused = false;
 
             m_eventManager.RaiseStartSimulationEvent();
 
@@ -114,7 +117,7 @@ public class CoreAlgorithm : MonoBehaviour
     {
         while (m_currentTick < 48)
         {
-            while (m_isPaused)
+            while (IsPaused)
             {
                 yield return null;
             }
@@ -152,9 +155,9 @@ public class CoreAlgorithm : MonoBehaviour
         /// if simulation has started and is playing
         if (m_simulationInProgress)
         {
-            if (!m_isPaused)
+            if (!IsPaused)
             {
-                m_isPaused = true;
+                IsPaused = true;
 
                 Time.timeScale = 0f;
 
@@ -164,7 +167,7 @@ public class CoreAlgorithm : MonoBehaviour
             }
             else
             {
-                m_isPaused = false;
+                IsPaused = false;
 
                 Time.timeScale = 1f;
 
@@ -182,9 +185,9 @@ public class CoreAlgorithm : MonoBehaviour
     /// </summary>
     private void ResumeSimulation()
     {
-        if (m_isPaused)
+        if (IsPaused)
         {
-            m_isPaused = false;
+            IsPaused = false;
 
             Time.timeScale = 1f;
         }

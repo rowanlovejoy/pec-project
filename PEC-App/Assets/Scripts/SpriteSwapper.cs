@@ -27,6 +27,12 @@ public class SpriteSwapper : MonoBehaviour
     /// </summary>
     private bool m_isDefaultSprite = true;
 
+    /// <summary>
+    /// Reference to core algorithm.
+    /// </summary>
+    [SerializeField]
+    private CoreAlgorithm m_coreAlgorithm;
+
     /// Start is called before the first frame update
     private void Start()
     {
@@ -43,7 +49,7 @@ public class SpriteSwapper : MonoBehaviour
         if (m_isDefaultSprite)
         {
             /// If simulation is not playing.
-            if (Time.timeScale == 0)
+            if (m_coreAlgorithm.IsPaused)
             {
                 m_image.sprite = m_newSprite;
                 m_isDefaultSprite = false;
@@ -52,7 +58,7 @@ public class SpriteSwapper : MonoBehaviour
         else
         {
             /// If simulation is playing
-            if (Time.timeScale == 1)
+            if (!m_coreAlgorithm.IsPaused)
             {
                 m_image.sprite = m_defaultSprite;
                 m_isDefaultSprite = true;
