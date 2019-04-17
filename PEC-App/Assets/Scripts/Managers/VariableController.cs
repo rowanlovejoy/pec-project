@@ -231,4 +231,12 @@ public class VariableController : MonoBehaviour
         /// Hides the Simulation Display GUI when the simulation stops.
         m_simulationDisplayGUI.SetActive(false);
     }
+
+    /// <summary>
+    /// Reset the simulation values in the models.
+    /// </summary>
+    public void ResetSimulationValues()
+    {
+        m_coreAlgorithm.ResetValues();
+    }
 }
