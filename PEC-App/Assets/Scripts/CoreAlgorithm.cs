@@ -86,7 +86,7 @@ public class CoreAlgorithm : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            PauseAndResumeSimulation();
+            PauseAndResumeSimulation(); /// DELETE THIS AFTER HOOKUP WITH BUTTON
         }
     }
 
