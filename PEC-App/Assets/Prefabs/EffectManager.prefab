@@ -312,12 +312,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a1320f1fded9f940ad1c89dce4df0d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_event: {fileID: 11400000, guid: 17eadf5c7e37c3847b875c53f82c5f73, type: 2}
+  m_event: {fileID: 11400000, guid: c219acc65cf1c384a9641ac0fc759412, type: 2}
   m_response:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3059340419234074142}
-        m_MethodName: HideAllEffects
+        m_MethodName: StopAllEffects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -346,7 +346,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3059340419234074142}
-        m_MethodName: HideAllEffects
+        m_MethodName: StopAllEffects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
