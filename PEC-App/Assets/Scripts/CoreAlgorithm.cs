@@ -157,6 +157,7 @@ public class CoreAlgorithm : MonoBehaviour
     /// </summary>
     public void PauseAndResumeSimulation()
     {
+        /// if simulation has started and is playing
         if (m_simulationInProgress)
         {
             if (!m_isPaused)
