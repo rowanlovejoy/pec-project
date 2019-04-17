@@ -2663,6 +2663,14 @@ PrefabInstance:
       propertyPath: m_coreAlgorithm
       value: 
       objectReference: {fileID: 1553040066}
+    - target: {fileID: 502650407, guid: ed1d45b8e48e0ca42b7f9158f598c53a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 533633758}
+    - target: {fileID: 502650407, guid: ed1d45b8e48e0ca42b7f9158f598c53a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetTrigger
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed1d45b8e48e0ca42b7f9158f598c53a, type: 3}
 --- !u!1 &962490400
