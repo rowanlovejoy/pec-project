@@ -54,11 +54,11 @@ public class EndRatingsCalculator : MonoBehaviour
     /// </summary>
     /// <param name="finalValue">The final value to be rated.</param>
     /// <returns>The calculated rating for the given final value.</returns>
-    private int CalculateRating(int _finalValue)
+    private int CalculateRating(int _finalValue, float _divisor)
     {
         /// Calculate the quotient of the final value being rated divided by the divisor value.
-        float _quotient = _finalValue / m_wallSaturationDivisor;
-        Debug.Log("Final value: " + _finalValue + " / " + m_wallSaturationDivisor + ": " + _quotient);
+        float _quotient = _finalValue / _divisor;
+        Debug.Log("Final value: " + _finalValue + " / " + _divisor + ": " + _quotient);
 
         /// Variable to store the calculated rating.
         int _rating = 0;
@@ -95,13 +95,13 @@ public class EndRatingsCalculator : MonoBehaviour
     public void CalculateEndRatings()
     {
         /// Calculate the rating for Wall Saturation.
-        WallSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.WallSaturation);
+        WallSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.WallSaturation, m_wallSaturationDivisor);
 
         /// Calculate the rating for Air Saturation.
-        AirSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.AirSaturation);
+        AirSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.AirSaturation, m_airSaturationDivisor);
 
         /// Calculate the rating for Money Spent.
-        MoneySpentRating = CalculateRating(m_coreAlgorithm.MoneyModel.MoneySpent);
+        MoneySpentRating = CalculateRating(m_coreAlgorithm.MoneyModel.MoneySpent, m_moneySpentDivisor);
 
         /// Debug statements.
         Debug.Log("Ratings - Wall Sat: " + WallSaturationRating + " - Air Sat: " + AirSaturationRating + " - Money Spent: " + MoneySpentRating);
