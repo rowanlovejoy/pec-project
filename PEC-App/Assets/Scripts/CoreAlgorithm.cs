@@ -110,7 +110,7 @@ public class CoreAlgorithm : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Simulation already in progress.");
+            Debug.LogWarning("Simulation already in progress.");
         }
     }
 
@@ -181,7 +181,7 @@ public class CoreAlgorithm : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Cannot pause or resume simulation as it is not in progress.");
+            Debug.LogWarning("Cannot pause or resume simulation as it is not in progress.");
         }
     }
 
