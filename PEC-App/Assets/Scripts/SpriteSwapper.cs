@@ -42,7 +42,7 @@ public class SpriteSwapper : MonoBehaviour
     {
         if (m_isDefaultSprite)
         {
-            /// If simulation is playing.
+            /// If simulation is not playing.
             if (Time.timeScale == 0)
             {
                 m_image.sprite = m_newSprite;
@@ -51,7 +51,7 @@ public class SpriteSwapper : MonoBehaviour
         }
         else
         {
-            /// If simulation is not playing
+            /// If simulation is playing
             if (Time.timeScale == 1)
             {
                 m_image.sprite = m_defaultSprite;
