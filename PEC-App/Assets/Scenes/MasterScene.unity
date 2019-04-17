@@ -3340,6 +3340,7 @@ GameObject:
   - component: {fileID: 1211722316}
   - component: {fileID: 1211722315}
   - component: {fileID: 1211722314}
+  - component: {fileID: 1211722317}
   m_Layer: 5
   m_Name: btn_pause
   m_TagString: Untagged
@@ -3417,6 +3418,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1211722317}
+        m_MethodName: SwapSprites
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1211722315
@@ -3456,6 +3468,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211722312}
   m_CullTransparentMesh: 0
+--- !u!114 &1211722317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211722312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a4ff0c75ed5a44996b47159f5cc138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_newSprite: {fileID: 21300000, guid: 3de34ef8354d8c84f89b7ea813e11319, type: 3}
 --- !u!114 &1247435890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1247435890, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
