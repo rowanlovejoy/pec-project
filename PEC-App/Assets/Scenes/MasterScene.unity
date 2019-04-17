@@ -2663,6 +2663,11 @@ PrefabInstance:
       propertyPath: m_coreAlgorithm
       value: 
       objectReference: {fileID: 1553040066}
+    - target: {fileID: 6537861147644328924, guid: ed1d45b8e48e0ca42b7f9158f598c53a,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed1d45b8e48e0ca42b7f9158f598c53a, type: 3}
 --- !u!1 &962490400
@@ -5487,6 +5492,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Infomation Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8588211111117509630, guid: 2fe3377cb5625124f9a8f3d78fdc8219,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1247435890, guid: 2fe3377cb5625124f9a8f3d78fdc8219, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
