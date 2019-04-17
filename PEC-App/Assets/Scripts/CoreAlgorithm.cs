@@ -232,6 +232,9 @@ public class CoreAlgorithm : MonoBehaviour
     private void ResetSimulationTick()
     {
         m_currentTick = 0;
+
+        /// Always reset MoneyModel variables
+        MoneyModel.ResetVariables();
     }
 
     /// <summary>
