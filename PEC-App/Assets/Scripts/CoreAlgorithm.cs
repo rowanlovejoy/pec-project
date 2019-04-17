@@ -86,14 +86,7 @@ public class CoreAlgorithm : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!m_isPaused)
-            {
-                PauseSimulation();
-            }
-            else
-            {
-                ResumeSimulation();
-            }
+            PauseAndResumeSimulation();
         }
     }
 
@@ -162,7 +155,7 @@ public class CoreAlgorithm : MonoBehaviour
     /// <summary>
     /// Pauses the simulation and triggers the PauseSimulation event
     /// </summary>
-    public void PauseSimulation()
+    public void PauseAndResumeSimulation()
     {
         if (m_simulationInProgress)
         {
@@ -178,29 +171,16 @@ public class CoreAlgorithm : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Cannot pause simulation as it is already paused.");
+                m_isPaused = false;
+
+                Time.timeScale = 1f;
+
+                Debug.Log("The simulation has been resumed.");
             }
         }
         else
         {
-            Debug.LogError("Cannot pause simulation as it is not in progress.");
-        }
-    }
-
-    /// <summary>
-    /// Resumes the simulation if it is paused
-    /// </summary>
-    public void ResumeSimulation()
-    {
-        if (m_isPaused)
-        {
-            m_isPaused = false;
-
-            Time.timeScale = 1f;
-        }
-        else
-        {
-            Debug.LogError("Cannot resume simulation as it is not paused.");
+            Debug.LogError("Cannot pause or resume simulation as it is not in progress.");
         }
     }
 
@@ -224,7 +204,7 @@ public class CoreAlgorithm : MonoBehaviour
     public void StopSimulation()
     {
         /// this is for if the simulation is stopped while it is paused
-        ResumeSimulation();
+        PauseAndResumeSimulation();
 
         m_simulationInProgress = false;
 
