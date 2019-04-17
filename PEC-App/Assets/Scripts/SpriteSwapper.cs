@@ -42,13 +42,21 @@ public class SpriteSwapper : MonoBehaviour
     {
         if (m_isDefaultSprite)
         {
-            m_image.sprite = m_newSprite;
-            m_isDefaultSprite = false;
+            /// If simulation is playing.
+            if (Time.timeScale == 0)
+            {
+                m_image.sprite = m_newSprite;
+                m_isDefaultSprite = false;
+            }
         }
         else
         {
-            m_image.sprite = m_defaultSprite;
-            m_isDefaultSprite = true;
+            /// If simulation is not playing
+            if (Time.timeScale == 1)
+            {
+                m_image.sprite = m_defaultSprite;
+                m_isDefaultSprite = true;
+            }
         }
     }
 }
