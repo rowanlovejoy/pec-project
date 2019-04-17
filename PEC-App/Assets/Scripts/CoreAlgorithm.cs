@@ -164,13 +164,19 @@ public class CoreAlgorithm : MonoBehaviour
     /// </summary>
     public void PauseSimulation()
     {
-        m_isPaused = true;
+        if (m_simulationInProgress)
+        {
+            if (!m_isPaused)
+            {
+                m_isPaused = true;
 
-        Time.timeScale = 0f;
+                Time.timeScale = 0f;
 
-        EventManager.Instance.RaisePauseSimulationEvent();
+                EventManager.Instance.RaisePauseSimulationEvent();
 
-        Debug.Log("The simulation has been paused.");
+                Debug.Log("The simulation has been paused.");
+            }
+        }
     }
 
     public void ResumeSimulation()
