@@ -16,7 +16,7 @@ public class ParamHelpTextManager : MonoBehaviour
     /// The currently displayed parameter help text.
     /// </summary>
     [SerializeField]
-    private TextMeshProUGUI m_displayedText = null;
+    private TextMeshProUGUI m_textDisplay = null;
 
     /// <summary>
     /// Displays the selected text on Parameter Help screen.
@@ -24,6 +24,6 @@ public class ParamHelpTextManager : MonoBehaviour
     /// <param name="_textIndex">The index at which the selected text is stored.</param>
     public void DisplayHelpText(int _textIndex)
     {
-        m_displayedText.text = m_paramText[_textIndex];
+        m_textDisplay.text = m_paramText[_textIndex];
     }
 }
