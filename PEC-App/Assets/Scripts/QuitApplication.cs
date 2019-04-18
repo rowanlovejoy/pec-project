@@ -9,10 +9,10 @@ public class QuitApplication : MonoBehaviour
     /// </summary>
     public void QuitApplicationBtn()
     {
-        ///Quits the application.
+        /// Quits the application.
         Application.Quit();
 
-        ///For testing in Unity Editor only.
+        /// For testing in Unity Editor only.
         #if (UNITY_EDITOR)
         Debug.Log("Application would have been closed, if you were in a build of the project.");
         #endif
