@@ -11,4 +11,10 @@ public class ParamHelpTextManager : MonoBehaviour
     /// </summary>
     [SerializeField, TextArea(3, 10)]
     private string[] m_paramText = null;
+
+    /// <summary>
+    /// The currently displayed parameter help text.
+    /// </summary>
+    [SerializeField]
+    private TextMeshProUGUI m_displayedText = null;
 }
