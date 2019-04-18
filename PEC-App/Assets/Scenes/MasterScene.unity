@@ -1900,10 +1900,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_paramText:
-  - Text 1
-  - Text 2
-  - Text 3
-  - Text 4
+  - Heating Period controls the duration heating stays on for after being turned on.
+    Longer periods may raise the temperature higher but will cost more money.
+  - Thermostat Setting controls what temperature the thermostat will try to raise
+    the house to while heating is on. Higher settings will result in a warmer house.
+  - "Moisture Production controls how much moisture the house produces. Moisture makes
+    the house\u2019s air and walls damper. Higher settings will cause more moisture
+    to be produced."
+  - "Ventilation controls how well ventilated the house is. The better the ventilation,
+    the more moisture is removed over time. Higher settings will improve the house\u2019s
+    ventilation."
   m_textDisplay: {fileID: 1594648923}
 --- !u!1 &633728778
 GameObject:
@@ -4847,7 +4853,7 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
