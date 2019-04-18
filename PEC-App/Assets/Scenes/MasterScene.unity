@@ -1721,6 +1721,7 @@ GameObject:
   - component: {fileID: 611092996}
   - component: {fileID: 611092995}
   - component: {fileID: 611092998}
+  - component: {fileID: 611092999}
   m_Layer: 5
   m_Name: pnl_paramHelpScreen
   m_TagString: Untagged
@@ -1819,6 +1820,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &611092999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611092993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc908c5221d5ee4d9fe2d7b9373392d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_paramText:
+  - 
+  - 
+  - 
 --- !u!1 &633728778
 GameObject:
   m_ObjectHideFlags: 0
