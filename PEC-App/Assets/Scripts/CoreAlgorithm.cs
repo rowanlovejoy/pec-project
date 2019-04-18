@@ -202,7 +202,7 @@ public class CoreAlgorithm : MonoBehaviour
 
         m_eventManager.RaiseEndSimulationEvent();
 
-        ResetValues();
+        ResetSimulationTick();
 
         Debug.Log("The simulation has ended.");
     }
@@ -217,24 +217,36 @@ public class CoreAlgorithm : MonoBehaviour
 
         m_simulationInProgress = false;
 
-        m_eventManager.RaiseStopSimulationEvent();
-
         StopAllCoroutines();
+        ResetSimulationTick();
         ResetValues();
+
+        m_eventManager.RaiseStopSimulationEvent();
 
         Debug.Log("The simulation has been stopped prematurely.");
     }
 
     /// <summary>
-    /// Resets all simulation values in the models.
+    /// Resets the tick and all simulation values in the models
     /// </summary>
-    private void ResetValues()
+    private void ResetSimulationTick()
     {
         m_currentTick = 0;
 
+        /// Always reset MoneyModel variables
+        MoneyModel.ResetVariables();
+    }
+
+    /// <summary>
+    /// Resets all simulation values in the models.
+    /// </summary>
+    public void ResetValues()
+    {
         foreach (IAdjustable model in m_models)
         {
             model.ResetVariables();
         }
+
+        EventManager.Instance.RaiseResetSimulationEvent();
     }
 }
