@@ -23,6 +23,8 @@ public class StatsScreenCalculator : MonoBehaviour
     void Update()
     {
         m_airSat.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + " / 100";
+
+        m_wallSat.text = "Dampness of Walls: " + m_coreAlgorithm.MoistureModel.WallSaturation + " / 100";
     }
 }
 
