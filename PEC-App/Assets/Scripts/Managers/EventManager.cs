@@ -150,6 +150,12 @@ public class EventManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameEvent m_dayEndEvent = null;
+
+    /// <summary>
+    /// Reference to the OnSimulationTick event.
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_onSimulationTick = null;
     #endregion
 
     /// <summary>
@@ -256,7 +262,14 @@ public class EventManager : MonoBehaviour
     /// </summary>
     public void OnSimulationTick()
     {
-
+        if (m_onSimulationTick != null)
+        {
+            m_onSimulationTick.Raise();
+        }
+        else
+        {
+            Debug.LogError("The on simulation tick event has not been assigned.");
+        }
     }
     #endregion
 
