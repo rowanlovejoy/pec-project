@@ -4,20 +4,30 @@ using UnityEngine;
 using TMPro;
 public class StatsScreenCalculator : MonoBehaviour
 {
+    /// <summary>
+    /// A reference to an  air saturation TMPro text component.
+    /// </summary>
     [SerializeField]
     private TextMeshProUGUI m_airSat;
+ 
+    /// <summary>
+    ///  A reference to a wall saturation TMPro text component.
+    /// </summary>
     [SerializeField]
     private TextMeshProUGUI m_wallSat;
+ 
+    /// <summary>
+    /// A reference to a cost TMPro text component.
+    /// </summary>
     [SerializeField]
     private TextMeshProUGUI m_cost;
 
+    /// <summary>
+    /// A reference to CoreAlgorithm.
+    /// </summary>
+
     [SerializeField]
     private CoreAlgorithm m_coreAlgorithm;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
