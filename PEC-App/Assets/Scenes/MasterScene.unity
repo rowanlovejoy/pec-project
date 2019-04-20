@@ -6469,7 +6469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_airSat: {fileID: 335774352}
   m_wallSat: {fileID: 1620893245}
-  m_cost: {fileID: 0}
+  m_cost: {fileID: 2107467487}
   m_coreAlgorithm: {fileID: 0}
 --- !u!1 &2073988730
 GameObject:
