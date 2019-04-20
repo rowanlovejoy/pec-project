@@ -25,6 +25,8 @@ public class StatsScreenCalculator : MonoBehaviour
         m_airSat.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + " / 100";
 
         m_wallSat.text = "Dampness of Walls: " + m_coreAlgorithm.MoistureModel.WallSaturation + " / 100";
+
+        m_cost.text = "Cost: " + m_coreAlgorithm.MoneyModel.MoneySpent + " / 40";
     }
 }
 
