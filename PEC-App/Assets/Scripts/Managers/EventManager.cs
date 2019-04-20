@@ -251,6 +251,13 @@ public class EventManager : MonoBehaviour
             Debug.LogError("The reset simulation event has not been assigned.");
         }
     }
+    /// <summary>
+    /// Raises the OnSimulationTick event, every tick.
+    /// </summary>
+    public void OnSimulationTick()
+    {
+
+    }
     #endregion
 
     #region HEATING EVENTS
