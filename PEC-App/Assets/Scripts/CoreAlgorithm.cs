@@ -95,6 +95,9 @@ public class CoreAlgorithm : MonoBehaviour
         {
             Debug.Log("Simulation starting");
 
+            /// Always reset MoneyModel variables
+            MoneyModel.ResetVariables();
+
             m_simulationInProgress = true;
 
             IsPaused = false;
@@ -233,9 +236,6 @@ public class CoreAlgorithm : MonoBehaviour
     private void ResetSimulationTick()
     {
         m_currentTick = 0;
-
-        /// Always reset MoneyModel variables
-        MoneyModel.ResetVariables();
     }
 
     /// <summary>
