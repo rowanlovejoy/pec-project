@@ -6,6 +6,8 @@ public class StatsScreenCalculator : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI m_airSat;
+    [SerializeField]
+    private TextMeshProUGUI m_wallSat;
 
     // Start is called before the first frame update
     void Start()
