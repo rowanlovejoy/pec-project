@@ -41,6 +41,12 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_resetSimulationEvent = null;
 
+    /// <summary>
+    /// Reference to the OnSimulationTick event.
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_onSimulationTick = null;
+
     [Header("Heating Events")]
     /// <summary>
     /// Reference to the HeatingOn event
@@ -150,12 +156,6 @@ public class EventManager : MonoBehaviour
     /// </summary>
     [SerializeField]
     private GameEvent m_dayEndEvent = null;
-
-    /// <summary>
-    /// Reference to the OnSimulationTick event.
-    /// </summary>
-    [SerializeField]
-    private GameEvent m_onSimulationTick = null;
     #endregion
 
     /// <summary>

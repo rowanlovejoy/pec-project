@@ -30,7 +30,7 @@ public class StatsScreenCalculator : MonoBehaviour
     private CoreAlgorithm m_coreAlgorithm;
 
     // Update is called once per frame
-    void Update()
+    public void StatScreenUpdate()
     {
         m_airSat.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + " / 100";
 

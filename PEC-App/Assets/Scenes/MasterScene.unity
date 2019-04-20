@@ -670,6 +670,7 @@ MonoBehaviour:
     type: 2}
   m_dayStartEvent: {fileID: 11400000, guid: 1329e1c5fa751c249b83632f9e91fa34, type: 2}
   m_dayEndEvent: {fileID: 11400000, guid: 0a529412abb363a46958312e8073dba4, type: 2}
+  m_onSimulationTick: {fileID: 11400000, guid: 74d38d0b9747fae4886df6741cbe11e4, type: 2}
 --- !u!4 &273170137
 Transform:
   m_ObjectHideFlags: 0
