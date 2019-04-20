@@ -29,7 +29,9 @@ public class StatsScreenCalculator : MonoBehaviour
     [SerializeField]
     private CoreAlgorithm m_coreAlgorithm;
 
-    // Update is called once per frame
+    /// <summary>
+    /// Updates the information within the Stats Screen.
+    /// </summary>
     public void StatScreenUpdate()
     {
         m_airSat.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + " / 100";
