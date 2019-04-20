@@ -11,6 +11,8 @@ public class StatsScreenCalculator : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI m_cost;
 
+    [SerializeField]
+    private CoreAlgorithm m_coreAlgorithm;
     // Start is called before the first frame update
     void Start()
     {
