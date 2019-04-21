@@ -6345,6 +6345,51 @@ PrefabInstance:
       propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816966, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.38000107
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015321660494, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.19999981
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015321660494, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.19999981
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015321660494, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.8063046
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015321660494, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1.1000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015321660494, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.223
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015321660494, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.6000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015321660494, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.9517342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015321660494, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.054
+      objectReference: {fileID: 0}
     - target: {fileID: 8570470015236529685, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_fontStyle
