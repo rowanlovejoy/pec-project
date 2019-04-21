@@ -5163,6 +5163,25 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!95 &1786948954
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786948951}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a836451adde33184dbe140ace8187368, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1804410279
 GameObject:
   m_ObjectHideFlags: 0
@@ -6366,6 +6385,106 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_text
+      value: 'Dampness of Air: 0L / 100L'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_text
+      value: 'Dampness of walls: 0L / 100L'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015366492132, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.32006836
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015366492132, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.15002441
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_text
+      value: "Cost: \xA30 / \xA360"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_textInfo.materialCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_subTextObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 2120314400}
     - target: {fileID: 8570470015215707234, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6551,16 +6670,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.2199707
       objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492132, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.32006836
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492132, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.15002441
-      objectReference: {fileID: 0}
     - target: {fileID: 8570470015759740930, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_Name
@@ -6645,96 +6754,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: lbl_dampness_Of_Air
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_text
-      value: 'Dampness of walls: 0L / 100L'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_text
-      value: "Cost: \xA30 / \xA360"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.materialCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_subTextObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: 2120314400}
-    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_text
-      value: 'Dampness of Air: 0L / 100L'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
