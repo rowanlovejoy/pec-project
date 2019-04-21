@@ -39,8 +39,12 @@ public class StatsScreenCalculator : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI m_costText;
 
+    /// <summary>
+    /// A reference to a temperature TMPro text component.
+    /// </summary>
     [SerializeField]
     private TextMeshProUGUI m_tempText;
+
     /// <summary>
     /// A reference to CoreAlgorithm.
     /// </summary>
