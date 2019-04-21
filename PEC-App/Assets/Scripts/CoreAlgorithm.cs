@@ -143,7 +143,7 @@ public class CoreAlgorithm : MonoBehaviour
 
             m_currentTick++;
 
-            m_eventManager.OnSimulationTick();
+            m_eventManager.RaiseOnSimulationTick();
             /// Wait time period for animations
 
             yield return new WaitForSeconds(_tickLength); 
