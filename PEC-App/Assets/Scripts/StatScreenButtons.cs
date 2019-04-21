@@ -26,7 +26,7 @@ public class StatScreenButtons : MonoBehaviour
     /// </summary>
     public void OnBtnClick()
     {
-        if (!m_isVisible)
+        if (m_isVisible == false)
         {
             m_animator.SetTrigger("DoSlideInAnimation");
             m_isVisible = true;

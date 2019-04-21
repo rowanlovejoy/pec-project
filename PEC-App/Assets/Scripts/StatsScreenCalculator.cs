@@ -39,10 +39,11 @@ public class StatsScreenCalculator : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI m_costText;
 
+    [SerializeField]
+    private TextMeshProUGUI m_tempText;
     /// <summary>
     /// A reference to CoreAlgorithm.
     /// </summary>
-
     [SerializeField]
     private CoreAlgorithm m_coreAlgorithm;
 
@@ -56,6 +57,8 @@ public class StatsScreenCalculator : MonoBehaviour
         m_wallSatText.text = "Dampness of Walls: " + m_coreAlgorithm.MoistureModel.WallSaturation + "L / " + m_maxWallSat + "L";
 
         m_costText.text = "Cost: £" + m_coreAlgorithm.MoneyModel.MoneySpent + " / £" + m_maxCost;
+
+        m_tempText.text = "Temp: " + m_coreAlgorithm.TemperatureModel.AirTemperature + "°C";
     }
 }
 
