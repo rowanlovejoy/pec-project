@@ -34,11 +34,11 @@ public class StatsScreenCalculator : MonoBehaviour
     /// </summary>
     public void StatScreenUpdate()
     {
-        m_airSat.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + " / 100";
+        m_airSat.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + "L / 100L";
 
-        m_wallSat.text = "Dampness of Walls: " + m_coreAlgorithm.MoistureModel.WallSaturation + " / 100";
+        m_wallSat.text = "Dampness of Walls: " + m_coreAlgorithm.MoistureModel.WallSaturation + "L / 100L";
 
-        m_cost.text = "Cost: " + m_coreAlgorithm.MoneyModel.MoneySpent + " / 60";
+        m_cost.text = "Cost: £" + m_coreAlgorithm.MoneyModel.MoneySpent + " / £60";
     }
 }
 
