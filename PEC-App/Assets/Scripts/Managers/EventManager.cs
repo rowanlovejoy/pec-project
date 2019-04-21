@@ -260,7 +260,7 @@ public class EventManager : MonoBehaviour
     /// <summary>
     /// Raises the OnSimulationTick event, every tick.
     /// </summary>
-    public void OnSimulationTick()
+    public void RaiseOnSimulationTick()
     {
         if (m_onSimulationTick != null)
         {

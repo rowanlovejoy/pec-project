@@ -145,6 +145,7 @@ public class CoreAlgorithm : MonoBehaviour
 
             m_eventManager.OnSimulationTick();
             /// Wait time period for animations
+
             yield return new WaitForSeconds(_tickLength); 
         }
 
