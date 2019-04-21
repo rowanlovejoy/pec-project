@@ -21,6 +21,7 @@ public class StatScreenButtons : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
     }
+
     /// <summary>
     /// On button press, check if panel is visible, if it isn't, slide in, otherwise, slide out.
     /// </summary>
