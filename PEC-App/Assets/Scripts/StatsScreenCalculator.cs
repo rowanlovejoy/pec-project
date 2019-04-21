@@ -5,22 +5,39 @@ using TMPro;
 public class StatsScreenCalculator : MonoBehaviour
 {
     /// <summary>
+    /// A reference to a maximum cost value that can be manually set in the editor.
+    /// </summary>
+    [SerializeField]
+    private int m_maxCost = 60;
+
+    /// <summary>
+    /// A reference to a maximum air saturation value that can be manually set in the editor.
+    /// </summary>
+    [SerializeField]
+    private int m_maxAirSat = 100;
+
+    /// <summary>
+    /// A reference to a maximum wall saturation value that can be manually set in the editor.
+    /// </summary>
+    [SerializeField]
+    private int m_maxWallSat = 100;
+    /// <summary>
     /// A reference to an  air saturation TMPro text component.
     /// </summary>
     [SerializeField]
-    private TextMeshProUGUI m_airSat;
+    private TextMeshProUGUI m_airSatText;
  
     /// <summary>
     ///  A reference to a wall saturation TMPro text component.
     /// </summary>
     [SerializeField]
-    private TextMeshProUGUI m_wallSat;
+    private TextMeshProUGUI m_wallSatText;
  
     /// <summary>
     /// A reference to a cost TMPro text component.
     /// </summary>
     [SerializeField]
-    private TextMeshProUGUI m_cost;
+    private TextMeshProUGUI m_costText;
 
     /// <summary>
     /// A reference to CoreAlgorithm.
@@ -34,11 +51,11 @@ public class StatsScreenCalculator : MonoBehaviour
     /// </summary>
     public void StatScreenUpdate()
     {
-        m_airSat.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + "L / 100L";
+        m_airSatText.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + "L / " + m_maxAirSat + "L";
 
-        m_wallSat.text = "Dampness of Walls: " + m_coreAlgorithm.MoistureModel.WallSaturation + "L / 100L";
+        m_wallSatText.text = "Dampness of Walls: " + m_coreAlgorithm.MoistureModel.WallSaturation + "L / " + m_maxWallSat + "L";
 
-        m_cost.text = "Cost: £" + m_coreAlgorithm.MoneyModel.MoneySpent + " / £60";
+        m_costText.text = "Cost: £" + m_coreAlgorithm.MoneyModel.MoneySpent + " / £" + m_maxCost;
     }
 }
 
