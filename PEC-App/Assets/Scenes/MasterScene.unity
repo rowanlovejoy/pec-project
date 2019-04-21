@@ -6345,10 +6345,20 @@ PrefabInstance:
       propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8570470015236529687, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_Name
+      value: lbl_stats_Screen_Title_Text
+      objectReference: {fileID: 0}
     - target: {fileID: 8570470015047816966, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.38000107
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015759740930, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_Name
+      value: pnl_stats_Panel
       objectReference: {fileID: 0}
     - target: {fileID: 8570470015321660494, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
@@ -6390,6 +6400,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0.054
       objectReference: {fileID: 0}
+    - target: {fileID: 8570470015047816961, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_Name
+      value: lbl_dampness_Of_Walls
+      objectReference: {fileID: 0}
     - target: {fileID: 8570470015236529685, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_fontStyle
@@ -6414,6 +6429,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470015366492135, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_Name
+      value: lbl_cost
+      objectReference: {fileID: 0}
+    - target: {fileID: 8570470016868191156, guid: e686ee8b56c465f43bfa24e7b825417d,
+        type: 3}
+      propertyPath: m_Name
+      value: lbl_dampness_Of_Air
       objectReference: {fileID: 0}
     - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
