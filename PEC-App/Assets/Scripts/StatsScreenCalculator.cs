@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
+
 public class StatsScreenCalculator : MonoBehaviour
 {
     /// <summary>
@@ -62,7 +64,7 @@ public class StatsScreenCalculator : MonoBehaviour
 
         m_costText.text = "Cost: £" + m_coreAlgorithm.MoneyModel.MoneySpent + " / £" + m_maxCost;
 
-        m_tempText.text = "Temp: " + m_coreAlgorithm.TemperatureModel.AirTemperature + "°C";
+        m_tempText.text = "Temp: " + Math.Round(m_coreAlgorithm.TemperatureModel.AirTemperature) + "°C";
     }
 }
 
