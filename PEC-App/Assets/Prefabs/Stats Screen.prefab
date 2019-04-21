@@ -33,10 +33,10 @@ RectTransform:
   m_Father: {fileID: 8570470015496827963}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.17400001}
-  m_AnchorMax: {x: 1, y: 0.3604611}
-  m_AnchoredPosition: {x: 0.32006836, y: 0.6000004}
-  m_SizeDelta: {x: -14.860001, y: 0.47000122}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 140.09999, y: 28.9}
+  m_SizeDelta: {x: 253.14, y: 24.470001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &313870428
 CanvasRenderer:
@@ -66,7 +66,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "Cost: \xA30 / \xA360"
+  m_text: 'Temp: 0C'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5, type: 2}
   m_sharedMaterial: {fileID: 21238538014903172, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5,
@@ -136,14 +136,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 313870427}
-    characterCount: 14
+    characterCount: 8
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -342,10 +342,10 @@ RectTransform:
   m_Father: {fileID: 8570470015496827963}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.7174611}
-  m_AnchoredPosition: {x: -0.2199707, y: 0}
-  m_SizeDelta: {x: -14.86, y: -3.5299988}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 140.09999, y: 78.5}
+  m_SizeDelta: {x: 253.14, y: 24.470001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8570470015047816964
 CanvasRenderer:
@@ -879,7 +879,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1786948955}
-        m_MethodName: onBtnClick
+        m_MethodName: OnBtnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -924,10 +924,10 @@ RectTransform:
   m_Father: {fileID: 8570470015496827963}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.3604611}
-  m_AnchorMax: {x: 1, y: 0.53900003}
-  m_AnchoredPosition: {x: 0.32006836, y: -0.39999962}
-  m_SizeDelta: {x: -14.86, y: 1.4700012}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 140.09999, y: 53.9}
+  m_SizeDelta: {x: 253.14, y: 24.470001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8570470015366492122
 CanvasRenderer:
@@ -1111,6 +1111,7 @@ MonoBehaviour:
   m_airSatText: {fileID: 8570470016868191146}
   m_wallSatText: {fileID: 8570470015047816967}
   m_costText: {fileID: 8570470015366492133}
+  m_tempText: {fileID: 313870427}
   m_coreAlgorithm: {fileID: 0}
 --- !u!1 &8570470015759740930
 GameObject:
@@ -1235,10 +1236,10 @@ RectTransform:
   m_Father: {fileID: 8570470015496827963}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7174611}
-  m_AnchorMax: {x: 1, y: 0.922539}
-  m_AnchoredPosition: {x: -0.6999512, y: -0.54999924}
-  m_SizeDelta: {x: -13.92, y: -0.78999996}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 140.1, y: 103.3}
+  m_SizeDelta: {x: 254.08, y: 26.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8570470016868191147
 CanvasRenderer:
