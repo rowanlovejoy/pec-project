@@ -3896,6 +3896,14 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 313870427, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
+      propertyPath: m_text
+      value: 'Temperature: 0C'
+      objectReference: {fileID: 0}
+    - target: {fileID: 313870427, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_havePropertiesChanged
