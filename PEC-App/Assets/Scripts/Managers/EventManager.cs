@@ -41,6 +41,12 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameEvent m_resetSimulationEvent = null;
 
+    /// <summary>
+    /// Reference to the OnSimulationTick event.
+    /// </summary>
+    [SerializeField]
+    private GameEvent m_onSimulationTick = null;
+
     [Header("Heating Events")]
     /// <summary>
     /// Reference to the HeatingOn event
@@ -249,6 +255,20 @@ public class EventManager : MonoBehaviour
         else
         {
             Debug.LogError("The reset simulation event has not been assigned.");
+        }
+    }
+    /// <summary>
+    /// Raises the OnSimulationTick event, every tick.
+    /// </summary>
+    public void RaiseOnSimulationTick()
+    {
+        if (m_onSimulationTick != null)
+        {
+            m_onSimulationTick.Raise();
+        }
+        else
+        {
+            Debug.LogError("The on simulation tick event has not been assigned.");
         }
     }
     #endregion
