@@ -23,6 +23,7 @@ public class StatsScreenCalculator : MonoBehaviour
     /// </summary>
     [SerializeField]
     private int m_maxWallSat = 100;
+
     /// <summary>
     /// A reference to an  air saturation TMPro text component.
     /// </summary>
