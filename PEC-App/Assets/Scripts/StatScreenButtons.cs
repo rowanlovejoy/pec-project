@@ -38,4 +38,9 @@ public class StatScreenButtons : MonoBehaviour
             m_isVisible = false;
         }
     }
+
+    public void ResetVisiblity()
+    {
+        m_isVisible = false;
+    }
 }
