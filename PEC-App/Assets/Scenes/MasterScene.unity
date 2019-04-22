@@ -3722,6 +3722,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1786948954, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
 --- !u!1 &1211722312
