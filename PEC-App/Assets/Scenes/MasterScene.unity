@@ -614,7 +614,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1204676474}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1204676475}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f257a8416bf07141b912f53cf16fe04, type: 3}
@@ -3675,7 +3675,15 @@ PrefabInstance:
     - target: {fileID: 1786948953, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
       propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1204676475}
+      objectReference: {fileID: 261094728}
+    - target: {fileID: 1786948953, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetVisiblity
+      objectReference: {fileID: 0}
+    - target: {fileID: 1786948953, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
+      propertyPath: m_response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8570470016868191157, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3920,12 +3928,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
---- !u!1 &1204676475 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8570470015215707245, guid: e686ee8b56c465f43bfa24e7b825417d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1204676474}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1211722312
 GameObject:
   m_ObjectHideFlags: 0
