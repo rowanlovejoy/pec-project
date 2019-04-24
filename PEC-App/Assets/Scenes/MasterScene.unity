@@ -3926,7 +3926,7 @@ PrefabInstance:
     - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_text
-      value: 'Dampness of walls: 0 / 100L'
+      value: 'Dampness of Walls: 0 / 100L'
       objectReference: {fileID: 0}
     - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
