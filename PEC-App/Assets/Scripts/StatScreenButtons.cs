@@ -32,7 +32,18 @@ public class StatScreenButtons : MonoBehaviour
             m_animator.SetTrigger("DoSlideInAnimation");
             m_isVisible = true;
         }
-        else
+        else 
+        {
+            EndSimEvent();
+        }
+    }
+
+    /// <summary>
+    /// A method that's called when the End Screen Event occurs.
+    /// </summary>
+    public void EndSimEvent()
+    {
+        if (m_isVisible == true)
         {
             m_animator.SetTrigger("DoSlideOutAnimation");
             m_isVisible = false;
