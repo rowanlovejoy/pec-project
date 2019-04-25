@@ -23,16 +23,22 @@ public class EndRatingsCalculator : MonoBehaviour
     private float m_wallSaturationDivisor = 5;
 
     /// <summary>
-    /// Divisor used to calculate the quotient that determines the air saturation rating.
+    /// Range used to calculate the quotient that determines the air saturation rating.
     /// </summary>
     [SerializeField]
-    private float m_airSaturationDivisor = 5;
+    private float m_airSaturationRange = 5;
 
     /// <summary>
-    /// Divisor used to calculate the quotient that determines the money spent rating.
+    /// Range used to calculate the quotient that determines the money spent rating.
     /// </summary>
     [SerializeField]
-    private float m_moneySpentDivisor = 5;
+    private float m_moneySpentRange = 5;
+
+    /// <summary>
+    /// Minimum used to calculate the quotient that determines the money spent rating.
+    /// </summary>
+    [SerializeField]
+    private float m_moneySpentMinimum = 5;
 
     /// <summary>
     /// The final wall saturation rating value.
@@ -65,19 +71,59 @@ public class EndRatingsCalculator : MonoBehaviour
         int _rating = 0;
 
         /// Determine the rating based on the quotient.
-        if (_quotient <= 2)
+        if (_quotient < 1)
         {
             _rating = 1;
         }
-        else if (_quotient <= 3)
+        else if (_quotient < 2)
         {
             _rating = 2;
         }
-        else if (_quotient <= 4)
+        else if (_quotient < 3)
         {
             _rating = 3;
         }
-        else if (_quotient <= 5)
+        else if (_quotient < 4)
+        {
+            _rating = 4;
+        }
+        else
+        {
+            _rating = 5;
+        }
+
+        /// Return the calculated rating.
+        return _rating;
+    }
+
+    /// <summary>
+    /// Calculate the cost rating for a given final value.
+    /// </summary>
+    /// <param name="_finalValue">The final value to be rated.</param>
+    /// <param name="_range">The range used with the final value to calculate the quotient that determines the rating.</param>
+    /// <returns>The calculated rating for the given final value.</returns>
+    private int CalculateRangedRating(float _finalValue, float _minimum, float _range)
+    {
+        float _quotient = (_finalValue - _minimum) / _range;
+        Debug.Log("Final value: (" + _finalValue + " - " + _minimum + ") / " + _range + ": " + _quotient);
+
+        /// Variable to store the calculated rating.
+        int _rating = 0;
+
+        /// Determine the rating based on the quotient.
+        if (_quotient < 0.2f)
+        {
+            _rating = 1;
+        }
+        else if (_quotient < 0.4f)
+        {
+            _rating = 2;
+        }
+        else if (_quotient < 0.6f)
+        {
+            _rating = 3;
+        }
+        else if (_quotient < 0.8f)
         {
             _rating = 4;
         }
@@ -98,11 +144,11 @@ public class EndRatingsCalculator : MonoBehaviour
         /// Calculate the rating for Wall Saturation.
         WallSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.WallSaturation, m_wallSaturationDivisor);
 
-        /// Calculate the rating for Air Saturation.
-        AirSaturationRating = CalculateRating(m_coreAlgorithm.MoistureModel.AirSaturation, m_airSaturationDivisor);
+        /// Calculate the rating for Air Saturation. Minimum air saturation will always be 50.
+        AirSaturationRating = CalculateRangedRating(m_coreAlgorithm.MoistureModel.AirSaturation, 50f, m_airSaturationRange);
 
         /// Calculate the rating for Money Spent.
-        MoneySpentRating = CalculateRating(m_coreAlgorithm.MoneyModel.MoneySpent, m_moneySpentDivisor);
+        MoneySpentRating = CalculateRangedRating(m_coreAlgorithm.MoneyModel.MoneySpent, m_moneySpentMinimum, m_moneySpentRange);
 
         /// Debug statements.
         Debug.Log("Ratings - Wall Sat: " + WallSaturationRating + " - Air Sat: " + AirSaturationRating + " - Money Spent: " + MoneySpentRating);
