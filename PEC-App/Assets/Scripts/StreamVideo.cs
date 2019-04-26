@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
+/// The code in this script is based on that provided in a publicly available tutorial created by Just Code (2017). 
+/// For a full reference to this tutorial, and others used during the creation of this project, 
+/// see the document Third-Party Asset and Code Declaration – Plymouth Energy Community Project.
+
 public class StreamVideo : MonoBehaviour
 {
     /// <summary>
