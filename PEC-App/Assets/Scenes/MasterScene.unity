@@ -2281,6 +2281,11 @@ PrefabInstance:
       propertyPath: m_coreAlgorithm
       value: 
       objectReference: {fileID: 1553040066}
+    - target: {fileID: 7924442183558128871, guid: ad63f311768c88b4cbeeba0f9aad8819,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7924442184074912744, guid: ad63f311768c88b4cbeeba0f9aad8819,
         type: 3}
       propertyPath: m_LocalPosition.x
