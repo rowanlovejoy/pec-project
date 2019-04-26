@@ -26,17 +26,17 @@ public class MoistureModel : IAdjustable
     /// <summary>
     /// Moisture production settings. Determines the amount of water that moves into the air per half hour.
     /// </summary>
-    private readonly float[] m_moistureProduction = new float[3] { 0.1f, 0.2f, 0.3f };
+    private readonly float[] m_moistureProduction = new float[3] { 0.1f, 0.15f, 0.2f };
 
     /// <summary>
     /// Moisture removal settings. Determines the amount of water removed from the air.
     /// </summary>
-    private readonly float[] m_moistureRemoval = new float[3] { 0.1f, 0.2f, 0.3f };
+    private readonly float[] m_moistureRemoval = new float[3] { 0.05f, 0.1f, 0.15f };
 
     /// <summary>
     /// Moistoure production duration settings. Determines the length of time (in ticks) moisture is being produced.
     /// </summary>
-    private readonly int[] m_moistureProductionLength = new int[] { 6, 10, 14 };
+    private readonly int[] m_moistureProductionLength = new int[] { 6, 7, 8 };
 
     /// <summary>
     /// The current amount (in litres) of water in the air.
@@ -65,10 +65,10 @@ public class MoistureModel : IAdjustable
     {
         [50] = -4,
         [60] = -2,
-        [70] = 2,
-        [80] = 4,
-        [90] = 6,
-        [100] = 8
+        [70] = 1,
+        [80] = 1,
+        [90] = 2,
+        [100] = 3
     };
 
     /// <summary>
