@@ -142,60 +142,37 @@ public class EndRatingsCalculator : MonoBehaviour
     /// <param name="_heatingPeriodSetting">Index of selected heating period.</param>
     /// <param name="_thermostatSetting">Index of selected thermostat setting.</param>
     /// <returns>The calculated cost rating.</returns>
-    private int CalculateCostRating(int _heatingPeriodSetting, int _thermostatSetting)
+    private int CalculateCostRating(int _heatingPeriodSetting, int _thermostatSetting, int _ventilationSetting)
     {
+        /// Sum all user selections
+        int _total = _heatingPeriodSetting + _thermostatSetting + _ventilationSetting;
+
         /// Variable to store the calculated rating.
         int _rating = 0;
 
-        switch (_heatingPeriodSetting)
+        /// Use probability of sum to determine rating
+        switch (_total)
         {
             case 0:
-                switch (_thermostatSetting)
-                {
-                    case 0:
-                        _rating = 1;
-                        break;
-                    case 1:
-                        _rating = 2;
-                        break;
-                    case 2:
-                        _rating = 3;
-                        break;
-                    default:
-                        break;
-                }
+                _rating = 1;
                 break;
             case 1:
-                switch (_thermostatSetting)
-                {
-                    case 0:
-                        _rating = 2;
-                        break;
-                    case 1:
-                        _rating = 3;
-                        break;
-                    case 2:
-                        _rating = 4;
-                        break;
-                    default:
-                        break;
-                }
+                _rating = 1;
                 break;
             case 2:
-                switch (_thermostatSetting)
-                {
-                    case 0:
-                        _rating = 3;
-                        break;
-                    case 1:
-                        _rating = 4;
-                        break;
-                    case 2:
-                        _rating = 5;
-                        break;
-                    default:
-                        break;
-                }
+                _rating = 2;
+                break;
+            case 3:
+                _rating = 3;
+                break;
+            case 4:
+                _rating = 4;
+                break;
+            case 5:
+                _rating = 5;
+                break;
+            case 6:
+                _rating = 5;
                 break;
             default:
                 break;
@@ -216,7 +193,7 @@ public class EndRatingsCalculator : MonoBehaviour
         AirSaturationRating = CalculateRangedRating(m_coreAlgorithm.MoistureModel.AirSaturation, 50f, m_airSaturationRange);
 
         /// Calculate the rating for Money Spent.
-        MoneySpentRating = CalculateCostRating(m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection, m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection);
+        MoneySpentRating = CalculateCostRating(m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection, m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection, m_coreAlgorithm.MoistureModel.MoistureRemovalSelection);
 
         /// Debug statements.
         Debug.Log("Ratings - Wall Sat: " + WallSaturationRating + " - Air Sat: " + AirSaturationRating + " - Money Spent: " + MoneySpentRating);
