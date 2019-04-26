@@ -59,13 +59,13 @@ public class StatsScreenCalculator : MonoBehaviour
     /// </summary>
     public void StatScreenUpdate()
     {
-        m_airSatText.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + "%";
+        m_airSatText.text = "Dampness of Air: " + m_coreAlgorithm.MoistureModel.AirSaturation + " / " + m_maxAirSat + "L";
 
-        m_wallSatText.text = "Dampness of Walls: " + m_coreAlgorithm.MoistureModel.WallSaturation + "%";
+        m_wallSatText.text = "Dampness of Walls: " + m_coreAlgorithm.MoistureModel.WallSaturation + " / " + m_maxWallSat + "L";
 
-        m_costText.text = "Cost: " + m_coreAlgorithm.MoneyModel.MoneySpent + " / " + m_maxCost;
+        m_costText.text = "Cost: " + m_coreAlgorithm.MoneyModel.MoneySpent + " / £" + m_maxCost;
 
-        m_tempText.text = "Temperature: " + m_coreAlgorithm.TemperatureModel.AirTemperature.ToString("F1") + "°C";
+        m_tempText.text = "Temperature: " + Math.Round(m_coreAlgorithm.TemperatureModel.AirTemperature) + "°C";
     }
 }
 

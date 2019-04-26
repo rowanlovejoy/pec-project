@@ -15,8 +15,8 @@ public class AirSaturationTable
     {
         Dictionary<int, int> _firstRow = new Dictionary<int, int>()
         {
-            [1] = 70,
-            [2] = 90,
+            [1] = 50,
+            [2] = 70,
             [3] = 100,
             [4] = 100,
             [5] = 100
@@ -44,7 +44,7 @@ public class AirSaturationTable
         {
             [1] = 50,
             [2] = 50,
-            [3] = 60,
+            [3] = 70,
             [4] = 90,
             [5] = 100
         };

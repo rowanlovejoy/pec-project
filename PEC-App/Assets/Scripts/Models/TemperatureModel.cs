@@ -21,7 +21,7 @@ public class TemperatureModel : IAdjustable
     /// <summary>
     /// The current temperature of air inside the house (degrees celsius).
     /// </summary>
-    public float AirTemperature { get; private set; } = 15.2f;
+    public float AirTemperature { get; private set; } = 14f;
 
     /// <summary>
     /// Heating period options. Determines how long heating is on for after coming on in ticks.
@@ -65,7 +65,7 @@ public class TemperatureModel : IAdjustable
         {
             HeatingIsOn = true;
 
-            AirTemperature += 0.5f;
+            AirTemperature += 1f;
 
             EventManager.Instance.RaiseHeatingOnEvent();
             EventManager.Instance.RaiseLowTemperatureOffEvent();
@@ -102,7 +102,7 @@ public class TemperatureModel : IAdjustable
     /// </summary>
     public void ResetVariables()
     {
-        AirTemperature = 15.2f;
+        AirTemperature = 14f;
         m_activeHeatingPeriod = false;
         HeatingIsOn = false;
     }
