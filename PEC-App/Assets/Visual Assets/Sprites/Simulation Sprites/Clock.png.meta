@@ -91,12 +91,12 @@ TextureImporter:
       name: Hour Hand
       rect:
         serializedVersion: 2
-        x: 18751
-        y: 3234
-        width: 2485
-        height: 833
+        x: 18756
+        y: 3242
+        width: 2480
+        height: 824
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -111,10 +111,10 @@ TextureImporter:
       name: Minute Hand
       rect:
         serializedVersion: 2
-        x: 16611
-        y: 3240
-        width: 829
-        height: 3310
+        x: 16619
+        y: 3246
+        width: 823
+        height: 3304
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,7 +136,7 @@ TextureImporter:
         width: 7324
         height: 7308
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -156,7 +156,7 @@ TextureImporter:
         width: 6732
         height: 6737
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

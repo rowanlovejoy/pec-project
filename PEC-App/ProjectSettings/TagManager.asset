@@ -62,3 +62,6 @@ TagManager:
   - name: Foreground Walls
     uniqueID: 2856270753
     locked: 0
+  - name: Clock
+    uniqueID: 1910760643
+    locked: 0
