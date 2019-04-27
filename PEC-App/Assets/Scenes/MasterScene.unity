@@ -4406,7 +4406,7 @@ PrefabInstance:
     - target: {fileID: 8570470015366492132, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.5699997
+      value: -0.56999207
       objectReference: {fileID: 0}
     - target: {fileID: 8570470015366492132, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
@@ -6554,7 +6554,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: DoSlideInAnimation
+          m_StringArgument: DoSlideOutAnimation
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -7368,76 +7368,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767402, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.8509804
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767402, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.090196066
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767402, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.13395196
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767396, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.2514
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767396, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.37660003
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767396, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767396, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0.7531967
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767396, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767396, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0.5028
-      objectReference: {fileID: 0}
     - target: {fileID: 8048087410760767403, guid: 6186f05bb80ded84491d5ec49c9888c3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1067948647}
-    - target: {fileID: 8048087410760767403, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetTrigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767403, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767403, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8048087410760767403, guid: 6186f05bb80ded84491d5ec49c9888c3,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: DoSlideOutAnimation
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6186f05bb80ded84491d5ec49c9888c3, type: 3}
 --- !u!1001 &8588211110911822112
@@ -7648,7 +7583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1247435889, guid: 2fe3377cb5625124f9a8f3d78fdc8219, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.40000916
+      value: 0.4000244
       objectReference: {fileID: 0}
     - target: {fileID: 1247435889, guid: 2fe3377cb5625124f9a8f3d78fdc8219, type: 3}
       propertyPath: m_SizeDelta.y
