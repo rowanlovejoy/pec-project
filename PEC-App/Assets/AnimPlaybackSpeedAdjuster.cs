@@ -21,5 +21,7 @@ public class AnimPlaybackSpeedAdjuster : MonoBehaviour
     {
         /// Adjust the playback speed of the Animator based on the current simulation length value.
         m_animator.speed = (60 / m_coreAlgorithm.SimulationLength);
+
+        Debug.Log("Clock Animation Playback Speed = (60 / " + m_coreAlgorithm.SimulationLength + ") = " + m_animator.speed);
     }
 }
