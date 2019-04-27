@@ -97,7 +97,7 @@ public class EndRatingsCalculator : MonoBehaviour
         /// Variable to store the calculated rating.
         int _rating = 0;
 
-        /// Use probability of sum to determine rating
+        /// Use of sum of selected setting indices to determine rating.
         switch (_total)
         {
             case 0:
