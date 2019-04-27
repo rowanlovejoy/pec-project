@@ -16,4 +16,9 @@ public class AnimPlaybackSpeedAdjuster : MonoBehaviour
     /// </summary>
     [SerializeField]
     private Animator m_animator = null;
+
+    private void Start()
+    {
+        
+    }
 }
