@@ -17,6 +17,30 @@ public class EndRatingsCalculator : MonoBehaviour
     private EndRatingsDisplayManager m_endRatingsDisplayManager = null;
 
     /// <summary>
+    /// Range used to calculate the quotient that determines the wall dampness rating.
+    /// </summary>
+    [SerializeField]
+    private float m_wallSaturationRange = 100;
+
+    /// <summary>
+    /// Minimum used to calculate the quotient that determines the wall dampness rating.
+    /// </summary>
+    [SerializeField]
+    private float m_wallSaturationMinimum = 0;
+
+    /// <summary>
+    /// Range used to calculate the quotient that determines the air dampness rating.
+    /// </summary>
+    [SerializeField]
+    private float m_airSaturationRange = 50;
+
+    /// <summary>
+    /// Minimum used to calculate the quotient that determines the air dampness rating.
+    /// </summary>
+    [SerializeField]
+    private float m_airSaturationMinimum = 50;
+
+    /// <summary>
     /// Range used to calculate the quotient that determines the money spent rating.
     /// </summary>
     [SerializeField]
@@ -136,10 +160,10 @@ public class EndRatingsCalculator : MonoBehaviour
     public void CalculateEndRatings()
     {
         /// Calculate the rating for Wall Saturation. Minimum wall saturation will always be 0 and range will always be 100
-        WallSaturationRating = CalculateRangedRating(m_coreAlgorithm.MoistureModel.WallSaturation, 0f, 100f);
+        WallSaturationRating = CalculateRangedRating(m_coreAlgorithm.MoistureModel.WallSaturation, m_wallSaturationMinimum, m_wallSaturationRange);
 
         /// Calculate the rating for Air Saturation. Minimum air saturation will always be 50 and range will always be 50.
-        AirSaturationRating = CalculateRangedRating(m_coreAlgorithm.MoistureModel.AirSaturation, 50f, 50f);
+        AirSaturationRating = CalculateRangedRating(m_coreAlgorithm.MoistureModel.AirSaturation, m_airSaturationMinimum, m_airSaturationRange);
 
         /// Calculate the rating for Money Spent.
         MoneySpentRating = CalculateCostRating(m_coreAlgorithm.TemperatureModel.HeatingPeriodSelection, m_coreAlgorithm.TemperatureModel.ThermostatSettingSelection, m_coreAlgorithm.MoistureModel.MoistureRemovalSelection);
