@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 8313033397029223605}
   - component: {fileID: 8313033397029223602}
   - component: {fileID: 8313033397029223603}
+  - component: {fileID: 3217288934344430124}
   m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
@@ -343,6 +344,20 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &3217288934344430124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8313033397029223606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76c13f3d5924484b95ead74ccd309fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_coreAlgorithm: {fileID: 0}
+  m_animator: {fileID: 8313033397029223604}
 --- !u!1 &8313033397238439440
 GameObject:
   m_ObjectHideFlags: 0
