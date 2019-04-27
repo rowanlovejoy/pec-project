@@ -2828,7 +2828,7 @@ PrefabInstance:
     - target: {fileID: 7353239399547549217, guid: ed1d45b8e48e0ca42b7f9158f598c53a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.1867981
+      value: 0.18676758
       objectReference: {fileID: 0}
     - target: {fileID: 7353239399547549217, guid: ed1d45b8e48e0ca42b7f9158f598c53a,
         type: 3}
@@ -3743,7 +3743,7 @@ PrefabInstance:
     - target: {fileID: 8570470015047816966, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.052219987
+      value: -0.052215576
       objectReference: {fileID: 0}
     - target: {fileID: 8570470015047816966, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
@@ -3768,7 +3768,7 @@ PrefabInstance:
     - target: {fileID: 8570470015047816966, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.26501
+      value: 0.26501083
       objectReference: {fileID: 0}
     - target: {fileID: 8570470015047816966, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
@@ -3905,14 +3905,6 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 313870427, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
-      propertyPath: m_text
-      value: 'Temperature: 0C'
-      objectReference: {fileID: 0}
-    - target: {fileID: 313870427, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -3922,16 +3914,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_text
-      value: 'Dampness of Walls: 0 / 100L'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015047816967, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
@@ -3943,16 +3925,6 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_text
-      value: "Cost: 0 / \xA360"
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470015366492133, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -3962,16 +3934,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_text
-      value: 'Dampness of Air: 0 / 100L'
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570470016868191146, guid: e686ee8b56c465f43bfa24e7b825417d,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1083229094, guid: e686ee8b56c465f43bfa24e7b825417d, type: 3}
       propertyPath: m_padding
