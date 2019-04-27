@@ -47,6 +47,7 @@ public class EndRatingsCalculator : MonoBehaviour
     /// Calculate the rating for a given final value using minimum and range.
     /// </summary>
     /// <param name="_finalValue">The final value to be rated.</param>
+    /// <param name="_minimum">The minimum possible value for the final value to be compared to.</param>
     /// <param name="_range">The range used with the final value to calculate the quotient that determines the rating.</param>
     /// <returns>The calculated rating for the given final value.</returns>
     private int CalculateRangedRating(float _finalValue, float _minimum, float _range)
