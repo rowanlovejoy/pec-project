@@ -113,7 +113,7 @@ public class EndRatingsCalculator : MonoBehaviour
     /// </summary>
     /// <param name="_heatingPeriodSetting">Index of selected heating period setting.</param>
     /// <param name="_thermostatSetting">Index of selected thermostat setting.</param>
-    /// <param name="_ventilationSetting">Indec of selected ventilation setting.</param>
+    /// <param name="_ventilationSetting">Index of selected ventilation setting.</param>
     /// <returns>The calculated cost rating.</returns>
     private int CalculateCostRating(int _heatingPeriodSetting, int _thermostatSetting, int _ventilationSetting)
     {
