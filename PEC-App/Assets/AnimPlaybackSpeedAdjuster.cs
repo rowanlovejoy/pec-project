@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class AnimPlaybackSpeedAdjuster : MonoBehaviour
 {
-    
+    /// <summary>
+    /// Reference to CoreAlgorithm.
+    /// </summary>
+    [SerializeField]
+    private CoreAlgorithm m_coreAlgorithm = null;
 }
