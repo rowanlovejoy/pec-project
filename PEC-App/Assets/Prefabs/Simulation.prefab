@@ -1087,6 +1087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7924442183324637525}
+  - component: {fileID: 7867862586736072751}
   m_Layer: 0
   m_Name: ExtractorFan
   m_TagString: Untagged
@@ -1111,6 +1112,25 @@ Transform:
   m_Father: {fileID: 7924442184370552880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7867862586736072751
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924442183324637546}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2b064516c5a0ea45b62cbb2211e705e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7924442183364171464
 GameObject:
   m_ObjectHideFlags: 0
@@ -4401,11 +4421,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8018795680057877778}
     m_Modifications:
-    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
-        type: 3}
-      propertyPath: m_Name
-      value: PotSteam
-      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4475,6 +4490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.10277012
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
+        type: 3}
+      propertyPath: m_Name
+      value: PotSteam
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773443, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
@@ -4506,11 +4526,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7919043992390033291}
     m_Modifications:
-    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
-        type: 3}
-      propertyPath: m_Name
-      value: PotSteam
-      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4580,6 +4595,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.10277012
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
+        type: 3}
+      propertyPath: m_Name
+      value: PotSteam
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773443, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
@@ -4686,11 +4706,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7919043992390033291}
     m_Modifications:
-    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
-        type: 3}
-      propertyPath: m_Name
-      value: KettleSteam
-      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4760,6 +4775,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.09291006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
+        type: 3}
+      propertyPath: m_Name
+      value: KettleSteam
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773443, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
@@ -4853,15 +4873,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aec9073fdf0268e4a83a6955cc0720bf, type: 3}
---- !u!198 &8296484693427563664 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6481057981966053162, guid: aec9073fdf0268e4a83a6955cc0720bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 3085633398555591610}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6216120323688358209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8977441272066941691, guid: aec9073fdf0268e4a83a6955cc0720bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 3085633398555591610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8296484693427563664 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6481057981966053162, guid: aec9073fdf0268e4a83a6955cc0720bf,
     type: 3}
   m_PrefabInstance: {fileID: 3085633398555591610}
   m_PrefabAsset: {fileID: 0}
@@ -4934,15 +4954,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aec9073fdf0268e4a83a6955cc0720bf, type: 3}
---- !u!198 &1087713918891920570 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 6481057981966053162, guid: aec9073fdf0268e4a83a6955cc0720bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 6262538881351476112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3062243972333027691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8977441272066941691, guid: aec9073fdf0268e4a83a6955cc0720bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 6262538881351476112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1087713918891920570 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6481057981966053162, guid: aec9073fdf0268e4a83a6955cc0720bf,
     type: 3}
   m_PrefabInstance: {fileID: 6262538881351476112}
   m_PrefabAsset: {fileID: 0}
@@ -4953,11 +4973,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8018795680057877778}
     m_Modifications:
-    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
-        type: 3}
-      propertyPath: m_Name
-      value: KettleSteam
-      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5028,6 +5043,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.09291006
       objectReference: {fileID: 0}
+    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
+        type: 3}
+      propertyPath: m_Name
+      value: KettleSteam
+      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773443, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -5058,11 +5078,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7919043992390033291}
     m_Modifications:
-    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
-        type: 3}
-      propertyPath: m_Name
-      value: BathSteam
-      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5132,6 +5147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.27361837
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
+        type: 3}
+      propertyPath: m_Name
+      value: BathSteam
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773443, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
@@ -5288,10 +5308,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7924442183097090041}
     m_Modifications:
-    - target: {fileID: 2868815791395756999, guid: cdced24a6bc92b141af6a5996fd494ca,
+    - target: {fileID: 2868815791395756997, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
-      propertyPath: m_Name
-      value: BedroomCondensation
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2868815791395756996, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
@@ -5363,10 +5383,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.27776012
       objectReference: {fileID: 0}
-    - target: {fileID: 2868815791395756997, guid: cdced24a6bc92b141af6a5996fd494ca,
+    - target: {fileID: 2868815791395756999, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
-      propertyPath: playOnAwake
-      value: 0
+      propertyPath: m_Name
+      value: BedroomCondensation
       objectReference: {fileID: 0}
     - target: {fileID: 2868815791395756998, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
@@ -5399,11 +5419,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7924442182936948367}
     m_Modifications:
-    - target: {fileID: 8313033397029223606, guid: bb2f0e55c2b2ddf4bbe9967b4faea88d,
-        type: 3}
-      propertyPath: m_Name
-      value: Clock
-      objectReference: {fileID: 0}
     - target: {fileID: 8313033397029223607, guid: bb2f0e55c2b2ddf4bbe9967b4faea88d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5524,6 +5539,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.013
       objectReference: {fileID: 0}
+    - target: {fileID: 8313033397029223606, guid: bb2f0e55c2b2ddf4bbe9967b4faea88d,
+        type: 3}
+      propertyPath: m_Name
+      value: Clock
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb2f0e55c2b2ddf4bbe9967b4faea88d, type: 3}
 --- !u!224 &1964317157059880739 stripped
@@ -5539,11 +5559,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8018795680057877778}
     m_Modifications:
-    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
-        type: 3}
-      propertyPath: m_Name
-      value: ClothingHorseSteam
-      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5614,6 +5629,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2978739
       objectReference: {fileID: 0}
+    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
+        type: 3}
+      propertyPath: m_Name
+      value: ClothingHorseSteam
+      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773443, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -5644,10 +5664,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7924442183097090041}
     m_Modifications:
-    - target: {fileID: 2868815791395756999, guid: cdced24a6bc92b141af6a5996fd494ca,
+    - target: {fileID: 2868815791395756997, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
-      propertyPath: m_Name
-      value: BathroomCondensation
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2868815791395756996, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
@@ -5719,10 +5739,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.27776
       objectReference: {fileID: 0}
-    - target: {fileID: 2868815791395756997, guid: cdced24a6bc92b141af6a5996fd494ca,
+    - target: {fileID: 2868815791395756999, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
-      propertyPath: playOnAwake
-      value: 0
+      propertyPath: m_Name
+      value: BathroomCondensation
       objectReference: {fileID: 0}
     - target: {fileID: 2868815791395756998, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
@@ -5736,15 +5756,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdced24a6bc92b141af6a5996fd494ca, type: 3}
---- !u!4 &5343893611507057669 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2868815791395756996, guid: cdced24a6bc92b141af6a5996fd494ca,
-    type: 3}
-  m_PrefabInstance: {fileID: 7924442183044128705}
-  m_PrefabAsset: {fileID: 0}
 --- !u!198 &5343893611507057668 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2868815791395756997, guid: cdced24a6bc92b141af6a5996fd494ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 7924442183044128705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5343893611507057669 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2868815791395756996, guid: cdced24a6bc92b141af6a5996fd494ca,
     type: 3}
   m_PrefabInstance: {fileID: 7924442183044128705}
   m_PrefabAsset: {fileID: 0}
@@ -5755,11 +5775,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5289891007165922840}
     m_Modifications:
-    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
-        type: 3}
-      propertyPath: m_Name
-      value: BathSteam
-      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5830,6 +5845,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.27361792
       objectReference: {fileID: 0}
+    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
+        type: 3}
+      propertyPath: m_Name
+      value: BathSteam
+      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773443, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -5860,11 +5880,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7924442183897935461}
     m_Modifications:
-    - target: {fileID: 9062546006879170026, guid: 732bd07faf5d73a41b97b05778efb290,
-        type: 3}
-      propertyPath: m_Name
-      value: RadiatorHeat
-      objectReference: {fileID: 0}
     - target: {fileID: 9062546006879170039, guid: 732bd07faf5d73a41b97b05778efb290,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5935,6 +5950,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.24864101
       objectReference: {fileID: 0}
+    - target: {fileID: 9062546006879170026, guid: 732bd07faf5d73a41b97b05778efb290,
+        type: 3}
+      propertyPath: m_Name
+      value: RadiatorHeat
+      objectReference: {fileID: 0}
     - target: {fileID: 9062546006879170037, guid: 732bd07faf5d73a41b97b05778efb290,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -5971,10 +5991,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7924442183097090041}
     m_Modifications:
-    - target: {fileID: 2868815791395756999, guid: cdced24a6bc92b141af6a5996fd494ca,
+    - target: {fileID: 2868815791395756997, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
-      propertyPath: m_Name
-      value: DownstairsCondensation
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2868815791395756996, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
@@ -6046,10 +6066,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.27776012
       objectReference: {fileID: 0}
-    - target: {fileID: 2868815791395756997, guid: cdced24a6bc92b141af6a5996fd494ca,
+    - target: {fileID: 2868815791395756999, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
-      propertyPath: playOnAwake
-      value: 0
+      propertyPath: m_Name
+      value: DownstairsCondensation
       objectReference: {fileID: 0}
     - target: {fileID: 2868815791395756998, guid: cdced24a6bc92b141af6a5996fd494ca,
         type: 3}
@@ -6082,11 +6102,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8018795680057877778}
     m_Modifications:
-    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
-        type: 3}
-      propertyPath: m_Name
-      value: BathSteam
-      objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773441, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6156,6 +6171,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.27361837
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991024237599773442, guid: d29bb56bf02a3944b907a35b4ffa1d50,
+        type: 3}
+      propertyPath: m_Name
+      value: BathSteam
       objectReference: {fileID: 0}
     - target: {fileID: 6991024237599773443, guid: d29bb56bf02a3944b907a35b4ffa1d50,
         type: 3}
