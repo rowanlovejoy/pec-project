@@ -66,7 +66,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Temp: 0C'
+  m_text: 'Temp: 0.0C'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5, type: 2}
   m_sharedMaterial: {fileID: 21238538014903172, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5,
@@ -136,10 +136,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 313870427}
-    characterCount: 8
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
-    wordCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -375,7 +375,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Dampness of walls: 0L / 100L'
+  m_text: 'Dampness of walls: 0%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5, type: 2}
   m_sharedMaterial: {fileID: 21238538014903172, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5,
@@ -445,10 +445,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 8570470015047816967}
-    characterCount: 28
+    characterCount: 21
     spriteCount: 0
-    spaceCount: 5
-    wordCount: 5
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -714,7 +714,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -957,7 +957,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "Cost: \xA30 / \xA360"
+  m_text: 'Cost: 0 / 60'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5, type: 2}
   m_sharedMaterial: {fileID: 21238538014903172, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5,
@@ -1027,14 +1027,14 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 8570470015366492133}
-    characterCount: 14
+    characterCount: 12
     spriteCount: 0
     spaceCount: 3
     wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1269,7 +1269,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Dampness of Air: 0L / 100L'
+  m_text: 'Dampness of Air: 0%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5, type: 2}
   m_sharedMaterial: {fileID: 21238538014903172, guid: e4c11f8a7c0c48d4299b9b0f8368c3d5,
@@ -1339,10 +1339,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 8570470016868191146}
-    characterCount: 26
+    characterCount: 19
     spriteCount: 0
-    spaceCount: 5
-    wordCount: 5
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1

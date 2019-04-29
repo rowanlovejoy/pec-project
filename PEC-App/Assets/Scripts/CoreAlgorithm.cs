@@ -41,7 +41,7 @@ public class CoreAlgorithm : MonoBehaviour
     /// <summary>
     /// The actual length of time in seconds the simulation runs.
     /// </summary>
-    private float m_simulationLength = 60f;
+    public float SimulationLength { get; private set; } = 60f;
 
     /// <summary>
     /// The length of each simulation tick.
@@ -76,7 +76,7 @@ public class CoreAlgorithm : MonoBehaviour
 
         m_models = new IAdjustable[4] { TemperatureModel, MoistureModel, MoneyModel, MouldModel };
 
-        m_tickLength = m_simulationLength / 48;
+        m_tickLength = SimulationLength / 48;
     }
 
     private void Start()

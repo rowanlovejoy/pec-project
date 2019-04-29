@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// The code in this script is based on that provided in a publicly available YouTube video tutorial created by user Indie Nuggets (2018). 
+/// For a full reference to this tutorial, and others used during the creation of this project, 
+/// see the document Third-Party Asset and Code Declaration – Plymouth Energy Community Project.
+
 [CreateAssetMenu]
 public class GameEvent : ScriptableObject
 {
